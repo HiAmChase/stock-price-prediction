@@ -1,8 +1,8 @@
 try:
-    import json
-    from flask import Flask, render_template, make_response
-    import requests
-    import json
+    from flask import Flask, render_template
+    import pandas as pd
+    import time
+    from datetime import datetime
     print("All module Loaded")
 except Exception as e:
     print("Error: {}".format(e))
@@ -17,9 +17,26 @@ def home():
 
 @app.route("/pipe", methods=["GET", "POST"])
 def pipe():
-    payload = {}
-    headers = {}
-    url = "https://demo-live-data.highcharts.com/aapl-ohlcv.json"
-    r = requests.get(url, headers=headers, data={})
-    r = r.json()
-    return {"res": r}
+    data = getStock()
+    return {"res": data}
+
+
+def getStock():
+    data = []
+    df = pd.read_csv('aapl.csv')
+
+    for _, row in df.iterrows():
+        timestamp = int(time.mktime(datetime.strptime(
+            row['Date'], "%Y-%m-%d").timetuple()
+        ) * 1000)
+        stock = [
+            timestamp,
+            row['Open'],
+            row['High'],
+            row['Low'],
+            row['Close'],
+            row['Volume'],
+        ]
+        data.append(stock)
+
+    return data
