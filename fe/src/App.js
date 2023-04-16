@@ -1,10 +1,10 @@
 import React from "react"
-import ChartDisplay from "./components/ChartDisplay"
+import MainScreen from "./components/MainScreen"
 
 function App() {
   return (
     <div>
-      <ChartDisplay stockName={"ba"} />
+      <MainScreen />
     </div>
   )
 }

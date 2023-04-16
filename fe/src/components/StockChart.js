@@ -1,9 +1,10 @@
 import React from "react"
 import HighchartsReact from "highcharts-react-official"
+import Highcharts from "highcharts/highstock"
 
-const StockChart = ({ options, highcharts }) => (
+const StockChart = ({ options }) => (
   <HighchartsReact
-    highcharts={highcharts}
+    highcharts={Highcharts}
     constructorType={"stockChart"}
     options={options}
   />

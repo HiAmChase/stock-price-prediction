@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react"
-import Highcharts from "highcharts/highstock"
+import axios from "axios"
 import StockChart from "./StockChart"
 import { baseUrl } from "../utils"
-import axios from "axios"
 
 function ChartDisplay({ stockName }) {
   const [stockData, setStockData] = useState([])
@@ -65,6 +64,7 @@ function ChartDisplay({ stockName }) {
         id: `${stockName}-ohlc`,
         name: `${stockName.toUpperCase()} Stock Price`,
         data: stockData,
+        color: "#5fabed",
       },
       {
         type: "column",
@@ -72,12 +72,13 @@ function ChartDisplay({ stockName }) {
         name: `${stockName.toUpperCase()} Volume`,
         data: volumeData,
         yAxis: 1,
+        color: "#555",
       },
     ],
   }
   return (
     <div>
-      <StockChart options={stockOptions} highcharts={Highcharts} />
+      <StockChart options={stockOptions} />
     </div>
   )
 }
