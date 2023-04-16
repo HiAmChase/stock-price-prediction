@@ -1,22 +1,29 @@
 import React, { useEffect, useState } from "react"
 import Highcharts from "highcharts/highstock"
 import StockChart from "./StockChart"
-import { fetchData, baseUrl } from "../utils"
+import { baseUrl } from "../utils"
+import axios from "axios"
 
-function ChartDisplay() {
+function ChartDisplay({ stockName }) {
   const [stockData, setStockData] = useState([])
+  const [volumeData, setVolumeData] = useState([])
 
   useEffect(() => {
-    const getStockData = async () => {
-      const url = `${baseUrl}/pipe`
-      const response = await fetchData(url)
-      setStockData(response.res)
-    }
-
-    getStockData()
-  }, [])
+    axios
+      .get(`${baseUrl}/pipe/${stockName}`)
+      .then((res) => {
+        setStockData(res.data.stocks)
+        setVolumeData(res.data.volumes)
+      })
+      .catch((err) => {
+        console.log("error: ", err)
+      })
+  }, [stockName])
 
   const stockOptions = {
+    title: {
+      text: `${stockName.toUpperCase()} Stock Price`,
+    },
     navigation: {
       bindings: {
         rect: {
@@ -55,15 +62,15 @@ function ChartDisplay() {
     series: [
       {
         type: "line",
-        id: "aapl-ohlc",
-        name: "AAPL Stock Price",
+        id: `${stockName}-ohlc`,
+        name: `${stockName.toUpperCase()} Stock Price`,
         data: stockData,
       },
       {
         type: "column",
-        id: "aapl-volume",
-        name: "AAPL Volume",
-        data: stockData,
+        id: `${stockName}-volume`,
+        name: `${stockName.toUpperCase()} Volume`,
+        data: volumeData,
         yAxis: 1,
       },
     ],

@@ -4,7 +4,7 @@ import ChartDisplay from "./components/ChartDisplay"
 function App() {
   return (
     <div>
-      <ChartDisplay />
+      <ChartDisplay stockName={"ba"} />
     </div>
   )
 }
