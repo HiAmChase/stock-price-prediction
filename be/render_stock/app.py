@@ -1,13 +1,16 @@
 try:
-    from flask import Flask, render_template
     import pandas as pd
     import time
+
     from datetime import datetime
+    from flask import Flask, render_template
+    from flask_cors import CORS
     print("All module Loaded")
 except Exception as e:
     print("Error: {}".format(e))
 
 app = Flask(__name__)
+CORS(app)
 
 
 @app.route("/")

@@ -1,6 +1,12 @@
+import React from "react"
+import ChartDisplay from "./components/ChartDisplay"
 
 function App() {
-  return <h1>Hi</h1>;
+  return (
+    <div>
+      <ChartDisplay />
+    </div>
+  )
 }
 
-export default App;
+export default App
