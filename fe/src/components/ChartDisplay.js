@@ -4,24 +4,29 @@ import StockChart from "./StockChart"
 import { baseUrl } from "../utils"
 
 function ChartDisplay({ stockName }) {
+  const [stock, setStock] = useState("")
   const [stockData, setStockData] = useState([])
   const [volumeData, setVolumeData] = useState([])
 
+  const getData = (stock) => {
+    axios.get(`${baseUrl}/pipe/${stock}`).then((res) => {
+      setStockData(res.data.stocks)
+      setVolumeData(res.data.volumes)
+      setStock(stock)
+    })
+  }
+
   useEffect(() => {
-    axios
-      .get(`${baseUrl}/pipe/${stockName}`)
-      .then((res) => {
-        setStockData(res.data.stocks)
-        setVolumeData(res.data.volumes)
-      })
-      .catch((err) => {
-        console.log("error: ", err)
-      })
+    try {
+      getData(stockName)
+    } catch (e) {
+      getData("aapl")
+    }
   }, [stockName])
 
   const stockOptions = {
     title: {
-      text: `${stockName.toUpperCase()} Stock Price`,
+      text: `${stock.toUpperCase()} Stock Price`,
     },
     navigation: {
       bindings: {
@@ -61,15 +66,15 @@ function ChartDisplay({ stockName }) {
     series: [
       {
         type: "line",
-        id: `${stockName}-ohlc`,
-        name: `${stockName.toUpperCase()} Stock Price`,
+        id: `${stock}-ohlc`,
+        name: `${stock.toUpperCase()} Stock Price`,
         data: stockData,
         color: "#5fabed",
       },
       {
         type: "column",
         id: `${stockName}-volume`,
-        name: `${stockName.toUpperCase()} Volume`,
+        name: `${stock.toUpperCase()} Volume`,
         data: volumeData,
         yAxis: 1,
         color: "#555",

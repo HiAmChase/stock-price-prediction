@@ -22,7 +22,7 @@ def pipe(stock):
 def getStock(stock):
     stocks = []
     volumes = []
-    df = pd.read_csv(f"train_data/{stock}.csv")
+    df = pd.read_csv(f"test_data/{stock}.csv")
 
     for _, row in df.iterrows():
         timestamp = int(time.mktime(datetime.strptime(
