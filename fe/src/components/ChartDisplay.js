@@ -7,11 +7,13 @@ function ChartDisplay({ stockName }) {
   const [stock, setStock] = useState("")
   const [stockData, setStockData] = useState([])
   const [volumeData, setVolumeData] = useState([])
+  const [predictData, setPredictData] = useState([])
 
   const getData = (stock) => {
     axios.get(`${baseUrl}/pipe/${stock}`).then((res) => {
       setStockData(res.data.stocks)
       setVolumeData(res.data.volumes)
+      setPredictData(res.data.predicted)
       setStock(stock)
     })
   }
@@ -70,6 +72,13 @@ function ChartDisplay({ stockName }) {
         name: `${stock.toUpperCase()} Stock Price`,
         data: stockData,
         color: "#5fabed",
+      },
+      {
+        type: "line",
+        id: `${stock}-predict`,
+        name: `${stock.toUpperCase()} Price Predicted`,
+        data: predictData,
+        color: "#f2c750",
       },
       {
         type: "column",
