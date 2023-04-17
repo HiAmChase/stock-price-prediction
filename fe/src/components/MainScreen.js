@@ -9,6 +9,12 @@ function MainScreen() {
     setStock(inputRef.current.value)
   }
 
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      setStock(e.target.value)
+    }
+  }
+
   return (
     <div>
       <div
@@ -16,12 +22,13 @@ function MainScreen() {
         style={{ width: "500px", margin: "auto" }}
       >
         <input
-          ref={inputRef}
           type="search"
           class="form-control rounded"
           placeholder="Search"
           aria-label="Search"
           aria-describedby="search-addon"
+          ref={inputRef}
+          onKeyDown={handleKeyDown}
         />
         <span
           class="input-group-text border-0"
