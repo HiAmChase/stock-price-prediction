@@ -1,5 +1,6 @@
 import React, { useRef, useState } from "react"
 import ChartDisplay from "./ChartDisplay"
+import PredictStock from "./PredictStock"
 
 function MainScreen() {
   const [stock, setStock] = useState("")
@@ -39,6 +40,7 @@ function MainScreen() {
         </span>
       </div>
       <ChartDisplay stockName={stock || "aapl"} />
+      <PredictStock stockName={stock || "aapl"} />
     </div>
   )
 }
