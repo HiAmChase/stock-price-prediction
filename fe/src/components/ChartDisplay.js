@@ -4,25 +4,34 @@ import StockChart from "./StockChart"
 import { baseUrl } from "../utils"
 
 function ChartDisplay({ stockName }) {
+  const defaultStock = "aapl"
   const [stock, setStock] = useState("")
   const [stockData, setStockData] = useState([])
   const [volumeData, setVolumeData] = useState([])
   const [predictData, setPredictData] = useState([])
 
-  const getData = (stock) => {
-    axios.get(`${baseUrl}/pipe/${stock}`).then((res) => {
-      setStockData(res.data.stocks)
-      setVolumeData(res.data.volumes)
-      setPredictData(res.data.predicted)
-      setStock(stock)
-    })
+  const getData = async (stock) => {
+    const res = await axios.get(`${baseUrl}/stock/${stock}`)
+    setStockData(res.data.stocks)
+    setVolumeData(res.data.volumes)
+    setStock(stock)
+  }
+
+  const predictTestData = async (stock) => {
+    const res = await axios.get(`${baseUrl}/predict_test/${stock}`)
+    setPredictData(res.data.predicteds)
+  }
+
+  const fetchData = async (stock) => {
+    await getData(stock)
+    await predictTestData(stock)
   }
 
   useEffect(() => {
     try {
-      getData(stockName)
+      fetchData(stockName)
     } catch (e) {
-      getData("aapl")
+      fetchData(defaultStock)
     }
   }, [stockName])
 

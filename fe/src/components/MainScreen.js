@@ -40,7 +40,7 @@ function MainScreen() {
         </span>
       </div>
       <ChartDisplay stockName={stock || "aapl"} />
-      <PredictStock stockName={stock || "aapl"} />
+      {/* <PredictStock stockName={stock || "aapl"} /> */}
     </div>
   )
 }

@@ -8,6 +8,12 @@ try:
     from flask_cors import CORS
     from keras.models import load_model
     from sklearn.preprocessing import MinMaxScaler
+
+    from config import (
+        TRAIN_DATA,
+        TEST_DATA,
+        MODEL_DATA
+    )
     print("All module Loaded")
 except Exception as e:
     print("Error: {}".format(e))
@@ -15,20 +21,15 @@ except Exception as e:
 app = Flask(__name__)
 CORS(app)
 
-TEST_DATA = "test_data"
-TRAIN_DATA = "train_data"
-MODEL_DATA = "models"
-
 prediction_days = 60
 
 
-@app.route("/pipe/<stock>", methods=["GET"])
-def pipe(stock):
-    stocks, volumes, predicted = getStock(stock)
+@app.route("/stock/<stock>", methods=["GET"])
+def get_stock(stock):
+    stocks, volumes = getStock(stock)
     return {
         "stocks": stocks,
         "volumes": volumes,
-        "predicted": predicted
     }
 
 
@@ -42,8 +43,36 @@ def predict(stock):
     }
 
 
+@app.route("/predict_test/<stock>", methods=["GET"])
+def predict_test_data(stock):
+    predicteds = predict_test_data(stock)
+    return {"predicteds": predicteds}
+
+
 def getStock(stock):
-    stocks, volumes, predicteds = [], [], []
+    stocks, volumes = [], []
+    test_data = pd.read_csv(f"{TEST_DATA}/{stock}.csv")
+
+    for _, row in test_data.iterrows():
+        timestamp = int(time.mktime(datetime.strptime(
+            row["Date"], "%Y-%m-%d").timetuple()
+        ) * 1000)
+        stock = [
+            timestamp,
+            round(row["Open"], 1),
+            round(row["High"], 1),
+            round(row["Low"], 1),
+            round(row["Close"], 1),
+        ]
+        volume = [timestamp, row["Volume"]]
+
+        stocks.append(stock)
+        volumes.append(volume)
+
+    return stocks, volumes
+
+
+def predict_test_data(stock):
     scaler = MinMaxScaler(feature_range=(0, 1))
 
     train_data = pd.read_csv(f"{TRAIN_DATA}/{stock}.csv")
@@ -63,7 +92,7 @@ def getStock(stock):
     ].values
     model_inputs = model_inputs.reshape(-1, 1)
     model_inputs = scaler.transform(model_inputs)
-    x_test = []
+    x_test, predicteds = [], []
 
     for x in range(prediction_days, len(model_inputs)):
         x_test.append(model_inputs[x-prediction_days:x, 0])
@@ -78,23 +107,13 @@ def getStock(stock):
         timestamp = int(time.mktime(datetime.strptime(
             row["Date"], "%Y-%m-%d").timetuple()
         ) * 1000)
-        stock = [
-            timestamp,
-            round(row["Open"], 1),
-            round(row["High"], 1),
-            round(row["Low"], 1),
-            round(row["Close"], 1),
-        ]
-        volume = [timestamp, row["Volume"]]
         predicted = [
             timestamp,
             round(predicted_prices[index][0].item(), 1)  # Predict value
         ]
-        stocks.append(stock)
-        volumes.append(volume)
         predicteds.append(predicted)
 
-    return stocks, volumes, predicteds
+    return predicteds
 
 
 def predict_stock(stock):
