@@ -1,5 +1,6 @@
 import React, { useRef, useState } from "react"
 import ChartDisplay from "./ChartDisplay"
+import { PredictType } from "../utils"
 
 function MainScreen() {
   const [stock, setStock] = useState("")
@@ -38,7 +39,14 @@ function MainScreen() {
           <i class="fas fa-search"></i>
         </span>
       </div>
-      <ChartDisplay stockName={stock || "aapl"} />
+      <ChartDisplay
+        stockName={stock || "aapl"}
+        predictType={PredictType.PREDICT_WITH_60_DAYS}
+      />
+      <ChartDisplay
+        stockName={stock || "aapl"}
+        predictType={PredictType.PREDICT_WITH_30_DAYS}
+      />
     </div>
   )
 }

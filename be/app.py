@@ -33,7 +33,7 @@ def get_stock(stock):
     }
 
 
-@app.route("/predict_future/<stock>", methods=["GET"])
+@app.route("/predict_future_60/<stock>", methods=["GET"])
 def predict(stock):
     predicted = predict_stock(
         stock=stock,
@@ -44,11 +44,20 @@ def predict(stock):
     }
 
 
-@app.route("/predict_test_data/<stock>", methods=["GET"])
-def predict_test_data(stock):
+@app.route("/predict_test_data_60/<stock>", methods=["GET"])
+def predict_test_data_60(stock):
     predicteds = predict_test_data(
         stock=stock,
         predict_type=PredictType.PREDICT_WITH_60_DAYS
+    )
+    return {"predicteds": predicteds}
+
+
+@app.route("/predict_test_data_30/<stock>", methods=["GET"])
+def predict_test_data_30(stock):
+    predicteds = predict_test_data(
+        stock=stock,
+        predict_type=PredictType.PREDICT_WITH_30_DAYS
     )
     return {"predicteds": predicteds}
 

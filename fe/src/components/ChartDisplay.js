@@ -3,8 +3,9 @@ import axios from "axios"
 import StockChart from "./StockChart"
 import { baseUrl } from "../utils"
 
-function ChartDisplay({ stockName }) {
+function ChartDisplay({ stockName, predictType }) {
   const defaultStock = "aapl"
+
   const [stock, setStock] = useState("")
   const [stockData, setStockData] = useState([])
   const [volumeData, setVolumeData] = useState([])
@@ -18,7 +19,7 @@ function ChartDisplay({ stockName }) {
   }
 
   const predictTestData = async (stock) => {
-    const res = await axios.get(`${baseUrl}/predict_test_data/${stock}`)
+    const res = await axios.get(`${predictType.predictTestData}/${stock}`)
     setPredictData(res.data.predicteds)
   }
 
@@ -37,7 +38,7 @@ function ChartDisplay({ stockName }) {
 
   const stockOptions = {
     title: {
-      text: `${stock.toUpperCase()} Stock Price`,
+      text: `${stock.toUpperCase()} ${predictType.titleSuffix}`,
     },
     navigation: {
       bindings: {
