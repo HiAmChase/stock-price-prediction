@@ -18,7 +18,7 @@ function ChartDisplay({ stockName }) {
   }
 
   const predictTestData = async (stock) => {
-    const res = await axios.get(`${baseUrl}/predict_test/${stock}`)
+    const res = await axios.get(`${baseUrl}/predict_test_data/${stock}`)
     setPredictData(res.data.predicteds)
   }
 

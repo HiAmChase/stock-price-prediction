@@ -12,16 +12,16 @@ try:
     from config import (
         TRAIN_DATA,
         TEST_DATA,
-        MODEL_DATA
+        MAPPING_PREDICT
     )
+    from helper import get_num_lines
+    from constant import PredictType
     print("All module Loaded")
 except Exception as e:
     print("Error: {}".format(e))
 
 app = Flask(__name__)
 CORS(app)
-
-prediction_days = 60
 
 
 @app.route("/stock/<stock>", methods=["GET"])
@@ -33,19 +33,23 @@ def get_stock(stock):
     }
 
 
-@app.route("/predict/<stock>", methods=["GET"])
+@app.route("/predict_future/<stock>", methods=["GET"])
 def predict(stock):
-    stocks, volumes, predicted = predict_stock(stock)
+    predicted = predict_stock(
+        stock=stock,
+        predict_type=PredictType.PREDICT_WITH_60_DAYS
+    )
     return {
-        "stocks": stocks,
-        "volumes": volumes,
         "predicted": predicted  # This is a value not array
     }
 
 
-@app.route("/predict_test/<stock>", methods=["GET"])
+@app.route("/predict_test_data/<stock>", methods=["GET"])
 def predict_test_data(stock):
-    predicteds = predict_test_data(stock)
+    predicteds = predict_test_data(
+        stock=stock,
+        predict_type=PredictType.PREDICT_WITH_60_DAYS
+    )
     return {"predicteds": predicteds}
 
 
@@ -72,12 +76,15 @@ def getStock(stock):
     return stocks, volumes
 
 
-def predict_test_data(stock):
+def predict_test_data(stock, predict_type):
     scaler = MinMaxScaler(feature_range=(0, 1))
-
     train_data = pd.read_csv(f"{TRAIN_DATA}/{stock}.csv")
     test_data = pd.read_csv(f"{TEST_DATA}/{stock}.csv")
-    model = load_model(f"{MODEL_DATA}/{stock}.h5")
+
+    prediction_days = MAPPING_PREDICT.get(predict_type)["prediction_days"]
+    model_source = MAPPING_PREDICT.get(predict_type)["models"]
+
+    model = load_model(f"{model_source}/{stock}.h5")
 
     scaler.fit_transform(
         train_data["Close"].values.reshape(-1, 1)
@@ -116,12 +123,14 @@ def predict_test_data(stock):
     return predicteds
 
 
-def predict_stock(stock):
-    stocks, volumes = [], []
+def predict_stock(stock, predict_type):
     scaler = MinMaxScaler(feature_range=(0, 1))
-
-    model = load_model(f"{MODEL_DATA}/{stock}.h5")
     train_data = pd.read_csv(f"{TRAIN_DATA}/{stock}.csv")
+
+    prediction_days = MAPPING_PREDICT.get(predict_type)["prediction_days"]
+    model_source = MAPPING_PREDICT.get(predict_type)["models"]
+
+    model = load_model(f"{model_source}/{stock}.h5")
 
     # Get last prediction days
     test_data_lines = get_num_lines(f"{TEST_DATA}/{stock}.csv")
@@ -145,26 +154,4 @@ def predict_stock(stock):
     prediction = model.predict(real_data)
     prediction = scaler.inverse_transform(prediction)
 
-    for _, row in test_data.iterrows():
-        timestamp = int(time.mktime(
-            datetime.strptime(row["Date"], "%Y-%m-%d").timetuple()
-        ) * 1000)
-        stock = [
-            timestamp,
-            round(row["Open"], 1),
-            round(row["High"], 1),
-            round(row["Low"], 1),
-            round(row["Close"], 1),
-        ]
-        volume = [timestamp, row["Volume"]]
-        stocks.append(stock)
-        volumes.append(volume)
-
-    return stocks, volumes, prediction.item(0)
-
-
-def get_num_lines(fname):
-    with open(fname) as f:
-        for i, _ in enumerate(f):
-            pass
-    return i + 1
+    return prediction.item(0)
