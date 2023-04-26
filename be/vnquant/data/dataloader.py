@@ -116,9 +116,9 @@ class DataLoaderVND(DataLoadProto):
             stock_data.volume_reconcile
 
         # Create multiple columns
-        iterables = [stock_data.columns.tolist(), [symbol]]
+        iterables = [stock_data.columns.tolist()]
         mulindex = pd.MultiIndex.from_product(
-            iterables, names=['Attributes', 'Symbols'])
+            iterables, names=['Date'])
         stock_data.columns = mulindex
 
         logging.info('data {} from {} to {} have already cloned!'
@@ -148,9 +148,9 @@ class DataLoaderVND(DataLoadProto):
             stock_data.volume_reconcile
 
         # Create multiple columns
-        iterables = [stock_data.columns.tolist(), [symbol]]
+        iterables = [stock_data.columns.tolist()]
         mulindex = pd.MultiIndex.from_product(
-            iterables, names=['Attributes', 'Symbols'])
+            iterables, names=['Date'])
         stock_data.columns = mulindex
 
         logging.info('data {} from {} to {} have already cloned!'
@@ -289,9 +289,9 @@ class DataLoaderCAFE(DataLoadProto):
                 stock_data.volume_reconcile
 
         # Create multiple columns
-        iterables = [stock_data.columns.tolist(), [symbol]]
+        iterables = [stock_data.columns.tolist()]
         mulindex = pd.MultiIndex.from_product(
-            iterables, names=['Attributes', 'Symbols'])
+            iterables, names=['Date'])
         stock_data.columns = mulindex
 
         logging.info('data {} from {} to {} have already cloned!'
