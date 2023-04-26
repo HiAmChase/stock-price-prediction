@@ -109,9 +109,7 @@ class DataLoaderVND(DataLoadProto):
         stock_data = stock_data.set_index('date').apply(
             pd.to_numeric, errors='coerce')
         stock_data.index = list(map(utils.convert_date, stock_data.index))
-        stock_data.index.name = 'date'
         stock_data = stock_data.sort_index()
-        stock_data.fillna(0, inplace=True)
         stock_data['volume'] = stock_data.volume_match + \
             stock_data.volume_reconcile
 
@@ -141,9 +139,7 @@ class DataLoaderVND(DataLoadProto):
         stock_data = stock_data.set_index('date').apply(
             pd.to_numeric, errors='coerce')
         stock_data.index = list(map(utils.convert_date, stock_data.index))
-        stock_data.index.name = 'date'
         stock_data = stock_data.sort_index()
-        stock_data.fillna(0, inplace=True)
         stock_data['volume'] = stock_data.volume_match + \
             stock_data.volume_reconcile
 
@@ -254,9 +250,13 @@ class DataLoaderCAFE(DataLoadProto):
         return data
 
     def download_one(self, symbol):
-        stock_data = pd.DataFrame(columns=['date', 'change_perc1', 'change_perc2',
-                                           'Open', 'High', 'Low', 'Close',
-                                           'avg', 'volume_match', 'volume_reconcile'])
+        stock_data = pd.DataFrame(
+            columns=[
+                'date', 'change_perc1', 'change_perc2',
+                'Open', 'High', 'Low', 'Close',
+                'avg', 'volume_match', 'volume_reconcile'
+            ]
+        )
 
         for i in range(1000):
             stock_slice_batch = self.download_batch(i + 1, symbol)
@@ -282,9 +282,7 @@ class DataLoaderCAFE(DataLoadProto):
                 pd.to_numeric, errors='coerce')
             stock_data.index = list(map(lambda text: utils.convert_date(
                 text, date_type='%d/%m/%Y'), stock_data.index))
-            stock_data.index.name = 'date'
             stock_data = stock_data.sort_index()
-            stock_data.fillna(0, inplace=True)
             stock_data['Volume'] = stock_data.volume_match + \
                 stock_data.volume_reconcile
 
