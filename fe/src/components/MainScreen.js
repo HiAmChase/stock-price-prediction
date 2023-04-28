@@ -1,10 +1,17 @@
 import React, { useRef, useState } from "react"
 import ChartDisplay from "./ChartDisplay"
 import { PredictType } from "../utils"
+import Select from "react-select"
 
 function MainScreen() {
+  const options = [
+    { value: "jack", label: "Jack" },
+    { value: "john", label: "John" },
+    { value: "mike", label: "Mike" },
+  ]
   const [stock, setStock] = useState("")
   const inputRef = useRef(null)
+  const [selectedOption, setSelectedOption] = useState(null)
 
   const handleClick = () => {
     setStock(inputRef.current.value)
@@ -16,8 +23,13 @@ function MainScreen() {
     }
   }
 
+  const handleChange = (selectedOption) => {
+    console.log("handleChange", selectedOption.value)
+  }
+
   return (
     <div>
+      <Select onChange={handleChange} options={options} />
       <div
         class="input-group rounded"
         style={{ width: "500px", margin: "auto" }}
@@ -39,14 +51,14 @@ function MainScreen() {
           <i class="fas fa-search"></i>
         </span>
       </div>
-      <ChartDisplay
+      {/* <ChartDisplay
         stockName={stock || "aapl"}
         predictType={PredictType.PREDICT_WITH_60_DAYS}
       />
       <ChartDisplay
         stockName={stock || "aapl"}
         predictType={PredictType.PREDICT_WITH_30_DAYS}
-      />
+      /> */}
     </div>
   )
 }
