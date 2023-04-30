@@ -25,11 +25,7 @@ def get_all_stocks():
 
 @app.route("/stock/<stock>", methods=["GET"])
 def get_stock_data(stock):
-    stocks, volumes = get_stock(stock)
-    return {
-        "stocks": stocks,
-        "volumes": volumes,
-    }
+    return get_stock(stock)
 
 
 @app.route("/predict_future_60/<stock>", methods=["GET"])

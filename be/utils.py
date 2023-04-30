@@ -23,17 +23,26 @@ def get_stock(stock):
         ) * 1000)
         stock = [
             timestamp,
-            round(row["Open"], 1),
-            round(row["High"], 1),
-            round(row["Low"], 1),
-            round(row["Close"], 1),
+            round(row["Open"], 2),
+            round(row["High"], 2),
+            round(row["Low"], 2),
+            round(row["Close"], 2),
         ]
         volume = [timestamp, row["Volume"]]
 
         stocks.append(stock)
         volumes.append(volume)
 
-    return stocks, volumes
+    difference, price, percentage, status = get_current_data(test_data)
+
+    return {
+        "stocks": stocks,
+        "volumes": volumes,
+        "difference": difference,
+        "price": price,
+        "percentage": percentage,
+        "status": status
+    }
 
 
 def predict_test_data(stock, predict_type):
@@ -76,7 +85,7 @@ def predict_test_data(stock, predict_type):
         ) * 1000)
         predicted = [
             timestamp,
-            round(predicted_prices[index][0].item(), 1)  # Predict value
+            round(predicted_prices[index][0].item(), 2)  # Predict value
         ]
         predicteds.append(predicted)
 
@@ -115,6 +124,18 @@ def predict_stock(stock, predict_type):
     prediction = scaler.inverse_transform(prediction)
 
     return prediction.item(0)
+
+
+def get_current_data(data):
+    data_last_2_days = data.iloc[-2]
+    data_last_day = data.iloc[-1]
+
+    difference = round(data_last_day["Close"] - data_last_2_days["Close"], 2)
+    price = round(data_last_day["Close"], 2)
+    percentage = abs(difference) / price * 100
+    status = "DOWN" if difference < 0 else "UP"
+
+    return (difference, price, percentage, status)
 
 
 def get_num_lines(fname):
