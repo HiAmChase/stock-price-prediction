@@ -16,7 +16,7 @@ try:
     )
     from helper import get_num_lines
     from constant import PredictType
-    from stock import STOCK
+    from stock import STOCK as stock_data
     print("All module Loaded")
 except Exception as e:
     print("Error: {}".format(e))
@@ -27,7 +27,7 @@ CORS(app)
 
 @app.route("/stock", methods=["GET"])
 def get_all_stocks():
-    return STOCK
+    return stock_data
 
 
 @app.route("/stock/<stock>", methods=["GET"])
