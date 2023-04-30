@@ -1,44 +1,29 @@
 import React, { useEffect, useState } from "react"
-import axios from "axios"
 import StockChart from "./StockChart"
-import { baseUrl } from "../utils"
+import { getStock, getPredictTestData } from "../api/stock"
 
-function ChartDisplay({ stockName, predictType }) {
-  const defaultStock = "aapl"
-
-  const [stock, setStock] = useState("")
+function ChartDisplay({ stock = "aapl", predictType }) {
   const [stockData, setStockData] = useState([])
   const [volumeData, setVolumeData] = useState([])
   const [predictData, setPredictData] = useState([])
 
-  const getData = async (stock) => {
-    const res = await axios.get(`${baseUrl}/stock/${stock}`)
-    setStockData(res.data.stocks)
-    setVolumeData(res.data.volumes)
-    setStock(stock)
-  }
-
-  const predictTestData = async (stock) => {
-    const res = await axios.get(`${predictType.predictTestData}/${stock}`)
-    setPredictData(res.data.predicteds)
-  }
-
   const fetchData = async (stock) => {
-    await getData(stock)
-    await predictTestData(stock)
+    await getStock(stock).then(({ data }) => {
+      setStockData(data.stocks)
+      setVolumeData(data.volumes)
+    })
+    await getPredictTestData(predictType, stock).then(({ data }) => {
+      setPredictData(data.predicteds)
+    })
   }
 
   useEffect(() => {
-    try {
-      fetchData(stockName)
-    } catch (e) {
-      fetchData(defaultStock)
-    }
-  }, [stockName])
+    fetchData(stock)
+  }, [stock])
 
   const stockOptions = {
     title: {
-      text: `${stock.toUpperCase()} ${predictType.titleSuffix}`,
+      text: `${stock?.toUpperCase()} ${predictType.titleSuffix}`,
     },
     navigation: {
       bindings: {
@@ -79,21 +64,21 @@ function ChartDisplay({ stockName, predictType }) {
       {
         type: "line",
         id: `${stock}-ohlc`,
-        name: `${stock.toUpperCase()} Stock Price`,
+        name: `${stock?.toUpperCase()} Stock Price`,
         data: stockData,
         color: "#5fabed",
       },
       {
         type: "line",
         id: `${stock}-predict`,
-        name: `${stock.toUpperCase()} Price Predicted`,
+        name: `${stock?.toUpperCase()} Price Predicted`,
         data: predictData,
         color: "#f2c750",
       },
       {
         type: "column",
-        id: `${stockName}-volume`,
-        name: `${stock.toUpperCase()} Volume`,
+        id: `${stock}-volume`,
+        name: `${stock?.toUpperCase()} Volume`,
         data: volumeData,
         yAxis: 1,
         color: "#555",
