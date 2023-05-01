@@ -11,6 +11,7 @@ from constant import (
     TEST_DATA,
     MAPPING_PREDICT
 )
+from stock import STOCK
 
 
 def get_stock(stock):
@@ -21,7 +22,7 @@ def get_stock(stock):
         timestamp = int(time.mktime(datetime.strptime(
             row["Date"], "%Y-%m-%d").timetuple()
         ) * 1000)
-        stock = [
+        stock_data = [
             timestamp,
             round(row["Open"], 2),
             round(row["High"], 2),
@@ -30,18 +31,21 @@ def get_stock(stock):
         ]
         volume = [timestamp, row["Volume"]]
 
-        stocks.append(stock)
+        stocks.append(stock_data)
         volumes.append(volume)
 
-    difference, price, percentage, status = get_current_data(test_data)
+    variation, price, percentage, date = get_current_data(test_data)
+    stock_obj = next((x for x in STOCK if x.get("value") == stock), None)
+    label = stock_obj.get("label")
 
     return {
         "stocks": stocks,
         "volumes": volumes,
-        "difference": difference,
+        "variation": variation,
         "price": price,
         "percentage": percentage,
-        "status": status
+        "date": date,
+        "label": label
     }
 
 
@@ -130,12 +134,12 @@ def get_current_data(data):
     data_last_2_days = data.iloc[-2]
     data_last_day = data.iloc[-1]
 
-    difference = round(data_last_day["Close"] - data_last_2_days["Close"], 2)
+    date = data_last_day["Date"]
+    variation = round(data_last_day["Close"] - data_last_2_days["Close"], 2)
     price = round(data_last_day["Close"], 2)
-    percentage = abs(difference) / price * 100
-    status = "DOWN" if difference < 0 else "UP"
+    percentage = round(abs(variation) / price * 100, 2)
 
-    return (difference, price, percentage, status)
+    return (variation, price, percentage, date)
 
 
 def get_num_lines(fname):

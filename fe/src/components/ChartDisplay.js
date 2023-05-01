@@ -1,20 +1,39 @@
 import React, { useEffect, useState } from "react"
 import StockChart from "./StockChart"
 import { getStock, getPredictTestData } from "../api/stock"
+import "./StockInfo.css"
 
 function ChartDisplay({ stock = "aapl", predictType }) {
-  const [stockData, setStockData] = useState([])
-  const [volumeData, setVolumeData] = useState([])
+  const [stockData, setStockData] = useState({
+    date: "2023-01-01",
+    variation: 0,
+    percentage: 0,
+    price: 0,
+    stocks: [],
+    volumes: [],
+    label: "",
+  })
   const [predictData, setPredictData] = useState([])
 
   const fetchData = async (stock) => {
     await getStock(stock).then(({ data }) => {
-      setStockData(data.stocks)
-      setVolumeData(data.volumes)
+      setStockData(data)
     })
     await getPredictTestData(predictType, stock).then(({ data }) => {
       setPredictData(data.predicteds)
     })
+  }
+
+  const getColor = (variation) => {
+    return variation < 0 ? "red" : "green"
+  }
+
+  const getArrowIcon = (variation) => {
+    return variation < 0 ? (
+      <i class="fa-solid fa-arrow-down"></i>
+    ) : (
+      <i class="fa-solid fa-arrow-up"></i>
+    )
   }
 
   useEffect(() => {
@@ -65,7 +84,7 @@ function ChartDisplay({ stock = "aapl", predictType }) {
         type: "line",
         id: `${stock}-ohlc`,
         name: `${stock?.toUpperCase()} Stock Price`,
-        data: stockData,
+        data: stockData.stocks,
         color: "#5fabed",
       },
       {
@@ -79,7 +98,7 @@ function ChartDisplay({ stock = "aapl", predictType }) {
         type: "column",
         id: `${stock}-volume`,
         name: `${stock?.toUpperCase()} Volume`,
-        data: volumeData,
+        data: stockData.volumes,
         yAxis: 1,
         color: "#555",
       },
@@ -87,6 +106,37 @@ function ChartDisplay({ stock = "aapl", predictType }) {
   }
   return (
     <div>
+      <div className="stock-info">
+        <h4>{stockData.label}</h4>
+        <div className="stock-price">
+          <h2 className="price">${stockData.price}</h2>
+          <div className="stock-box">
+            <p
+              style={{
+                color: `${getColor(stockData.variation)}`,
+              }}
+            >
+              {getArrowIcon(stockData.variation)} {stockData.percentage}%
+            </p>
+          </div>
+          <p
+            style={{
+              color: `${getColor(stockData.variation)}`,
+            }}
+            className="variation"
+          >
+            {stockData.variation}
+          </p>
+          <p
+            style={{
+              color: `${getColor(stockData.variation)}`,
+            }}
+          >
+            1 day
+          </p>
+        </div>
+        <span>2023-03-30</span>
+      </div>
       <StockChart options={stockOptions} />
     </div>
   )
