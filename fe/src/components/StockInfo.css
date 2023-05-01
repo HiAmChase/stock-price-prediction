@@ -1,0 +1,22 @@
+.stock-info .stock-price {
+    width: 300px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.stock-info p {
+    margin: 0;
+    font-weight: 500;
+}
+
+.stock-info span {
+    font-size: 15px;
+}
+
+.stock-info .stock-price .stock-box {
+    background-color: #f1f1f1;
+    padding: 4px 6px;
+    border-radius: 3px;
+}
