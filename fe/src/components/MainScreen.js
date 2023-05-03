@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react"
 import Select from "react-select"
 
 import ChartDisplay from "./ChartDisplay"
-import { PredictType } from "../utils"
+import { PredictType } from "./utils"
 import { getAllStock } from "../api/stock"
 
 function MainScreen() {

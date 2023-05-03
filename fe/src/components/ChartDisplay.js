@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react"
 import StockChart from "./StockChart"
 import { getStock, getPredictTestData } from "../api/stock"
 import "./StockInfo.css"
+import { DEFAULT_COLOR, DOWN_COLOR, UP_COLOR, BACKGROUND_COLOR } from "./utils"
 
 function ChartDisplay({ stock = "aapl", predictType }) {
   const [stockData, setStockData] = useState({
@@ -13,15 +14,19 @@ function ChartDisplay({ stock = "aapl", predictType }) {
     volumes: [],
     label: "",
   })
+  const [data, setData] = useState({})
+  const [charType, setChartType] = useState("candlestick")
+  const [stockOptions, setStockOptions] = useState({})
+  const [height, setHeight] = useState(0)
   const [predictData, setPredictData] = useState([])
 
   const fetchData = async (stock) => {
     await getStock(stock).then(({ data }) => {
-      setStockData(data)
+      setData(data)
     })
-    await getPredictTestData(predictType, stock).then(({ data }) => {
-      setPredictData(data.predicteds)
-    })
+    // await getPredictTestData(predictType, stock).then(({ data }) => {
+    //   setPredictData(data.predicteds)
+    // })
   }
 
   const getColor = (variation) => {
@@ -40,104 +45,77 @@ function ChartDisplay({ stock = "aapl", predictType }) {
     fetchData(stock)
   }, [stock])
 
-  const stockOptions = {
-    title: {
-      text: `${stock?.toUpperCase()} ${predictType.titleSuffix}`,
-    },
-    navigation: {
-      bindings: {
-        rect: {
-          annotationsOptions: {
-            shapeOptions: {
-              fill: "rgba(255, 0, 0, 0.8)",
-            },
-          },
+  useEffect(() => {
+    setHeight(window.innerHeight * 0.6)
+  }, [])
+
+  useEffect(() => {
+    if (Object.keys(data).length !== 0) {
+      let yAxis
+      yAxis = [
+        {
+          height: "85%",
+          labels: { style: { color: DEFAULT_COLOR }, align: "right", x: -3 },
         },
-      },
-      annotationsOptions: {
-        typeOptions: {
+        {
+          top: "85%",
+          height: "15%",
+          labels: { align: "right", style: { color: DEFAULT_COLOR }, x: -3 },
+          offset: 0,
+        },
+      ]
+      setStockOptions({
+        yAxis: yAxis,
+        xAxis: [{ labels: { style: { color: DEFAULT_COLOR } } }],
+        series: [
+          {
+            data: data.stocks,
+            type: charType,
+            name: `${stock.toUpperCase()} Stock Price`,
+            id: "main-series",
+          },
+          {
+            type: "column",
+            name: "Volumn",
+            data: data.volumes,
+            color: "white",
+            yAxis: 1,
+          },
+        ],
+        rangeSelector: {
+          buttons: [],
+        },
+        plotOptions: {
+          candlestick: {
+            color: DOWN_COLOR,
+            lineColor: DOWN_COLOR,
+            upColor: UP_COLOR,
+            upLineColor: UP_COLOR,
+          },
+          ohlc: {
+            color: DOWN_COLOR,
+            lineColor: DOWN_COLOR,
+            upColor: UP_COLOR,
+            upLineColor: UP_COLOR,
+          },
           line: {
-            stroke: "rgba(255, 0, 0, 1)",
-            strokeWidth: 10,
+            color: UP_COLOR,
+            lineWidth: 1,
           },
         },
-      },
-    },
-    yAxis: [
-      {
-        labels: {
-          align: "left",
+        chart: {
+          height: `${height}px`,
+          backgroundColor: BACKGROUND_COLOR,
         },
-        height: "80%",
-      },
-      {
-        labels: {
-          align: "left",
-        },
-        top: "80%",
-        height: "20%",
-        offset: 0,
-      },
-    ],
-    series: [
-      {
-        type: "line",
-        id: `${stock}-ohlc`,
-        name: `${stock?.toUpperCase()} Stock Price`,
-        data: stockData.stocks,
-        color: "#5fabed",
-      },
-      {
-        type: "line",
-        id: `${stock}-predict`,
-        name: `${stock?.toUpperCase()} Price Predicted`,
-        data: predictData,
-        color: "#f2c750",
-      },
-      {
-        type: "column",
-        id: `${stock}-volume`,
-        name: `${stock?.toUpperCase()} Volume`,
-        data: stockData.volumes,
-        yAxis: 1,
-        color: "#555",
-      },
-    ],
-  }
+      })
+    }
+  }, [data, charType])
+
   return (
-    <div>
-      <div className="stock-info">
-        <h4>{stockData.label}</h4>
-        <div className="stock-price">
-          <h2 className="price">${stockData.price}</h2>
-          <div className="stock-box">
-            <p
-              style={{
-                color: `${getColor(stockData.variation)}`,
-              }}
-            >
-              {getArrowIcon(stockData.variation)} {stockData.percentage}%
-            </p>
-          </div>
-          <p
-            style={{
-              color: `${getColor(stockData.variation)}`,
-            }}
-            className="variation"
-          >
-            {stockData.variation}
-          </p>
-          <p
-            style={{
-              color: `${getColor(stockData.variation)}`,
-            }}
-          >
-            1 day
-          </p>
-        </div>
-        <span>2023-03-30</span>
+    <div className="Chartdisplay">
+      <div className="Chartdisplay__chart" id="chart">
+        <StockChart options={stockOptions} />
       </div>
-      <StockChart options={stockOptions} />
     </div>
   )
 }
