@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react"
 import StockChart from "./StockChart"
-import { getStock, getPredictTestData } from "../api/stock"
+import { getStock } from "../api/stock"
 import "./ChartDisplay.css"
 import { DEFAULT_COLOR, DOWN_COLOR, UP_COLOR, BACKGROUND_COLOR } from "./utils"
 
@@ -46,6 +46,26 @@ function ChartDisplay({ stock = "aapl", predictType }) {
       setStockOptions({
         yAxis: yAxis,
         xAxis: [{ labels: { style: { color: DEFAULT_COLOR } } }],
+        navigation: {
+          bindings: {
+            rect: {
+              annotationsOptions: {
+                shapeOptions: {
+                  fill: "rgba(255, 0, 0, 0.8)",
+                },
+              },
+            },
+          },
+          annotationsOptions: {
+            typeOptions: {
+              line: {
+                stroke: "rgba(255, 0, 0, 1)",
+                strokeWidth: 10,
+              },
+            },
+          },
+          backgroundColor: BACKGROUND_COLOR,
+        },
         series: [
           {
             data: data.stocks,
@@ -61,9 +81,6 @@ function ChartDisplay({ stock = "aapl", predictType }) {
             yAxis: 1,
           },
         ],
-        rangeSelector: {
-          buttons: [],
-        },
         plotOptions: {
           candlestick: {
             color: DOWN_COLOR,
