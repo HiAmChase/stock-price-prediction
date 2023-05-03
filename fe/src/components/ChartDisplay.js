@@ -127,6 +127,17 @@ function ChartDisplay({ stock = "aapl", predictType }) {
             </button>
           </form>
         </div>
+        <div>
+          <select
+            className="Menu__dropdown"
+            value={charType}
+            onChange={(e) => setChartType(e.target.value)}
+          >
+            <option value="candlestick">Candlestick</option>
+            <option value="ohlc">OHLC</option>
+            <option value="line">Line</option>
+          </select>
+        </div>
       </div>
       <div className="Chartdisplay__chart" id="chart">
         <StockChart options={stockOptions} />
