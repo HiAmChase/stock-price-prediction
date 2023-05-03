@@ -1,10 +1,13 @@
 import React from "react"
-import MainScreen from "./components/MainScreen"
+import ChartDisplay from "./components/ChartDisplay"
+import "./App.css"
 
 function App() {
   return (
-    <div>
-      <MainScreen />
+    <div className="App">
+      <div className="App__leftPanel">
+        <ChartDisplay />
+      </div>
     </div>
   )
 }

@@ -25,7 +25,7 @@ function ChartDisplay({ stock = "aapl", predictType }) {
 
   useEffect(() => {
     setHeight(window.innerHeight * 0.6)
-    fetchData(ticker)
+    fetchData("aapl")
   }, [])
 
   useEffect(() => {
@@ -127,6 +127,7 @@ function ChartDisplay({ stock = "aapl", predictType }) {
             </button>
           </form>
         </div>
+        {/* Chart Type */}
         <div>
           <select
             className="Menu__dropdown"
