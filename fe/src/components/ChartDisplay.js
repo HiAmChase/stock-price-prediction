@@ -1,52 +1,31 @@
 import React, { useEffect, useState } from "react"
 import StockChart from "./StockChart"
 import { getStock, getPredictTestData } from "../api/stock"
-import "./StockInfo.css"
+import "./ChartDisplay.css"
 import { DEFAULT_COLOR, DOWN_COLOR, UP_COLOR, BACKGROUND_COLOR } from "./utils"
 
 function ChartDisplay({ stock = "aapl", predictType }) {
-  const [stockData, setStockData] = useState({
-    date: "2023-01-01",
-    variation: 0,
-    percentage: 0,
-    price: 0,
-    stocks: [],
-    volumes: [],
-    label: "",
-  })
   const [data, setData] = useState({})
   const [charType, setChartType] = useState("candlestick")
+  const [ticker, setTicker] = useState("aapl")
   const [stockOptions, setStockOptions] = useState({})
   const [height, setHeight] = useState(0)
-  const [predictData, setPredictData] = useState([])
 
-  const fetchData = async (stock) => {
-    await getStock(stock).then(({ data }) => {
+  const fetchData = async (ticker) => {
+    await getStock(ticker).then(({ data }) => {
       setData(data)
     })
-    // await getPredictTestData(predictType, stock).then(({ data }) => {
-    //   setPredictData(data.predicteds)
-    // })
   }
 
-  const getColor = (variation) => {
-    return variation < 0 ? "red" : "green"
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    fetchData(ticker)
+    setTicker("")
   }
-
-  const getArrowIcon = (variation) => {
-    return variation < 0 ? (
-      <i class="fa-solid fa-arrow-down"></i>
-    ) : (
-      <i class="fa-solid fa-arrow-up"></i>
-    )
-  }
-
-  useEffect(() => {
-    fetchData(stock)
-  }, [stock])
 
   useEffect(() => {
     setHeight(window.innerHeight * 0.6)
+    fetchData(ticker)
   }, [])
 
   useEffect(() => {
@@ -71,7 +50,7 @@ function ChartDisplay({ stock = "aapl", predictType }) {
           {
             data: data.stocks,
             type: charType,
-            name: `${stock.toUpperCase()} Stock Price`,
+            name: `${ticker.toUpperCase()} Stock Price`,
             id: "main-series",
           },
           {
@@ -113,6 +92,25 @@ function ChartDisplay({ stock = "aapl", predictType }) {
 
   return (
     <div className="Chartdisplay">
+      <div className="Chartdisplay__menu">
+        {/* Stock input */}
+        {/* TODO: Update to drop down */}
+        <div>
+          <form onSubmit={handleSubmit}>
+            <div>
+              <input
+                value={ticker}
+                className="Tickerinput"
+                type="text"
+                onChange={(e) => setTicker(e.target.value.toLowerCase())}
+              />
+            </div>
+            <button type="submit" style={{ display: "none" }}>
+              Submit
+            </button>
+          </form>
+        </div>
+      </div>
       <div className="Chartdisplay__chart" id="chart">
         <StockChart options={stockOptions} />
       </div>
