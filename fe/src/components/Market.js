@@ -1,14 +1,10 @@
-import React, { useState } from "react"
+import React from "react"
+import { useSelector } from "react-redux"
+
 import "./Market.css"
 
-const DEFAULT_DATA = [
-  { ticker: "AAPL", price: 10, change: 1.4, percentage: 0.3 },
-  { ticker: "AAPL", price: 10, change: 1.4, percentage: 0.3 },
-  { ticker: "AAPL", price: 10, change: 1.4, percentage: 0.3 },
-]
-
 function Market() {
-  const [data, setData] = useState(DEFAULT_DATA)
+  const watchList = useSelector((state) => state.watchList)
   return (
     <div className="Market">
       <div>
@@ -26,9 +22,9 @@ function Market() {
             </tr>
           </thead>
           <tbody className="Market__main">
-            {data.map((item) => (
-              <tr className="MarketRow">
-                <td>{item.ticker}</td>
+            {watchList.map((item) => (
+              <tr className="MarketRow" key={item.ticker}>
+                <td>{item.ticker.toUpperCase()}</td>
                 <td>${item.price.toFixed(2)}</td>
                 <td className={item.price > 0 ? "Value__up" : "Value__down"}>
                   {item.price.toFixed(2)}

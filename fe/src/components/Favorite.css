@@ -1,0 +1,16 @@
+.star {
+    font-size: 20px;
+    padding: 1px 3px;
+    margin: 4px;
+}
+.star:hover{
+    cursor: pointer;
+}
+
+.favorite {
+    color: #ffd862;
+}
+
+.not-favorite {
+    color: #fff;
+}

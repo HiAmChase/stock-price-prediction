@@ -1,16 +1,22 @@
 import React, { useEffect, useState } from "react"
-import { getStock } from "../api/stock"
-import { DEFAULT_COLOR, DOWN_COLOR, UP_COLOR, BACKGROUND_COLOR } from "./utils"
 import { useSelector, useDispatch } from "react-redux"
+
+import { DEFAULT_COLOR, DOWN_COLOR, UP_COLOR, BACKGROUND_COLOR } from "./utils"
+import { getStock } from "../api/stock"
 import { actions } from "../redux"
+
+import Favorite from "./Favorite"
 import StockChart from "./StockChart"
+
 import "./ChartDisplay.css"
 
 function ChartDisplay({ sstock = "aapl", predictType }) {
   const ticker = useSelector((state) => state.ticker)
+  const watchList = useSelector((state) => state.watchList)
   const dispatch = useDispatch()
 
   const [stock, setStock] = useState(ticker)
+  const [isFavorite, setIsFavorite] = useState(false)
   const [data, setData] = useState({})
   const [charType, setChartType] = useState("candlestick")
   const [stockOptions, setStockOptions] = useState({})
@@ -22,6 +28,14 @@ function ChartDisplay({ sstock = "aapl", predictType }) {
     })
   }
 
+  const checkIsFavorite = () => {
+    const item = watchList.find((item) => item.ticker === ticker)
+    if (item !== undefined) {
+      return setIsFavorite(true)
+    }
+    return setIsFavorite(false)
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault()
     dispatch(actions.setTicker(stock))
@@ -29,10 +43,10 @@ function ChartDisplay({ sstock = "aapl", predictType }) {
 
   useEffect(() => {
     setHeight(window.innerHeight * 0.6)
-    fetchData(ticker)
   }, [])
 
   useEffect(() => {
+    checkIsFavorite()
     fetchData(ticker)
   }, [ticker])
 
@@ -146,6 +160,9 @@ function ChartDisplay({ sstock = "aapl", predictType }) {
             <option value="ohlc">OHLC</option>
             <option value="line">Line</option>
           </select>
+        </div>
+        <div>
+          <Favorite isFavorite={isFavorite} />
         </div>
       </div>
       <div className="Chartdisplay__chart" id="chart">
