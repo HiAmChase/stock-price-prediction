@@ -1,13 +1,18 @@
 import React, { useEffect, useState } from "react"
-import StockChart from "./StockChart"
 import { getStock } from "../api/stock"
-import "./ChartDisplay.css"
 import { DEFAULT_COLOR, DOWN_COLOR, UP_COLOR, BACKGROUND_COLOR } from "./utils"
+import { useSelector, useDispatch } from "react-redux"
+import { actions } from "../redux"
+import StockChart from "./StockChart"
+import "./ChartDisplay.css"
 
-function ChartDisplay({ stock = "aapl", predictType }) {
+function ChartDisplay({ sstock = "aapl", predictType }) {
+  const ticker = useSelector((state) => state.ticker)
+  const dispatch = useDispatch()
+
+  const [stock, setStock] = useState(ticker)
   const [data, setData] = useState({})
   const [charType, setChartType] = useState("candlestick")
-  const [ticker, setTicker] = useState("aapl")
   const [stockOptions, setStockOptions] = useState({})
   const [height, setHeight] = useState(0)
 
@@ -19,14 +24,17 @@ function ChartDisplay({ stock = "aapl", predictType }) {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    fetchData(ticker)
-    setTicker("")
+    dispatch(actions.setTicker(stock))
   }
 
   useEffect(() => {
     setHeight(window.innerHeight * 0.6)
-    fetchData("aapl")
+    fetchData(ticker)
   }, [])
+
+  useEffect(() => {
+    fetchData(ticker)
+  }, [ticker])
 
   useEffect(() => {
     if (Object.keys(data).length !== 0) {
@@ -116,10 +124,10 @@ function ChartDisplay({ stock = "aapl", predictType }) {
           <form onSubmit={handleSubmit}>
             <div>
               <input
-                value={ticker}
+                value={stock}
                 className="Tickerinput"
                 type="text"
-                onChange={(e) => setTicker(e.target.value.toLowerCase())}
+                onChange={(e) => setStock(e.target.value.toLowerCase())}
               />
             </div>
             <button type="submit" style={{ display: "none" }}>
