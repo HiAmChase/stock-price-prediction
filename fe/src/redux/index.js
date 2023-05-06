@@ -11,7 +11,18 @@ const stockSlice = createSlice({
   },
   reducers: {
     setTicker(state, action) {
+      // payload = ticker
       state.ticker = action.payload
+    },
+
+    addToWatchList(state, action) {},
+
+    removeFromWatchList(state, action) {
+      // payload = ticker
+      const newWatchList = [...state.watchList].filter(
+        (item) => item.ticker !== action.payload
+      )
+      state.watchList = newWatchList
     },
   },
 })

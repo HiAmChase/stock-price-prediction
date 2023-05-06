@@ -41,6 +41,16 @@ function ChartDisplay({ sstock = "aapl", predictType }) {
     dispatch(actions.setTicker(stock))
   }
 
+  const handleFavorite = (e) => {
+    e.preventDefault()
+    if (isFavorite === false) {
+      setIsFavorite(true)
+    } else {
+      dispatch(actions.removeFromWatchList(ticker))
+      setIsFavorite(false)
+    }
+  }
+
   useEffect(() => {
     setHeight(window.innerHeight * 0.6)
   }, [])
@@ -162,7 +172,7 @@ function ChartDisplay({ sstock = "aapl", predictType }) {
           </select>
         </div>
         <div>
-          <Favorite isFavorite={isFavorite} />
+          <Favorite isFavorite={isFavorite} handleFavorite={handleFavorite} />
         </div>
       </div>
       <div className="Chartdisplay__chart" id="chart">
