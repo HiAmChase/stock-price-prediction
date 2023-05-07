@@ -4,10 +4,7 @@ const stockSlice = createSlice({
   name: "stock",
   initialState: {
     ticker: "aapl",
-    watchList: [
-      { ticker: "aapl", price: 10, change: 1.4, percentage: 0.3 },
-      { ticker: "cat", price: 10, change: 1.4, percentage: 0.3 },
-    ],
+    watchList: [],
   },
   reducers: {
     setTicker(state, action) {
@@ -15,7 +12,10 @@ const stockSlice = createSlice({
       state.ticker = action.payload
     },
 
-    addToWatchList(state, action) {},
+    addToWatchList(state, action) {
+      // payload = stock object
+      state.watchList = [...state.watchList, action.payload]
+    },
 
     removeFromWatchList(state, action) {
       // payload = ticker

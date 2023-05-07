@@ -34,14 +34,14 @@ def get_stock(stock):
         stocks.append(stock_data)
         volumes.append(volume)
 
-    variation, price, percentage, date = get_current_data(test_data)
+    change, price, percentage, date = get_current_data(test_data)
     stock_obj = next((x for x in STOCK if x.get("value") == stock), None)
     label = stock_obj.get("label")
 
     return {
         "stocks": stocks,
         "volumes": volumes,
-        "variation": variation,
+        "change": change,
         "price": price,
         "percentage": percentage,
         "date": date,
@@ -135,11 +135,11 @@ def get_current_data(data):
     data_last_day = data.iloc[-1]
 
     date = data_last_day["Date"]
-    variation = round(data_last_day["Close"] - data_last_2_days["Close"], 2)
-    price = round(data_last_day["Close"], 2)
-    percentage = round(abs(variation) / price * 100, 2)
+    change = data_last_day["Close"] - data_last_2_days["Close"]
+    price = data_last_day["Close"]
+    percentage = abs(change) / price * 100
 
-    return (variation, price, percentage, date)
+    return (change, price, percentage, date)
 
 
 def get_num_lines(fname):

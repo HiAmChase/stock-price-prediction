@@ -23,8 +23,8 @@ def get_all_stocks():
     return stock_data
 
 
-@app.route("/stock/<stock>", methods=["GET"])
-def get_stock_data(stock):
+@app.route("/statistic/stock/<stock>", methods=["GET"])
+def get_statistic(stock):
     return get_stock(stock)
 
 

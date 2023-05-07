@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react"
 import { useSelector, useDispatch } from "react-redux"
 
 import { DEFAULT_COLOR, DOWN_COLOR, UP_COLOR, BACKGROUND_COLOR } from "./utils"
-import { getStock } from "../api/stock"
+import { getStatisticStock } from "../api/stock"
 import { actions } from "../redux"
 
 import Favorite from "./Favorite"
@@ -23,7 +23,7 @@ function ChartDisplay({ sstock = "aapl", predictType }) {
   const [height, setHeight] = useState(0)
 
   const fetchData = async (ticker) => {
-    await getStock(ticker).then(({ data }) => {
+    await getStatisticStock(ticker).then(({ data }) => {
       setData(data)
     })
   }
@@ -45,6 +45,14 @@ function ChartDisplay({ sstock = "aapl", predictType }) {
     e.preventDefault()
     if (isFavorite === false) {
       setIsFavorite(true)
+      dispatch(
+        actions.addToWatchList({
+          ticker: ticker,
+          price: data.price,
+          change: data.change,
+          percentage: data.percentage,
+        })
+      )
     } else {
       dispatch(actions.removeFromWatchList(ticker))
       setIsFavorite(false)
