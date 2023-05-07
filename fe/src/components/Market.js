@@ -22,11 +22,11 @@ function Market() {
         <table>
           <thead className="Market__header">
             <tr>
-              <th>Symbol</th>
-              <th>Price</th>
-              <th>Change</th>
-              <th>Percentage</th>
-              <td></td>
+              <th className="text-center">Symbol</th>
+              <th className="text-center">Price</th>
+              <th className="text-center">Change</th>
+              <th className="text-center">Percentage</th>
+              <th></th>
             </tr>
           </thead>
           <tbody className="Market__main">
@@ -34,10 +34,18 @@ function Market() {
               <tr className="MarketRow" key={item.ticker}>
                 <td>{item.ticker.toUpperCase()}</td>
                 <td>${item.price.toFixed(2)}</td>
-                <td className={item.change > 0 ? "Value__up" : "Value__down"}>
+                <td
+                  className={`text-center ${
+                    item.change > 0 ? "Value__up" : "Value__down"
+                  }`}
+                >
                   {item.change.toFixed(2)}
                 </td>
-                <td className={item.change > 0 ? "Value__up" : "Value__down"}>
+                <td
+                  className={`text-center ${
+                    item.change > 0 ? "Value__up" : "Value__down"
+                  }`}
+                >
                   {item.percentage.toFixed(2)}%
                 </td>
                 <Tooltip title="Remove from Favorite">
