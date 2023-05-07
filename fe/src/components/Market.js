@@ -1,10 +1,17 @@
 import React from "react"
-import { useSelector } from "react-redux"
+import { useSelector, useDispatch } from "react-redux"
 
+import { actions } from "../redux"
 import "./Market.css"
 
 function Market() {
   const watchList = useSelector((state) => state.watchList)
+  const dispatch = useDispatch()
+
+  const handleRemoveFromWatchList = (ticker) => {
+    dispatch(actions.removeFromWatchList(ticker))
+  }
+
   return (
     <div className="Market">
       <div>
@@ -32,7 +39,9 @@ function Market() {
                 <td className={item.change > 0 ? "Value__up" : "Value__down"}>
                   {item.percentage.toFixed(2)}%
                 </td>
-                <td>X</td>
+                <td onClick={() => handleRemoveFromWatchList(item.ticker)}>
+                  X
+                </td>
               </tr>
             ))}
           </tbody>

@@ -14,7 +14,15 @@ const stockSlice = createSlice({
 
     addToWatchList(state, action) {
       // payload = stock object
-      state.watchList = [...state.watchList, action.payload]
+      const index = state.watchList.findIndex(
+        (item) => item.ticker === action.payload.ticker
+      )
+
+      if (index !== -1) {
+        state.watchList[index] = action.payload
+      } else {
+        state.watchList = [...state.watchList, action.payload]
+      }
     },
 
     removeFromWatchList(state, action) {
