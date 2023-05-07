@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux"
 
 import { actions } from "../redux"
 import "./Market.css"
+import { Tooltip } from "@mui/material"
 
 function Market() {
   const watchList = useSelector((state) => state.watchList)
@@ -39,9 +40,11 @@ function Market() {
                 <td className={item.change > 0 ? "Value__up" : "Value__down"}>
                   {item.percentage.toFixed(2)}%
                 </td>
-                <td onClick={() => handleRemoveFromWatchList(item.ticker)}>
-                  X
-                </td>
+                <Tooltip title="Remove from Favorite">
+                  <td onClick={() => handleRemoveFromWatchList(item.ticker)}>
+                    <i class="fa-solid fa-xmark"></i>
+                  </td>
+                </Tooltip>
               </tr>
             ))}
           </tbody>
