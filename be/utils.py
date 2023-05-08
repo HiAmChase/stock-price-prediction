@@ -35,8 +35,8 @@ def get_stock(stock):
         volumes.append(volume)
 
     change, price, percentage, date = get_current_data(test_data)
-    stock_obj = next((x for x in STOCK if x.get("value") == stock), None)
-    label = stock_obj.get("label")
+    stock_obj = next((x for x in STOCK if x.get("ticker") == stock), None)
+    company_name = stock_obj.get("company_name")
 
     return {
         "stocks": stocks,
@@ -45,7 +45,7 @@ def get_stock(stock):
         "price": price,
         "percentage": percentage,
         "date": date,
-        "label": label
+        "company_name": company_name
     }
 
 

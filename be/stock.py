@@ -1,62 +1,240 @@
 STOCK = [
-    {"value": "aapl", "label": "AAPL - Apple Inc."},
-    {"value": "axp", "label": "AXP - American Express Company"},
-    {"value": "ba", "label": "BA - The Boeing Company"},
-    {"value": "cat", "label": "CAT - Caterpillar Inc."},
-    {"value": "csco", "label": "CSCO - Cisco Systems Inc."},
-    {"value": "cvx", "label": "CVX - Chevron Corporation"},
-    {"value": "dd", "label": "DD - DuPont de Nemours Inc."},
-    {"value": "dis", "label": "DIS - The Walt Disney Company"},
-    {"value": "ge", "label": "GE - General Electric Company"},
-    {"value": "gs", "label": "GS - The Goldman Sachs Group, Inc."},
-    {"value": "hd", "label": "HD - The Home Depot, Inc."},
-    {"value": "ibm", "label": "IBM - International Business Machines Corporation"},
-    {"value": "intc", "label": "INTC - Intel Corporation"},
-    {"value": "jnj", "label": "JNJ - Johnson & Johnson"},
-    {"value": "jpm", "label": "JPM - JPMorgan Chase & Co."},
-    {"value": "ko", "label": "KO - The Coca-Cola Company"},
-    {"value": "mcd", "label": "MCD - McDonald's Corporation"},
-    {"value": "mmm", "label": "MMM - 3M Company"},
-    {"value": "mrk", "label": "MRK - Merck & Co., Inc."},
-    {"value": "msft", "label": "MSFT - Microsoft Corporation"},
-    {"value": "nke", "label": "NKE - NIKE, Inc."},
-    {"value": "pfe", "label": "PFE - Pfizer Inc."},
-    {"value": "pg", "label": "PG - The Procter & Gamble Company"},
-    {"value": "rtx", "label": "RTX - Raytheon Technologies Corporation"},
-    {"value": "trv", "label": "TRV - The Travelers Companies"},
-    {"value": "unh", "label": "UNH - UnitedHealth Group Incorporated"},
-    {"value": "v", "label": "V - Visa Inc."},
-    {"value": "vz", "label": "VZ - Verizon Communications Inc."},
-    {"value": "wmt", "label": "WMT - Walmart Inc."},
-    {"value": "xom", "label": "XOM - Exxon Mobil Corporation"},
-    {"value": "acb", "label": "ACB - Ngân hàng TMCP Á Châu"},
-    {"value": "bcm", "label": "BCM - Tổng Công ty Đầu tư và Phát triển Công nghiệp"},
-    {"value": "bid", "label": "BID - Ngân hàng TMCP Đầu tư và Phát triển Việt Nam"},
-    {"value": "bvh", "label": "BVH - Tập đoàn Bảo Việt"},
-    {"value": "ctg", "label": "CTG - Ngân hàng TMCP Công Thương Việt Nam - VIETINBANK"},
-    {"value": "fpt", "label": "FPT - Công ty Cổ phần FPT"},
-    {"value": "gas", "label": "GAS - Tổng Công ty Khí Việt Nam"},
-    {"value": "gvr", "label": "GVR - Tập đoàn Công nghiệp Cao su Việt Nam"},
-    {"value": "hdb", "label": "HDB - Ngân hàng TMCP Phát triển - HDBank"},
-    {"value": "hpg", "label": "HPG - CTCP Tập đoàn Hòa Phát"},
-    {"value": "mbb", "label": "MBB - Ngân hàng TMCP Quân Đội - MBBank"},
-    {"value": "msn", "label": "MSN - CTCP Tập đoàn Masan"},
-    {"value": "mwg", "label": "MWG - CTCP Đầu tư Thế giới Di động"},
-    {"value": "nvl", "label": "NVL - Tập đoàn Đầu tư Địa ốc NoVa"},
-    {"value": "pdr", "label": "PDR - CTCP Phát triển Bất động sản Phát Đạt"},
-    {"value": "plx", "label": "PLX - Tập đoàn Xăng Dầu Việt Nam"},
-    {"value": "pow", "label": "POW - Tổng Công ty Điện lực Dầu khí Việt Nam"},
-    {"value": "sab", "label": "SAB - CTCP Bia - Rượu - Nước giải khát Sài Gòn"},
-    {"value": "ssi", "label": "SSI - CTCP Chứng khoán SSI"},
-    {"value": "stb", "label": "STB - Ngân hàng TMCP Sài Gòn Thương Tín - SacomBank"},
-    {"value": "tcb", "label": "TCB - Ngân hàng TMCP Kỹ thương Việt Nam - Techcombank"},
-    {"value": "tpb", "label": "TPB - Ngân hàng TMCP Tiên Phong - TPBank"},
-    {"value": "vcb", "label": "VCB - Ngân hàng TMCP Ngoại thương Việt Nam - Vietcombank"},
-    {"value": "vhm", "label": "VHM - Công ty Cổ phần Vinhomes"},
-    {"value": "vib", "label": "VIB - Ngân hàng TMCP Quốc tế Việt Nam - VietstockFinance"},
-    {"value": "vic", "label": "VIC - Tập đoàn VINGROUP"},
-    {"value": "vjc", "label": "VJC - CTCP Hàng không Vietjet"},
-    {"value": "vnm", "label": "VNM - CTCP Sữa Việt Nam - Vinamilk"},
-    {"value": "vpb", "label": "VPB - Ngân hàng TMCP Việt Nam Thịnh Vượng - VPBank"},
-    {"value": "vre", "label": "VRE - CTCP Vincom Retail"},
+    {
+        "ticker": "aapl",
+        "company_name": "Apple Inc."
+    },
+    {
+        "ticker": "axp",
+        "company_name": "American Express Company"
+    },
+    {
+        "ticker": "ba",
+        "company_name": "The Boeing Company"
+    },
+    {
+        "ticker": "cat",
+        "company_name": "Caterpillar Inc."
+    },
+    {
+        "ticker": "csco",
+        "company_name": "Cisco Systems Inc."
+    },
+    {
+        "ticker": "cvx",
+        "company_name": "Chevron Corporation"
+    },
+    {
+        "ticker": "dd",
+        "company_name": "DuPont de Nemours Inc."
+    },
+    {
+        "ticker": "dis",
+        "company_name": "The Walt Disney Company"
+    },
+    {
+        "ticker": "ge",
+        "company_name": "General Electric Company"
+    },
+    {
+        "ticker": "gs",
+        "company_name": "The Goldman Sachs Group, Inc."
+    },
+    {
+        "ticker": "hd",
+        "company_name": "The Home Depot, Inc."
+    },
+    {
+        "ticker": "ibm",
+        "company_name": "International Business Machines Corporation"
+    },
+    {
+        "ticker": "intc",
+        "company_name": "Intel Corporation"
+    },
+    {
+        "ticker": "jnj",
+        "company_name": "Johnson & Johnson"
+    },
+    {
+        "ticker": "jpm",
+        "company_name": "JPMorgan Chase & Co."
+    },
+    {
+        "ticker": "ko",
+        "company_name": "The Coca-Cola Company"
+    },
+    {
+        "ticker": "mcd",
+        "company_name": "McDonald's Corporation"
+    },
+    {
+        "ticker": "mmm",
+        "company_name": "3M Company"
+    },
+    {
+        "ticker": "mrk",
+        "company_name": "Merck & Co., Inc."
+    },
+    {
+        "ticker": "msft",
+        "company_name": "Microsoft Corporation"
+    },
+    {
+        "ticker": "nke",
+        "company_name": "NIKE, Inc."
+    },
+    {
+        "ticker": "pfe",
+        "company_name": "Pfizer Inc."
+    },
+    {
+        "ticker": "pg",
+        "company_name": "The Procter & Gamble Company"
+    },
+    {
+        "ticker": "rtx",
+        "company_name": "Raytheon Technologies Corporation"
+    },
+    {
+        "ticker": "trv",
+        "company_name": "The Travelers Companies"
+    },
+    {
+        "ticker": "unh",
+        "company_name": "UnitedHealth Group Incorporated"
+    },
+    {
+        "ticker": "v",
+        "company_name": "Visa Inc."
+    },
+    {
+        "ticker": "vz",
+        "company_name": "Verizon Communications Inc."
+    },
+    {
+        "ticker": "wmt",
+        "company_name": "Walmart Inc."
+    },
+    {
+        "ticker": "xom",
+        "company_name": "Exxon Mobil Corporation"
+    },
+    {
+        "ticker": "acb",
+        "company_name": "Ngân hàng TMCP Á Châu"
+    },
+    {
+        "ticker": "bcm",
+        "company_name": "Tổng Công ty Đầu tư và Phát triển Công nghiệp"
+    },
+    {
+        "ticker": "bid",
+        "company_name": "Ngân hàng TMCP Đầu tư và Phát triển Việt Nam"
+    },
+    {"ticker": "bvh",
+     "company_name": "Tập đoàn Bảo Việt"
+     },
+    {
+        "ticker": "ctg",
+        "company_name": "Ngân hàng TMCP Công Thương Việt Nam - VIETINBANK"
+    },
+    {
+        "ticker": "fpt",
+        "company_name": "Công ty Cổ phần FPT"
+    },
+    {
+        "ticker": "gas",
+        "company_name": "Tổng Công ty Khí Việt Nam"
+    },
+    {
+        "ticker": "gvr",
+        "company_name": "Tập đoàn Công nghiệp Cao su Việt Nam"
+    },
+    {
+        "ticker": "hdb",
+        "company_name": "Ngân hàng TMCP Phát triển - HDBank"},
+    {
+        "ticker": "hpg",
+        "company_name": "CTCP Tập đoàn Hòa Phát"
+    },
+    {
+        "ticker": "mbb",
+        "company_name": "Ngân hàng TMCP Quân Đội - MBBank"
+    },
+    {
+        "ticker": "msn",
+        "company_name": "CTCP Tập đoàn Masan"
+    },
+    {
+        "ticker": "mwg",
+        "company_name": "CTCP Đầu tư Thế giới Di động"
+    },
+    {
+        "ticker": "nvl",
+        "company_name": "Tập đoàn Đầu tư Địa ốc NoVa"
+    },
+    {
+        "ticker": "pdr",
+        "company_name": "CTCP Phát triển Bất động sản Phát Đạt"
+    },
+    {
+        "ticker": "plx",
+        "company_name": "Tập đoàn Xăng Dầu Việt Nam"
+    },
+    {
+        "ticker": "pow",
+        "company_name": "Tổng Công ty Điện lực Dầu khí Việt Nam"
+    },
+    {
+        "ticker": "sab",
+        "company_name": "CTCP Bia - Rượu - Nước giải khát Sài Gòn"
+    },
+    {
+        "ticker": "ssi",
+        "company_name": "CTCP Chứng khoán SSI"
+    },
+    {
+        "ticker": "stb",
+        "company_name": "Ngân hàng TMCP Sài Gòn Thương Tín - SacomBank"
+    },
+    {
+        "ticker": "tcb",
+        "company_name": "Ngân hàng TMCP Kỹ thương Việt Nam - Techcombank"
+    },
+    {
+        "ticker": "tpb",
+        "company_name": "Ngân hàng TMCP Tiên Phong - TPBank"
+    },
+    {
+        "ticker": "vcb",
+        "company_name": "Ngân hàng TMCP Ngoại thương Việt Nam - Vietcombank"
+    },
+    {
+        "ticker": "vhm",
+        "company_name": "Công ty Cổ phần Vinhomes"
+    },
+    {
+        "ticker": "vib",
+        "company_name": "Ngân hàng TMCP Quốc tế Việt Nam - VietstockFinance"
+    },
+    {
+        "ticker": "vic",
+        "company_name": "Tập đoàn VINGROUP"
+    },
+    {
+        "ticker": "vjc",
+        "company_name": "CTCP Hàng không Vietjet"
+    },
+    {
+        "ticker": "vnm",
+        "company_name": "CTCP Sữa Việt Nam - Vinamilk"
+    },
+    {
+        "ticker": "vpb",
+        "company_name": "Ngân hàng TMCP Việt Nam Thịnh Vượng - VPBank"
+    },
+    {
+        "ticker": "vre",
+        "company_name": "CTCP Vincom Retail"
+    },
 ]
