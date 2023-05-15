@@ -5,6 +5,8 @@ TRAIN_DATA = "train_data"
 MODEL_60_DAYS = "models_60"
 MODEL_30_DAYS = "models_30"
 
+DATE_FORMAT = "%Y-%m-%d"
+
 
 class PredictType(Enum):
     PREDICT_WITH_60_DAYS = "PREDICT_WITH_60_DAYS"

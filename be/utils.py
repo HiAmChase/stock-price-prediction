@@ -1,15 +1,18 @@
 import pandas as pd
 import numpy as np
 import time
+import csv
+import vnquant.data as dt
 
-from datetime import datetime
+from datetime import date, timedelta, datetime
 from keras.models import load_model
 from sklearn.preprocessing import MinMaxScaler
 
 from constant import (
     TRAIN_DATA,
     TEST_DATA,
-    MAPPING_PREDICT
+    MAPPING_PREDICT,
+    DATE_FORMAT
 )
 from stock import STOCK
 
@@ -128,6 +131,37 @@ def predict_stock(stock, predict_type):
     prediction = scaler.inverse_transform(prediction)
 
     return prediction.item(0)
+
+
+# Only for vietnam stock
+def fetch_new_data(stock):
+    today = date.today().strftime(DATE_FORMAT)
+
+    stock_data = pd.read_csv(f"{TEST_DATA}/{stock}.csv")
+
+    last_day = stock_data.iloc[-1]["Date"]
+    last_day = datetime.strptime(last_day, DATE_FORMAT).date()
+    last_day = str(last_day + timedelta(days=1))
+
+    loader = dt.DataLoader(stock, last_day, today)
+    data = loader.download()
+
+    new_data = []
+    for index, row in data.iterrows():
+        row_date = str(index).split(" ")[0]
+        high = row["High"]
+        low = row["Low"]
+        _open = row["Open"]
+        close = row["Close"]
+        adjust = row["adjust"]
+        volume = int(row["Volume"])
+        new_row = [row_date, high, low, _open, close, adjust, volume]
+        new_data.append(new_row)
+
+    with open(f"{TEST_DATA}/{stock}.csv", mode='a', newline='') as file:
+        writer = csv.writer(file)
+        for row in new_data:
+            writer.writerow(row)
 
 
 def get_current_data(data):
