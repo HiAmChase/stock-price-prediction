@@ -6,14 +6,19 @@ body {
 }
 .App {
   display: flex;
+  flex-direction: column;
 }
-.App > div {
+.App > div:nth-child(1) {
   margin: 3px;
   background-color: rgb(19, 23, 34);
-  height: 99vh;
-  min-height: 700px;
+  height: 70%;
+  min-height: 400px;
 }
-.App__leftPanel{
+.App > div:nth-child(2) {
+  margin: 3px;
+  background-color: rgb(19, 23, 34);
+}
+/* .App__leftPanel{
   display: flex;
   flex-direction: column;
 }
@@ -33,6 +38,21 @@ body {
 }
 .App__rightPanel > div{
   height: 48%;
+} */
+.App__bottomPanel {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.App__bottomPanel > div:nth-child(1) {
+  width: 20%;
+}
+.App__bottomPanel > div:nth-child(2) {
+  width: 60%;
+}
+.App__bottomPanel > div:nth-child(3) {
+  width: 20%;
 }
 .Value__up{
   color: #26a69a;

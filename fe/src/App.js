@@ -7,11 +7,12 @@ import "./App.css"
 function App() {
   return (
     <div className="App">
-      <div className="App__leftPanel">
+      <div className="App__topPanel">
         <ChartDisplay />
       </div>
-      <div className="App__rightPanel">
+      <div className="App__bottomPanel">
         <Market />
+        <div className="temp"></div>
         <Fundament />
       </div>
     </div>
