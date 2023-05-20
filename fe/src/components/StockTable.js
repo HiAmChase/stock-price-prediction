@@ -4,7 +4,7 @@ import "./StockTable.css"
 function StockTable() {
   return (
     <div className="stock-table">
-      <table class="table table-hover custom-table">
+      <table class="table table-hover">
         <thead>
           <tr>
             <th scope="col">#</th>
