@@ -25,6 +25,8 @@ body {
 }
 .App__bottomPanel > div:nth-child(1) {
   width: 20%;
+  overflow: scroll;
+  height: 35.3vh;
 }
 .App__bottomPanel > div:nth-child(2) {
   width: 60%;
