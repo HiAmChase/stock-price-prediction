@@ -1,43 +1,63 @@
 import React, { useState, useEffect } from "react"
+import { useSelector, useDispatch } from "react-redux"
+
+import { getStockInfo } from "../api/stock"
+import { actions } from "../redux"
 
 import "./Fundament.css"
 
-function NumberFormat({ n, type }) {
-  const [num, setNum] = useState("-")
+function Fundament() {
+  const ticker = useSelector((state) => state.ticker)
+  const dispatch = useDispatch()
+
+  const [data, setData] = useState({})
+
+  const fetchData = async (ticker) => {
+    await getStockInfo(ticker).then(({ data }) => {
+      setData(data)
+      dispatch(
+        actions.updateStockInfo({
+          price: data.price,
+          change: data.change,
+          percentage: data.percentage,
+        })
+      )
+    })
+  }
 
   useEffect(() => {
-    if (type === "pct") {
-      setNum(`${(n * 100).toFixed(2)}%`)
-    }
-  }, [n])
+    fetchData(ticker)
+  }, [ticker])
 
-  return <span className={n > 0 ? `Value__up` : `Value__down`}>{num}</span>
-}
-
-function Fundament() {
   return (
     <div className="Fundament">
       <div className="Fundgeneral">
-        <h4>Company Name</h4>
+        <h4>{data.company_name}</h4>
         {/* Title */}
         <div>
-          Industry
+          {data.industry}
           <i className="fa-solid fa-circle separatedot"></i>
-          Sector
+          {data.sector}
           <i className="fa-solid fa-circle separatedot"></i>
-          Country
+          {data.country}
         </div>
         {/* Price */}
         <div>
           <h1>
-            34.45
+            {data.price?.toFixed(2)}
             <span className="chg">
-              <NumberFormat n={0.2} type="pct" />
+              <span
+                className={data.percentage > 0 ? "Value__up" : "Value__down"}
+              >
+                {data.percentage?.toFixed(2)}%
+              </span>
             </span>
           </h1>
           <div className="Fund__info">
-            <span className="Fund__date">2023-04-02</span>
-            <span className="Fund__text">Prev Close: {(0.3).toFixed(2)}</span>
+            <span className="Fund__date">{data.date}</span>
+            <span className="Fund__text">
+              Prev Close: {data.prev_price?.toFixed(2)}
+            </span>
           </div>
         </div>
       </div>

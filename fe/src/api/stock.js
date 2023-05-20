@@ -4,7 +4,7 @@ const getAllStock = () => {
   return instance.get("/stock")
 }
 
-const getStock = (stock) => {
+const getStockInfo = (stock) => {
   return instance.get(`/stock/${stock}`)
 }
 
@@ -16,4 +16,4 @@ const getPredictTestData = (predictType, stock) => {
   return instance.get(`/${predictType.predictUrlPrefix}/${stock}`)
 }
 
-export { getStock, getPredictTestData, getAllStock, getStatisticStock }
+export { getStockInfo, getPredictTestData, getAllStock, getStatisticStock }

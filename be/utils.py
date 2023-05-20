@@ -20,16 +20,23 @@ from stock import STOCK
 def get_stock_info(stock):
     test_data = pd.read_csv(f"{TEST_DATA}/{stock}.csv")
 
-    change, price, percentage, date = get_current_data(test_data)
+    change, price, percentage, date, prev_price = get_current_data(test_data)
     stock_obj = next((x for x in STOCK if x.get("ticker") == stock), None)
     company_name = stock_obj.get("company_name")
+    industry = stock_obj.get("industry")
+    sector = stock_obj.get("sector")
+    country = stock_obj.get("country")
 
     return {
         "change": change,
-        "price": price,
         "percentage": percentage,
         "date": date,
-        "company_name": company_name
+        "company_name": company_name,
+        "price": price,
+        "prev_price": prev_price,
+        "industry": industry,
+        "sector": sector,
+        "country": country,
     }
 
 
@@ -177,9 +184,10 @@ def get_current_data(data):
     date = data_last_day["Date"]
     change = data_last_day["Close"] - data_last_2_days["Close"]
     price = data_last_day["Close"]
+    prev_price = data_last_2_days["Close"]
     percentage = abs(change) / price * 100
 
-    return (change, price, percentage, date)
+    return (change, price, percentage, date, prev_price)
 
 
 def get_num_lines(fname):

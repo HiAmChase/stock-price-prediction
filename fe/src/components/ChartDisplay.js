@@ -13,6 +13,7 @@ import "./ChartDisplay.css"
 function ChartDisplay({ sstock = "aapl", predictType }) {
   const ticker = useSelector((state) => state.ticker)
   const watchList = useSelector((state) => state.watchList)
+  const stockInfo = useSelector((state) => state.stockInfo)
   const dispatch = useDispatch()
 
   const [stock, setStock] = useState(ticker)
@@ -41,16 +42,16 @@ function ChartDisplay({ sstock = "aapl", predictType }) {
     dispatch(actions.setTicker(stock))
   }
 
-  const handleFavorite = (e) => {
+  const handleFavorite = async (e) => {
     e.preventDefault()
     if (isFavorite === false) {
       setIsFavorite(true)
       dispatch(
         actions.addToWatchList({
           ticker: ticker,
-          price: data.price,
-          change: data.change,
-          percentage: data.percentage,
+          price: stockInfo.price,
+          change: stockInfo.change,
+          percentage: stockInfo.percentage,
         })
       )
     } else {

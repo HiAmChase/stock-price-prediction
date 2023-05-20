@@ -33,20 +33,20 @@ function Market() {
             {watchList.map((item) => (
               <tr className="MarketRow" key={item.ticker}>
                 <td>{item.ticker.toUpperCase()}</td>
-                <td>${item.price.toFixed(2)}</td>
+                <td>${item.price?.toFixed(2)}</td>
                 <td
                   className={`text-center ${
                     item.change > 0 ? "Value__up" : "Value__down"
                   }`}
                 >
-                  {item.change.toFixed(2)}
+                  {item.change?.toFixed(2)}
                 </td>
                 <td
                   className={`text-center ${
                     item.change > 0 ? "Value__up" : "Value__down"
                   }`}
                 >
-                  {item.percentage.toFixed(2)}%
+                  {item.percentage?.toFixed(2)}%
                 </td>
                 <Tooltip title="Remove from Favorite">
                   <td onClick={() => handleRemoveFromWatchList(item.ticker)}>
