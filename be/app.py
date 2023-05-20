@@ -18,13 +18,13 @@ app = Flask(__name__)
 CORS(app)
 
 
-@app.route("/stock", methods=["GET"])
-def get_all_stocks():
+@app.route("/statistic/stock/<stock>", methods=["GET"])
+def get_statistic():
     return stock_data
 
 
-@app.route("/statistic/stock/<stock>", methods=["GET"])
-def get_statistic(stock):
+@app.route("/stock/<stock>", methods=["GET"])
+def get__stock(stock):
     return get_stock(stock)
 
 

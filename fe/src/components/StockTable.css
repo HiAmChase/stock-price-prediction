@@ -1,3 +1,7 @@
 .stock-table {
     color: #d1d4dc;
 }
+
+.stock-table > table > tbody > tr:hover {
+    cursor: pointer;
+}
