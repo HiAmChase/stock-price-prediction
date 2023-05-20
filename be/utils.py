@@ -17,10 +17,25 @@ from constant import (
 from stock import STOCK
 
 
-def get_stock(stock):
-    stocks, volumes = [], []
+def get_stock_info(stock):
     test_data = pd.read_csv(f"{TEST_DATA}/{stock}.csv")
 
+    change, price, percentage, date = get_current_data(test_data)
+    stock_obj = next((x for x in STOCK if x.get("ticker") == stock), None)
+    company_name = stock_obj.get("company_name")
+
+    return {
+        "change": change,
+        "price": price,
+        "percentage": percentage,
+        "date": date,
+        "company_name": company_name
+    }
+
+
+def get_statistic(stock):
+    stocks, volumes = [], []
+    test_data = pd.read_csv(f"{TEST_DATA}/{stock}.csv")
     for _, row in test_data.iterrows():
         timestamp = int(time.mktime(datetime.strptime(
             row["Date"], "%Y-%m-%d").timetuple()
@@ -37,18 +52,9 @@ def get_stock(stock):
         stocks.append(stock_data)
         volumes.append(volume)
 
-    change, price, percentage, date = get_current_data(test_data)
-    stock_obj = next((x for x in STOCK if x.get("ticker") == stock), None)
-    company_name = stock_obj.get("company_name")
-
     return {
         "stocks": stocks,
         "volumes": volumes,
-        "change": change,
-        "price": price,
-        "percentage": percentage,
-        "date": date,
-        "company_name": company_name
     }
 
 

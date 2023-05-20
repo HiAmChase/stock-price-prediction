@@ -35,7 +35,10 @@ function Fundament() {
               <NumberFormat n={0.2} type="pct" />
             </span>
           </h1>
-          <span className="Fund__text">Prev Close: {(0.3).toFixed(2)}</span>
+          <div className="Fund__info">
+            <span className="Fund__date">2023-04-02</span>
+            <span className="Fund__text">Prev Close: {(0.3).toFixed(2)}</span>
+          </div>
         </div>
       </div>
     </div>

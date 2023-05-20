@@ -1,5 +1,5 @@
 .Fundament{
-    padding: 0px 5px;
+    padding: 10px 10px;
     display: flex;
     color: rgb(209, 212, 220);
     flex-direction: column;
@@ -9,7 +9,7 @@
 }
 .separatedot{
     font-size: 0.5rem !important;
-    margin: 0px 2px;
+    margin: 0px 5px;
 }
 .chg{
     margin-left: 5px;
@@ -37,4 +37,9 @@
 .Fundstat{
     flex-grow: 1;
     overflow-y: auto;
+}
+
+.Fund__info {
+    display: flex;
+    flex-direction: column;
 }

@@ -6,7 +6,8 @@ try:
     from utils import (
         predict_test_data,
         predict_stock,
-        get_stock
+        get_stock_info,
+        get_statistic
     )
     from constant import PredictType
     from stock import STOCK as stock_data
@@ -19,13 +20,13 @@ CORS(app)
 
 
 @app.route("/statistic/stock/<stock>", methods=["GET"])
-def get_statistic():
-    return stock_data
+def get__statistic(stock):
+    return get_statistic(stock)
 
 
 @app.route("/stock/<stock>", methods=["GET"])
-def get__stock(stock):
-    return get_stock(stock)
+def get_stock(stock):
+    return get_stock_info(stock)
 
 
 @app.route("/predict_future_60/<stock>", methods=["GET"])
