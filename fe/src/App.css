@@ -8,38 +8,16 @@ body {
   display: flex;
   flex-direction: column;
 }
-.App > div:nth-child(1) {
+.App__topPanel {
   margin: 3px;
   background-color: rgb(19, 23, 34);
-  height: 70%;
+  height: 64vh;
   min-height: 400px;
 }
-.App > div:nth-child(2) {
+.App__bottomPanel {
   margin: 3px;
   background-color: rgb(19, 23, 34);
-}
-/* .App__leftPanel{
-  display: flex;
-  flex-direction: column;
-}
-.App__rightPanel {
-  width: 300px;
-}
-.App__leftPanel {
-  flex-grow: 1;
-  width: 60%;
-}
-.App__leftPanel > div:nth-child(1) {
-  height:75%;
-  border-bottom: 7px solid #222838;
-}
-.App__leftPanel > div:nth-child(2) {
-  height:30%;
-}
-.App__rightPanel > div{
-  height: 48%;
-} */
-.App__bottomPanel {
+  height: 35vh;
   display: flex;
   width: 100%;
   flex-direction: row;
@@ -50,6 +28,7 @@ body {
 }
 .App__bottomPanel > div:nth-child(2) {
   width: 60%;
+  overflow: scroll;
 }
 .App__bottomPanel > div:nth-child(3) {
   width: 20%;

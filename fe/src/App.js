@@ -2,6 +2,7 @@ import React from "react"
 import ChartDisplay from "./components/ChartDisplay"
 import Market from "./components/Market"
 import Fundament from "./components/Fundament"
+import StockTable from "./components/StockTable"
 import "./App.css"
 
 function App() {
@@ -12,7 +13,7 @@ function App() {
       </div>
       <div className="App__bottomPanel">
         <Market />
-        <div className="temp"></div>
+        <StockTable />
         <Fundament />
       </div>
     </div>

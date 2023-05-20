@@ -1,9 +1,7 @@
 .Market{
     padding: 0px 5px;
-    border-bottom: 7px solid #222838;
     display: flex;
     flex-direction: column;
-    height: 40vh;
     color: #d1d4dc;
 }
 .Market__title {
