@@ -19,14 +19,24 @@ app = Flask(__name__)
 CORS(app)
 
 
-@app.route("/statistic/stock/<stock>", methods=["GET"])
-def get__statistic(stock):
-    return get_statistic(stock)
+@app.route("/stock", methods=["GET"])
+def get_all_stock():
+    stocks = []
+    for stock in stock_data:
+        ticker = stock.get("ticker")
+        data = get_stock_info(ticker)
+        stocks.append(data)
+    return stocks
 
 
 @app.route("/stock/<stock>", methods=["GET"])
 def get_stock(stock):
     return get_stock_info(stock)
+
+
+@app.route("/statistic/stock/<stock>", methods=["GET"])
+def get__statistic(stock):
+    return get_statistic(stock)
 
 
 @app.route("/predict_future_60/<stock>", methods=["GET"])

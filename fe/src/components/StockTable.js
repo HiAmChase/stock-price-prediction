@@ -1,71 +1,45 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
+
+import { getAllStock } from "../api/stock"
+
 import "./StockTable.css"
 
 function StockTable() {
+  const [stocks, setStocks] = useState([])
+  const fetchData = async () => {
+    await getAllStock().then(({ data }) => {
+      console.log(data)
+      setStocks(data)
+    })
+  }
+  useEffect(() => {
+    fetchData()
+  }, [])
+
   return (
     <div className="stock-table">
-      <table class="table table-hover">
+      <table className="table table-hover">
         <thead>
           <tr>
-            <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
+            <th scope="col">Ticker</th>
+            <th scope="col">Date</th>
+            <th scope="col">Change</th>
+            <th scope="col">Percentage</th>
+            <th scope="col">Price</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>1</td>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>Larry the Bird</td>
-            <td>@twitter</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>Larry the Bird</td>
-            <td>@twitter</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>Larry the Bird</td>
-            <td>@twitter</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>Larry the Bird</td>
-            <td>@twitter</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>Larry the Bird</td>
-            <td>@twitter</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>Larry the Bird</td>
-            <td>@twitter</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>Larry the Bird</td>
-            <td>@twitter</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>Larry the Bird</td>
-            <td>@twitter</td>
-          </tr>
+          {stocks.map((item) => {
+            return (
+              <tr key={item.ticker} >
+                <td>{item.ticker.toUpperCase()}</td>
+                <td>{item.date}</td>
+                <td>{item.change?.toFixed(2)}</td>
+                <td>{item.percentage?.toFixed(2)}%</td>
+                <td>{item.price?.toFixed(2)}</td>
+              </tr>
+            )
+          })}
         </tbody>
       </table>
     </div>

@@ -1,5 +1,6 @@
 .stock-table {
     color: #d1d4dc;
+    text-align: center;
 }
 
 .stock-table > table > tbody > tr:hover {

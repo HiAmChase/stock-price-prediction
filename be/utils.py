@@ -28,6 +28,7 @@ def get_stock_info(stock):
     country = stock_obj.get("country")
 
     return {
+        "ticker": stock,
         "change": change,
         "percentage": percentage,
         "date": date,
