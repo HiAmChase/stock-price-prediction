@@ -177,6 +177,8 @@ def fetch_new_data(stock):
         for row in new_data:
             writer.writerow(row)
 
+    return {"message": "ok"}
+
 
 def get_current_data(data):
     data_last_2_days = data.iloc[-2]

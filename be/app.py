@@ -7,7 +7,8 @@ try:
         predict_test_data,
         predict_stock,
         get_stock_info,
-        get_statistic
+        get_statistic,
+        fetch_new_data
     )
     from constant import PredictType
     from stock import STOCK as stock_data
@@ -37,6 +38,11 @@ def get_stock(stock):
 @app.route("/statistic/stock/<stock>", methods=["GET"])
 def get__statistic(stock):
     return get_statistic(stock)
+
+
+@app.route("/stock/<stock>", methods=["POST"])
+def fetch__new_data(stock):
+    return fetch_new_data(stock)
 
 
 @app.route("/predict_future_60/<stock>", methods=["GET"])
