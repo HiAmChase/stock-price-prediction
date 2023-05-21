@@ -10,13 +10,13 @@ import StockChart from "./StockChart"
 
 import "./ChartDisplay.css"
 
-function ChartDisplay({ sstock = "aapl", predictType }) {
+function ChartDisplay() {
   const ticker = useSelector((state) => state.ticker)
   const watchList = useSelector((state) => state.watchList)
   const stockInfo = useSelector((state) => state.stockInfo)
   const dispatch = useDispatch()
 
-  const [stock, setStock] = useState(ticker)
+  const [stock, setStock] = useState("")
   const [isFavorite, setIsFavorite] = useState(false)
   const [data, setData] = useState({})
   const [charType, setChartType] = useState("candlestick")
