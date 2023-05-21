@@ -44,7 +44,7 @@ function Market() {
                 </td>
                 <Tooltip title="Remove from Favorite">
                   <td onClick={() => handleRemoveFromWatchList(item.ticker)}>
-                    <i class="fa-solid fa-xmark"></i>
+                    <i className="fa-solid fa-xmark"></i>
                   </td>
                 </Tooltip>
               </tr>

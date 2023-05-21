@@ -31,6 +31,27 @@
     width: 80%;
     border-bottom: 2px solid #787b86;
 }
+.Fund__title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.Fund__title > h4 {
+    margin: 0px;
+}
+.Fund__title > button {
+    background-color: transparent;
+    border: none;
+    color: inherit;
+}
+.Fund__title > button:hover {
+    cursor: pointer;
+}
+.Fund__title > button:focus {
+    outline: none;
+}
 .Fund__text{
     color: #787b86;
 }

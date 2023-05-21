@@ -5,7 +5,7 @@ import { Tooltip } from "@mui/material"
 
 function Favorite({ isFavorite = false, handleFavorite }) {
   const tooltipTitle = () => {
-    return isFavorite ? "Remove to Favorite" : "Add from Favorite"
+    return isFavorite ? "Remove from Favorite" : "Add to Favorite"
   }
   return (
     <Tooltip title={tooltipTitle()}>

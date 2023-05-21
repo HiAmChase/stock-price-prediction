@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react"
 import { useSelector, useDispatch } from "react-redux"
+import { Tooltip } from "@mui/material"
 
 import { getStockInfo } from "../api/stock"
 import { actions } from "../redux"
+import { getColor } from "./utils"
 
 import "./Fundament.css"
-import { getColor } from "./utils"
 
 function Fundament() {
   const ticker = useSelector((state) => state.ticker)
@@ -26,6 +27,10 @@ function Fundament() {
     })
   }
 
+  const fetchNewData = () => {
+    dispatch(actions.setTicker("fpt"))
+  }
+
   useEffect(() => {
     fetchData(ticker)
   }, [ticker])
@@ -33,7 +38,14 @@ function Fundament() {
   return (
     <div className="Fundament">
       <div className="Fundgeneral">
-        <h4>{data.company_name}</h4>
+        <div className="Fund__title">
+          <h4>{data.company_name}</h4>
+          <Tooltip title="Fetch new data">
+            <button onClick={fetchNewData}>
+              <i className="fa fa-download"></i>
+            </button>
+          </Tooltip>
+        </div>
         {/* Title */}
         <div>
           {data.industry}
