@@ -37,16 +37,19 @@ body {
   width: 20%;
 }
 .Value__up{
-  color: #26a69a;
+  color: #0f0;
 }
 .Value__down{
-  color: #f44336;
+  color: #ff3737;
+}
+.Value__unchange {
+  color: #ffd900;
 }
 .Valuebackground__up{
-  background-color: #26a69a;
+  background-color: #0f0;
 }
 .Valuebackground__down{
-  background-color: #f44336;
+  background-color: #ff3737;
 }
 
 /* width */

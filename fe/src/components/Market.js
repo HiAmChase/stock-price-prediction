@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from "react-redux"
 import { actions } from "../redux"
 import "./Market.css"
 import { Tooltip } from "@mui/material"
+import { getColor } from "./utils"
 
 function Market() {
   const watchList = useSelector((state) => state.watchList)
@@ -34,18 +35,11 @@ function Market() {
               <tr className="MarketRow" key={item.ticker}>
                 <td>{item.ticker.toUpperCase()}</td>
                 <td>${item.price?.toFixed(2)}</td>
-                <td
-                  className={`text-center ${
-                    item.change > 0 ? "Value__up" : "Value__down"
-                  }`}
-                >
+                <td className={`text-center ${getColor(item.change)}`}>
                   {item.change?.toFixed(2)}
                 </td>
-                <td
-                  className={`text-center ${
-                    item.change > 0 ? "Value__up" : "Value__down"
-                  }`}
-                >
+                <td className={`text-center ${getColor(item.change)}`}>
+                  {item.change >= 0 ? "" : "-"}
                   {item.percentage?.toFixed(2)}%
                 </td>
                 <Tooltip title="Remove from Favorite">

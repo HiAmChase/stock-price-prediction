@@ -5,6 +5,7 @@ import { getStockInfo } from "../api/stock"
 import { actions } from "../redux"
 
 import "./Fundament.css"
+import { getColor } from "./utils"
 
 function Fundament() {
   const ticker = useSelector((state) => state.ticker)
@@ -46,9 +47,8 @@ function Fundament() {
           <h1>
             {data.price?.toFixed(2)}
             <span className="chg">
-              <span
-                className={data.percentage > 0 ? "Value__up" : "Value__down"}
-              >
+              <span className={getColor(data.change)}>
+                {data.change >= 0 ? "" : "-"}
                 {data.percentage?.toFixed(2)}%
               </span>
             </span>
