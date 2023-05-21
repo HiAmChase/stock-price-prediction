@@ -32,6 +32,7 @@ function StockTable() {
         <thead>
           <tr>
             <th scope="col">Symbol</th>
+            <th scope="col">Country</th>
             <th scope="col">Date</th>
             <th scope="col">Change</th>
             <th scope="col">Percentage</th>
@@ -47,6 +48,7 @@ function StockTable() {
                 onClick={() => updateTicker(item.ticker)}
               >
                 <td>{item.ticker.toUpperCase()}</td>
+                <td>{item.country.toUpperCase()}</td>
                 <td>{item.date}</td>
                 <td>{item.change?.toFixed(2)}</td>
                 <td>

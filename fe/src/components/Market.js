@@ -34,7 +34,7 @@ function Market() {
             {watchList.map((item) => (
               <tr className="MarketRow" key={item.ticker}>
                 <td>{item.ticker.toUpperCase()}</td>
-                <td>${item.price?.toFixed(2)}</td>
+                <td>{item.price?.toFixed(2)}</td>
                 <td className={`text-center ${getColor(item.change)}`}>
                   {item.change?.toFixed(2)}
                 </td>
