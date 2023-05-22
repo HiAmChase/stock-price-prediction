@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react"
-import { useSelector } from "react-redux"
+import { useSelector, useDispatch } from "react-redux"
 
-import { getStatisticStock } from "./api/stock"
+import { getStatisticStock, getStockInfo } from "./api/stock"
+import { actions } from "./redux"
 
 import ChartDisplay from "./components/ChartDisplay"
 import Market from "./components/Market"
@@ -11,9 +12,11 @@ import StockTable from "./components/StockTable"
 import "./App.css"
 
 function App() {
+  const dispatch = useDispatch()
   const ticker = useSelector((state) => state.ticker)
 
   const [statistic, setStatistic] = useState({})
+  const [fundament, setFundament] = useState({})
 
   const fetchStatisticData = async (ticker) => {
     await getStatisticStock(ticker).then(({ data }) => {
@@ -21,8 +24,22 @@ function App() {
     })
   }
 
+  const fetchFundamentData = async (ticker) => {
+    await getStockInfo(ticker).then(({ data }) => {
+      setFundament(data)
+      dispatch(
+        actions.updateStockInfo({
+          price: data.price,
+          change: data.change,
+          percentage: data.percentage,
+        })
+      )
+    })
+  }
+
   useEffect(() => {
     fetchStatisticData(ticker)
+    fetchFundamentData(ticker)
   }, [ticker])
 
   return (
@@ -33,7 +50,7 @@ function App() {
       <div className="App__bottomPanel">
         <Market />
         <StockTable />
-        <Fundament />
+        <Fundament data={fundament} />
       </div>
     </div>
   )

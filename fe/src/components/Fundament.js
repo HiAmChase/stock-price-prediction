@@ -1,39 +1,11 @@
-import React, { useState, useEffect } from "react"
-import { useSelector, useDispatch } from "react-redux"
+import React from "react"
 import { Tooltip } from "@mui/material"
-
-import { getStockInfo } from "../api/stock"
-import { actions } from "../redux"
 import { getColor } from "./utils"
 
 import "./Fundament.css"
 
-function Fundament() {
-  const ticker = useSelector((state) => state.ticker)
-  const dispatch = useDispatch()
-
-  const [data, setData] = useState({})
-
-  const fetchData = async (ticker) => {
-    await getStockInfo(ticker).then(({ data }) => {
-      setData(data)
-      dispatch(
-        actions.updateStockInfo({
-          price: data.price,
-          change: data.change,
-          percentage: data.percentage,
-        })
-      )
-    })
-  }
-
-  const fetchNewData = () => {
-    dispatch(actions.setTicker("fpt"))
-  }
-
-  useEffect(() => {
-    fetchData(ticker)
-  }, [ticker])
+function Fundament({ data }) {
+  const fetchNewData = () => {}
 
   return (
     <div className="Fundament">
