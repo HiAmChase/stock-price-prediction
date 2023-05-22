@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react"
 import { useSelector, useDispatch } from "react-redux"
 
 import { DEFAULT_COLOR, DOWN_COLOR, UP_COLOR, BACKGROUND_COLOR } from "./utils"
-import { getStatisticStock } from "../api/stock"
 import { actions } from "../redux"
 
 import Favorite from "./Favorite"
@@ -10,7 +9,7 @@ import StockChart from "./StockChart"
 
 import "./ChartDisplay.css"
 
-function ChartDisplay() {
+function ChartDisplay({ data }) {
   const ticker = useSelector((state) => state.ticker)
   const watchList = useSelector((state) => state.watchList)
   const stockInfo = useSelector((state) => state.stockInfo)
@@ -18,16 +17,9 @@ function ChartDisplay() {
 
   const [stock, setStock] = useState("")
   const [isFavorite, setIsFavorite] = useState(false)
-  const [data, setData] = useState({})
   const [charType, setChartType] = useState("candlestick")
   const [stockOptions, setStockOptions] = useState({})
   const [height, setHeight] = useState(0)
-
-  const fetchData = async (ticker) => {
-    await getStatisticStock(ticker).then(({ data }) => {
-      setData(data)
-    })
-  }
 
   const checkIsFavorite = () => {
     const item = watchList.find((item) => item.ticker === ticker)
@@ -66,7 +58,6 @@ function ChartDisplay() {
 
   useEffect(() => {
     checkIsFavorite()
-    fetchData(ticker)
   }, [ticker])
 
   useEffect(() => {
