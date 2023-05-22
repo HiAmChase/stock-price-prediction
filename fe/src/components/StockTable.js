@@ -1,30 +1,16 @@
-import React, { useEffect, useState } from "react"
+import React from "react"
 import { useDispatch } from "react-redux"
 
-import { getAllStock } from "../api/stock"
 import { actions } from "../redux"
 import { getColor } from "./utils"
 import "./StockTable.css"
 
-function StockTable() {
+function StockTable({ stocks }) {
   const dispatch = useDispatch()
-
-  const [stocks, setStocks] = useState([])
-
-  const fetchData = async () => {
-    await getAllStock().then(({ data }) => {
-      console.log(data)
-      setStocks(data)
-    })
-  }
 
   const updateTicker = (ticker) => {
     dispatch(actions.setTicker(ticker))
   }
-
-  useEffect(() => {
-    fetchData()
-  }, [])
 
   return (
     <div className="stock-table">

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react"
 import { useSelector, useDispatch } from "react-redux"
 
-import { getStatisticStock, getStockInfo } from "./api/stock"
+import { getStatisticStock, getStockInfo, getAllStock } from "./api/stock"
 import { actions } from "./redux"
 
 import ChartDisplay from "./components/ChartDisplay"
@@ -17,27 +17,38 @@ function App() {
 
   const [statistic, setStatistic] = useState({})
   const [fundament, setFundament] = useState({})
+  const [stocks, setStocks] = useState([])
 
-  const fetchStatisticData = async (ticker) => {
-    await getStatisticStock(ticker).then(({ data }) => {
-      setStatistic(data)
-    })
-  }
-
-  const fetchFundamentData = async (ticker) => {
-    await getStockInfo(ticker).then(({ data }) => {
-      setFundament(data)
-      dispatch(
-        actions.updateStockInfo({
-          price: data.price,
-          change: data.change,
-          percentage: data.percentage,
-        })
-      )
+  const fetchStocksData = async () => {
+    await getAllStock().then(({ data }) => {
+      setStocks(data)
     })
   }
 
   useEffect(() => {
+    fetchStocksData()
+  }, [])
+
+  useEffect(() => {
+    const fetchStatisticData = async (ticker) => {
+      await getStatisticStock(ticker).then(({ data }) => {
+        setStatistic(data)
+      })
+    }
+
+    const fetchFundamentData = async (ticker) => {
+      await getStockInfo(ticker).then(({ data }) => {
+        setFundament(data)
+        dispatch(
+          actions.updateStockInfo({
+            price: data.price,
+            change: data.change,
+            percentage: data.percentage,
+          })
+        )
+      })
+    }
+
     fetchStatisticData(ticker)
     fetchFundamentData(ticker)
   }, [ticker])
@@ -49,7 +60,7 @@ function App() {
       </div>
       <div className="App__bottomPanel">
         <Market />
-        <StockTable />
+        <StockTable stocks={stocks} />
         <Fundament data={fundament} />
       </div>
     </div>
