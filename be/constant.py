@@ -12,16 +12,16 @@ DATE_FORMAT = "%Y-%m-%d"
 
 
 class PredictType(Enum):
-    PREDICT_WITH_60_DAYS = "PREDICT_WITH_60_DAYS"
-    PREDICT_WITH_30_DAYS = "PREDICT_WITH_30_DAYS"
+    PREDICT_WITH_60_DAYS = "LAST_60_DAYS"
+    PREDICT_WITH_30_DAYS = "LAST_30_DAYS"
 
 
 MAPPING_PREDICT = {
-    PredictType.PREDICT_WITH_60_DAYS: {
+    PredictType.PREDICT_WITH_60_DAYS.value: {
         "prediction_days": 60,
         "models": MODEL_60_DAYS
     },
-    PredictType.PREDICT_WITH_30_DAYS: {
+    PredictType.PREDICT_WITH_30_DAYS.value: {
         "prediction_days": 30,
         "models": MODEL_30_DAYS
     },

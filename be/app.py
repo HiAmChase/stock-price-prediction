@@ -1,6 +1,6 @@
 try:
 
-    from flask import Flask
+    from flask import Flask, request
     from flask_cors import CORS
 
     from utils import (
@@ -47,6 +47,13 @@ def fetch__new_data(stock):
         return {"message": "success"}
     except:
         return {"message": "error"}
+
+
+@app.route("/predict_past/stock/<stock>", methods=["POST"])
+def predict_past(stock):
+    predict_type = request.json.get("predict_type")
+    predicteds = predict_test_data(stock, predict_type)
+    return {"predicteds": predicteds}
 
 
 @app.route("/predict_future_60/<stock>", methods=["GET"])

@@ -9,7 +9,7 @@ import StockChart from "./StockChart"
 
 import "./ChartDisplay.css"
 
-function ChartDisplay({ data }) {
+function ChartDisplay({ statistic, predictPast }) {
   const ticker = useSelector((state) => state.ticker)
   const watchList = useSelector((state) => state.watchList)
   const stockInfo = useSelector((state) => state.stockInfo)
@@ -61,7 +61,7 @@ function ChartDisplay({ data }) {
   }, [ticker])
 
   useEffect(() => {
-    if (Object.keys(data).length !== 0) {
+    if (Object.keys(statistic).length !== 0) {
       let yAxis
       yAxis = [
         {
@@ -100,15 +100,21 @@ function ChartDisplay({ data }) {
         },
         series: [
           {
-            data: data.stocks,
+            type: "line",
+            name: "Predicts",
+            data: predictPast.predicts,
+            color: "white",
+          },
+          {
             type: charType,
+            data: statistic.stocks,
             name: `${ticker.toUpperCase()} Stock Price`,
             id: "main-series",
           },
           {
             type: "column",
             name: "Volumn",
-            data: data.volumes,
+            data: statistic.volumes,
             color: "white",
             yAxis: 1,
           },
@@ -137,7 +143,7 @@ function ChartDisplay({ data }) {
         },
       })
     }
-  }, [data, charType])
+  }, [statistic, charType])
 
   return (
     <div className="Chartdisplay">

@@ -16,14 +16,16 @@ const getStatisticStock = (stock) => {
   return instance.get(`/statistic/stock/${stock}`)
 }
 
-const getPredictTestData = (predictType, stock) => {
-  return instance.get(`/${predictType.predictUrlPrefix}/${stock}`)
+const getPredictPast = (stock, predictType) => {
+  return instance.post(`/predict_past/stock/${stock}`, {
+    predict_type: predictType,
+  })
 }
 
 export {
   getStockInfo,
-  getPredictTestData,
   getAllStock,
   getStatisticStock,
+  getPredictPast,
   postFetchNewData,
 }

@@ -5,6 +5,7 @@ import {
   getStatisticStock,
   getStockInfo,
   getAllStock,
+  getPredictPast,
   postFetchNewData,
 } from "./api/stock"
 
@@ -22,6 +23,7 @@ function App() {
   const ticker = useSelector((state) => state.ticker)
 
   const [statistic, setStatistic] = useState({})
+  const [predictPast, setPredictPast] = useState({})
   const [fundament, setFundament] = useState({})
   const [stocks, setStocks] = useState([])
 
@@ -31,13 +33,13 @@ function App() {
     })
   }
 
-  const fetchStatisticData = async (ticker) => {
+  const fetchStatisticData = async () => {
     await getStatisticStock(ticker).then(({ data }) => {
       setStatistic(data)
     })
   }
 
-  const fetchFundamentData = async (ticker) => {
+  const fetchFundamentData = async () => {
     await getStockInfo(ticker).then(({ data }) => {
       setFundament(data)
       dispatch(
@@ -47,6 +49,14 @@ function App() {
           percentage: data.percentage,
         })
       )
+    })
+  }
+
+  const handleGetPredict = async (e) => {
+    // Default is 60 days
+    await getPredictPast(ticker, "LAST_60_DAYS").then(({ data }) => {
+      console.log(data)
+      setPredictPast(data)
     })
   }
 
@@ -65,14 +75,15 @@ function App() {
   }, [])
 
   useEffect(() => {
-    fetchStatisticData(ticker)
-    fetchFundamentData(ticker)
+    fetchStatisticData()
+    fetchFundamentData()
+    handleGetPredict()
   }, [ticker])
 
   return (
     <div className="App">
       <div className="App__topPanel">
-        <ChartDisplay data={statistic} />
+        <ChartDisplay statistic={statistic} predictPast={predictPast} />
       </div>
       <div className="App__bottomPanel">
         <Market />
