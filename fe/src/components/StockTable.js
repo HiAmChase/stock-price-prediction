@@ -1,5 +1,6 @@
 import React from "react"
 import { useDispatch } from "react-redux"
+import { Tooltip } from "@mui/material"
 
 import { actions } from "../redux"
 import { getColor } from "./utils"
@@ -33,7 +34,9 @@ function StockTable({ stocks }) {
                 className={getColor(item.change)}
                 onClick={() => updateTicker(item.ticker)}
               >
-                <td>{item.ticker.toUpperCase()}</td>
+                <Tooltip title={item.company_name}>
+                  <td>{item.ticker.toUpperCase()}</td>
+                </Tooltip>
                 <td>{item.country.toUpperCase()}</td>
                 <td>{item.date}</td>
                 <td>{item.change?.toFixed(2)}</td>
