@@ -1,7 +1,13 @@
 import React, { useEffect, useState } from "react"
 import { useSelector, useDispatch } from "react-redux"
 
-import { getStatisticStock, getStockInfo, getAllStock } from "./api/stock"
+import {
+  getStatisticStock,
+  getStockInfo,
+  getAllStock,
+  postFetchNewData,
+} from "./api/stock"
+
 import { actions } from "./redux"
 
 import ChartDisplay from "./components/ChartDisplay"
@@ -25,30 +31,40 @@ function App() {
     })
   }
 
+  const fetchStatisticData = async (ticker) => {
+    await getStatisticStock(ticker).then(({ data }) => {
+      setStatistic(data)
+    })
+  }
+
+  const fetchFundamentData = async (ticker) => {
+    await getStockInfo(ticker).then(({ data }) => {
+      setFundament(data)
+      dispatch(
+        actions.updateStockInfo({
+          price: data.price,
+          change: data.change,
+          percentage: data.percentage,
+        })
+      )
+    })
+  }
+
+  const handleFetchData = async (e) => {
+    e.preventDefault()
+    await postFetchNewData(ticker).then(({ data }) => {
+      if (data.message === "success") {
+        fetchStatisticData(ticker)
+        fetchFundamentData(ticker)
+      }
+    })
+  }
+
   useEffect(() => {
     fetchStocksData()
   }, [])
 
   useEffect(() => {
-    const fetchStatisticData = async (ticker) => {
-      await getStatisticStock(ticker).then(({ data }) => {
-        setStatistic(data)
-      })
-    }
-
-    const fetchFundamentData = async (ticker) => {
-      await getStockInfo(ticker).then(({ data }) => {
-        setFundament(data)
-        dispatch(
-          actions.updateStockInfo({
-            price: data.price,
-            change: data.change,
-            percentage: data.percentage,
-          })
-        )
-      })
-    }
-
     fetchStatisticData(ticker)
     fetchFundamentData(ticker)
   }, [ticker])
@@ -61,7 +77,7 @@ function App() {
       <div className="App__bottomPanel">
         <Market />
         <StockTable stocks={stocks} />
-        <Fundament data={fundament} />
+        <Fundament data={fundament} handleFetchData={handleFetchData} />
       </div>
     </div>
   )

@@ -4,16 +4,14 @@ import { getColor } from "./utils"
 
 import "./Fundament.css"
 
-function Fundament({ data }) {
-  const fetchNewData = () => {}
-
+function Fundament({ data, handleFetchData }) {
   return (
     <div className="Fundament">
       <div className="Fundgeneral">
         <div className="Fund__title">
           <h4>{data.company_name}</h4>
           <Tooltip title="Fetch new data">
-            <button onClick={fetchNewData}>
+            <button onClick={handleFetchData}>
               <i className="fa fa-download"></i>
             </button>
           </Tooltip>

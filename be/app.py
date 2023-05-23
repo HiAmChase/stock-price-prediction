@@ -42,7 +42,11 @@ def get__statistic(stock):
 
 @app.route("/stock/<stock>", methods=["POST"])
 def fetch__new_data(stock):
-    return fetch_new_data(stock)
+    try:
+        fetch_new_data(stock)
+        return {"message": "success"}
+    except:
+        return {"message": "error"}
 
 
 @app.route("/predict_future_60/<stock>", methods=["GET"])
