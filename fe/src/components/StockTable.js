@@ -16,14 +16,14 @@ function StockTable({ stocks }) {
   return (
     <div className="stock-table">
       <table className="table table-hover">
-        <thead>
+        <thead className="table-header">
           <tr>
-            <th scope="col">Symbol</th>
-            <th scope="col">Country</th>
-            <th scope="col">Date</th>
-            <th scope="col">Change</th>
-            <th scope="col">Percentage</th>
-            <th scope="col">Price</th>
+            <th className="table-header-item" scope="col">Symbol</th>
+            <th className="table-header-item" scope="col">Country</th>
+            <th className="table-header-item" scope="col">Date</th>
+            <th className="table-header-item" scope="col">Change</th>
+            <th className="table-header-item" scope="col">Percentage</th>
+            <th className="table-header-item" scope="col">Price</th>
           </tr>
         </thead>
         <tbody>

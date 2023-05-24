@@ -6,3 +6,14 @@
 .stock-table > table > tbody > tr:hover {
     cursor: pointer;
 }
+
+.table-header {
+    position: sticky;
+    top: 0;
+    background: #374462;
+    box-shadow: 0px 10px 10px -15px grey;
+    z-index: 999;
+}
+.table-header-item {
+    border-top: none;
+}
