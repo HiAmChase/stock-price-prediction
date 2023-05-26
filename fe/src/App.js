@@ -55,7 +55,6 @@ function App() {
   const handleGetPredict = async (e) => {
     // Default is 60 days
     await getPredictPast(ticker, "LAST_60_DAYS").then(({ data }) => {
-      console.log(data)
       setPredictPast(data)
     })
   }
@@ -77,13 +76,13 @@ function App() {
   useEffect(() => {
     fetchStatisticData()
     fetchFundamentData()
-    handleGetPredict()
+    // handleGetPredict()
   }, [ticker])
 
   return (
     <div className="App">
       <div className="App__topPanel">
-        <ChartDisplay statistic={statistic} predictPast={predictPast} />
+        <ChartDisplay statistic={statistic} />
       </div>
       <div className="App__bottomPanel">
         <Market />

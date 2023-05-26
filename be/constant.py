@@ -1,7 +1,7 @@
 from enum import Enum
 
-# PATH = "/home/thinh/Documents/stock-price-prediction/be"
-PATH = "/home/chase/Documents/stock-price-prediction/be"
+PATH = "/home/thinh/Documents/stock-price-prediction/be"
+# PATH = "/home/chase/Documents/stock-price-prediction/be"
 
 TEST_DATA = f"{PATH}/test_data"
 TRAIN_DATA = f"{PATH}/train_data"

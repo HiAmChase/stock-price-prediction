@@ -9,7 +9,7 @@ import StockChart from "./StockChart"
 
 import "./ChartDisplay.css"
 
-function ChartDisplay({ statistic, predictPast }) {
+function ChartDisplay({ statistic }) {
   const ticker = useSelector((state) => state.ticker)
   const watchList = useSelector((state) => state.watchList)
   const stockInfo = useSelector((state) => state.stockInfo)
@@ -102,7 +102,7 @@ function ChartDisplay({ statistic, predictPast }) {
           {
             type: "line",
             name: "Predicts",
-            data: predictPast.predicts,
+            data: statistic.stocks,
             color: "white",
           },
           {
