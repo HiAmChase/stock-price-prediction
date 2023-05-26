@@ -18,12 +18,27 @@ function StockTable({ stocks }) {
       <table className="table table-hover">
         <thead className="table-header">
           <tr>
-            <th className="table-header-item" scope="col">Symbol</th>
-            <th className="table-header-item" scope="col">Country</th>
-            <th className="table-header-item" scope="col">Date</th>
-            <th className="table-header-item" scope="col">Change</th>
-            <th className="table-header-item" scope="col">Percentage</th>
-            <th className="table-header-item" scope="col">Price</th>
+            <th className="table-header-item" scope="col">
+              Symbol
+            </th>
+            <th className="table-header-item" scope="col">
+              Country
+            </th>
+            <th className="table-header-item" scope="col">
+              Date
+            </th>
+            <th className="table-header-item" scope="col">
+              Change
+            </th>
+            <th className="table-header-item" scope="col">
+              Percentage
+            </th>
+            <th className="table-header-item" scope="col">
+              Price
+            </th>
+            <th className="table-header-item" scope="col">
+              Fetch Data
+            </th>
           </tr>
         </thead>
         <tbody>
@@ -45,6 +60,11 @@ function StockTable({ stocks }) {
                   {item.percentage?.toFixed(2)}%
                 </td>
                 <td>{item.price?.toFixed(2)}</td>
+                <td>
+                  <button>
+                    <i className="fa fa-download"></i>
+                  </button>
+                </td>
               </tr>
             )
           })}

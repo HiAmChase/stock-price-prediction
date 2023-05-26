@@ -17,3 +17,16 @@
 .table-header-item {
     border-top: none;
 }
+
+.stock-table tbody button {
+    background-color: transparent;
+    border: none;
+    color: rgb(209, 212, 220);
+    font-size: 20px;
+}
+.stock-table tbody  button:hover {
+    cursor: pointer;
+}
+.stock-table tbody button:focus {
+    outline: none;
+}
