@@ -3,18 +3,20 @@ import numpy as np
 import time
 import csv
 import vnquant.data as dt
+import yfinance as yfin
 
-from datetime import date, timedelta, datetime
-from keras.models import load_model
 from sklearn.preprocessing import MinMaxScaler
+from keras.models import load_model
+from datetime import date, timedelta, datetime
+from pandas_datareader import data as pdr
 
+from stock import STOCK
 from constant import (
     TRAIN_DATA,
     TEST_DATA,
     MAPPING_PREDICT,
     DATE_FORMAT
 )
-from stock import STOCK
 
 
 def get_stock_info(stock):
@@ -147,8 +149,16 @@ def predict_stock(stock, predict_type):
     return prediction.item(0)
 
 
-# Only for vietnam stock
 def fetch_new_data(stock):
+    stock_obj = next((x for x in STOCK if x.get("ticker") == stock), None)
+    country = stock_obj.get("country")
+    if country == "USA":
+        fetch_foreign_data(stock)
+    else:
+        fetch_domestic_data(stock)
+
+
+def fetch_domestic_data(stock):
     today = date.today().strftime(DATE_FORMAT)
 
     stock_data = pd.read_csv(f"{TEST_DATA}/{stock}.csv")
@@ -159,7 +169,6 @@ def fetch_new_data(stock):
 
     loader = dt.DataLoader(stock, last_day, today)
     data = loader.download()
-
     new_data = []
     for index, row in data.iterrows():
         row_date = str(index).split(" ")[0]
@@ -172,7 +181,37 @@ def fetch_new_data(stock):
         new_row = [row_date, high, low, _open, close, adjust, volume]
         new_data.append(new_row)
 
-    with open(f"{TEST_DATA}/{stock}.csv", mode='a', newline='') as file:
+    with open(f"{TEST_DATA}/{stock}.csv", mode="a", newline="") as file:
+        writer = csv.writer(file)
+        for row in new_data:
+            writer.writerow(row)
+
+
+def fetch_foreign_data(stock):
+    today = date.today().strftime(DATE_FORMAT)
+
+    stock_data = pd.read_csv(f"{TEST_DATA}/{stock}.csv")
+
+    last_day = stock_data.iloc[-1]["Date"]
+    last_day = datetime.strptime(last_day, DATE_FORMAT).date()
+    last_day = str(last_day + timedelta(days=2))
+
+    yfin.pdr_override()
+    data = pdr.get_data_yahoo(stock, start=last_day, end=today)
+    df = pd.DataFrame(data)
+    new_data = []
+    for index, row in df.iterrows():
+        row_date = str(index).split(" ")[0]
+        high = row["High"]
+        low = row["Low"]
+        _open = row["Open"]
+        close = row["Close"]
+        adjust = row["Adj Close"]
+        volume = int(row["Volume"])
+        new_row = [row_date, _open, high, low, close, adjust, volume]
+        new_data.append(new_row)
+
+    with open(f"{TEST_DATA}/{stock}.csv", mode="a", newline="") as file:
         writer = csv.writer(file)
         for row in new_data:
             writer.writerow(row)
