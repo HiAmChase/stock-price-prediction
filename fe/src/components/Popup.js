@@ -15,17 +15,30 @@ function Popup() {
   }
 
   const getPopupClass = () => {
-    if (popupInfo.type === "success") {
-      return "success"
+    switch (popupInfo.type) {
+      case "success":
+        return "popup-success"
+      case "error":
+        return "popup-error"
+      default:
+        return ""
     }
-    return ""
+  }
+
+  const getPopupIcon = () => {
+    switch (popupInfo.type) {
+      case "success":
+        return <i className="fa-regular fa-circle-check"></i>
+      case "error":
+        return <i class="fa-regular fa-exclamation"></i>
+      default:
+        return ""
+    }
   }
 
   return popupInfo.show ? (
     <div className="popup">
-      <div className={`popup-icon ${getPopupClass()}`}>
-        <i className="fa-regular fa-circle-check"></i>
-      </div>
+      <div className={`popup-icon ${getPopupClass()}`}>{getPopupIcon()}</div>
       <p className="popup-content">{popupInfo.content}</p>
       <button className="close-btn" onClick={handleClosePopup}>
         <i className="fa-solid fa-xmark"></i>

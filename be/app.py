@@ -46,7 +46,7 @@ def fetch__new_data(stock):
         fetch_new_data(stock)
         return {"message": "success"}
     except:
-        return {"message": "error"}
+        raise Exception("An error occurred while retrieving data")
 
 
 @app.route("/predict_past/stock/<stock>", methods=["POST"])

@@ -63,8 +63,8 @@ function App() {
 
   const handleFetchData = async (e) => {
     e.preventDefault()
-    await postFetchNewData(ticker).then(({ data }) => {
-      if (data.message === "success") {
+    await postFetchNewData(ticker)
+      .then(() => {
         dispatch(
           actions.updatePopupInfo({
             show: true,
@@ -75,8 +75,16 @@ function App() {
         fetchAllStocksData()
         fetchStatisticData(ticker)
         fetchFundamentData(ticker)
-      }
-    })
+      })
+      .catch(() => {
+        dispatch(
+          actions.updatePopupInfo({
+            show: true,
+            content: "An error occurred while retrieving data",
+            type: "error",
+          })
+        )
+      })
   }
 
   useEffect(() => {

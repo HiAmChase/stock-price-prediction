@@ -2,7 +2,7 @@
     position: absolute;
     top: 32px;
     right: 32px;
-    width: 340px;
+    width: 380px;
     background: #374462;
     color: rgb(209, 212, 220);
     box-shadow: 0px 10px 10px -15px grey;
@@ -17,8 +17,12 @@
     font-size: 20px;
 }
 
-.success {
+.popup-success {
     color: rgb(141, 232, 141);
+}
+
+.popup-error {
+    color: rgb(225, 97, 97);
 }
 
 .popup .close-btn {
