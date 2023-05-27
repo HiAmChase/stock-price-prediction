@@ -36,9 +36,6 @@ function StockTable({ stocks }) {
             <th className="table-header-item" scope="col">
               Price
             </th>
-            <th className="table-header-item" scope="col">
-              Fetch Data
-            </th>
           </tr>
         </thead>
         <tbody>
@@ -60,11 +57,6 @@ function StockTable({ stocks }) {
                   {item.percentage?.toFixed(2)}%
                 </td>
                 <td>{item.price?.toFixed(2)}</td>
-                <td>
-                  <button>
-                    <i className="fa fa-download"></i>
-                  </button>
-                </td>
               </tr>
             )
           })}

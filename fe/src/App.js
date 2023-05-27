@@ -27,7 +27,7 @@ function App() {
   const [fundament, setFundament] = useState({})
   const [stocks, setStocks] = useState([])
 
-  const fetchStocksData = async () => {
+  const fetchAllStocksData = async () => {
     await getAllStock().then(({ data }) => {
       setStocks(data)
     })
@@ -63,6 +63,7 @@ function App() {
     e.preventDefault()
     await postFetchNewData(ticker).then(({ data }) => {
       if (data.message === "success") {
+        fetchAllStocksData()
         fetchStatisticData(ticker)
         fetchFundamentData(ticker)
       }
@@ -70,7 +71,7 @@ function App() {
   }
 
   useEffect(() => {
-    fetchStocksData()
+    fetchAllStocksData()
   }, [])
 
   useEffect(() => {
