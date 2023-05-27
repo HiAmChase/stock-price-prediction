@@ -15,12 +15,14 @@ import ChartDisplay from "./components/ChartDisplay"
 import Market from "./components/Market"
 import Fundament from "./components/Fundament"
 import StockTable from "./components/StockTable"
+import Popup from "./components/Popup"
 
 import "./App.css"
 
 function App() {
   const dispatch = useDispatch()
   const ticker = useSelector((state) => state.ticker)
+  const popupInfo = useSelector((state) => state.popupInfo)
 
   const [statistic, setStatistic] = useState({})
   const [predictPast, setPredictPast] = useState({})
@@ -63,6 +65,13 @@ function App() {
     e.preventDefault()
     await postFetchNewData(ticker).then(({ data }) => {
       if (data.message === "success") {
+        dispatch(
+          actions.updatePopupInfo({
+            show: true,
+            content: "Fetch data successfully",
+            type: "success",
+          })
+        )
         fetchAllStocksData()
         fetchStatisticData(ticker)
         fetchFundamentData(ticker)
@@ -80,6 +89,10 @@ function App() {
     // handleGetPredict()
   }, [ticker])
 
+  useEffect(() => {
+    setTimeout(() => dispatch(actions.updatePopupInfo({ show: false })), 2000)
+  }, [popupInfo.show])
+
   return (
     <div className="App">
       <div className="App__topPanel">
@@ -90,6 +103,7 @@ function App() {
         <StockTable stocks={stocks} />
         <Fundament data={fundament} handleFetchData={handleFetchData} />
       </div>
+      <Popup />
     </div>
   )
 }

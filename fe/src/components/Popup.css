@@ -1,0 +1,43 @@
+.popup {
+    position: absolute;
+    top: 32px;
+    right: 32px;
+    width: 340px;
+    background: #374462;
+    color: rgb(209, 212, 220);
+    box-shadow: 0px 10px 10px -15px grey;
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+}
+
+.popup .popup-icon {
+    margin-right: 14px;
+    font-size: 20px;
+}
+
+.success {
+    color: rgb(141, 232, 141);
+}
+
+.popup .close-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background-color: transparent;
+    border: none;
+    color: rgb(209, 212, 220);
+}
+
+.popup .close-btn:hover {
+    cursor: pointer;
+}
+
+.popup .close-btn:focus {
+    outline: none;
+}
+
+.popup .popup-content {
+    margin: 0;
+}

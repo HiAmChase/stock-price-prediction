@@ -6,6 +6,7 @@ const stockSlice = createSlice({
     ticker: "aapl",
     watchList: [],
     stockInfo: {},
+    popupInfo: { show: false, content: "", type: "" },
   },
   reducers: {
     setTicker(state, action) {
@@ -37,6 +38,11 @@ const stockSlice = createSlice({
     updateStockInfo(state, action) {
       // payload = stock object
       state.stockInfo = action.payload
+    },
+
+    updatePopupInfo(state, action) {
+      // payload = popup object
+      state.popupInfo = action.payload
     },
   },
 })
