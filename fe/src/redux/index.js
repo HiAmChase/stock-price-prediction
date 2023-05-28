@@ -38,6 +38,18 @@ const stockSlice = createSlice({
       localStorage.setItem("watchList", JSON.stringify(state.watchList))
     },
 
+    updateTickerInWatchList(state, action) {
+      // payload = stock object
+      const index = state.watchList.findIndex(
+        (item) => item.ticker === action.payload.ticker
+      )
+
+      if (index !== -1) {
+        state.watchList[index] = action.payload
+        localStorage.setItem("watchList", JSON.stringify(state.watchList))
+      }
+    },
+
     updateStockInfo(state, action) {
       // payload = stock object
       state.stockInfo = action.payload

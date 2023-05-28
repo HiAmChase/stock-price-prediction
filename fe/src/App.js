@@ -73,7 +73,7 @@ function App() {
           })
         )
         dispatch(
-          actions.addToWatchList({
+          actions.updateTickerInWatchList({
             ticker: ticker,
             price: data.price,
             change: data.change,
