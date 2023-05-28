@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux"
 
 import { DEFAULT_COLOR, DOWN_COLOR, UP_COLOR, BACKGROUND_COLOR } from "./utils"
 import { actions } from "../redux"
+import { getPredictPast } from "../api/stock"
 
 import Favorite from "./Favorite"
 import StockChart from "./StockChart"
@@ -16,6 +17,7 @@ function ChartDisplay({ statistic }) {
   const dispatch = useDispatch()
 
   const [stock, setStock] = useState("")
+  const [predictPast, setPredictPast] = useState([])
   const [isFavorite, setIsFavorite] = useState(false)
   const [charType, setChartType] = useState("candlestick")
   const [stockOptions, setStockOptions] = useState({})
@@ -27,6 +29,13 @@ function ChartDisplay({ statistic }) {
       return setIsFavorite(true)
     }
     return setIsFavorite(false)
+  }
+
+  const handleGetPredictPast = async () => {
+    // Default is 60 days
+    await getPredictPast(ticker, "LAST_60_DAYS").then(({ data }) => {
+      setPredictPast(data.predicteds)
+    })
   }
 
   const handleSubmit = (e) => {
@@ -68,6 +77,7 @@ function ChartDisplay({ statistic }) {
 
   useEffect(() => {
     setHeight(window.innerHeight * 0.6)
+    // handleGetPredictPast()
   }, [])
 
   useEffect(() => {

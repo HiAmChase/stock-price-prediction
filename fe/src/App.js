@@ -5,7 +5,6 @@ import {
   getStatisticStock,
   getStockInfo,
   getAllStock,
-  getPredictPast,
   postFetchNewData,
 } from "./api/stock"
 
@@ -25,7 +24,6 @@ function App() {
   const popupInfo = useSelector((state) => state.popupInfo)
 
   const [statistic, setStatistic] = useState({})
-  const [predictPast, setPredictPast] = useState({})
   const [fundament, setFundament] = useState({})
   const [stocks, setStocks] = useState([])
 
@@ -51,13 +49,6 @@ function App() {
           percentage: data.percentage,
         })
       )
-    })
-  }
-
-  const handleGetPredict = async (e) => {
-    // Default is 60 days
-    await getPredictPast(ticker, "LAST_60_DAYS").then(({ data }) => {
-      setPredictPast(data)
     })
   }
 
@@ -102,7 +93,6 @@ function App() {
   useEffect(() => {
     fetchStatisticData()
     fetchFundamentData()
-    // handleGetPredict()
   }, [ticker])
 
   useEffect(() => {
