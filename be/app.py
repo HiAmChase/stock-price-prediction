@@ -44,7 +44,7 @@ def get__statistic(stock):
 def fetch__new_data(stock):
     try:
         fetch_new_data(stock)
-        return {"message": "success"}
+        return get_stock_info(stock)
     except:
         raise Exception("An error occurred while retrieving data")
 

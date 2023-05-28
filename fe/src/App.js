@@ -64,12 +64,20 @@ function App() {
   const handleFetchData = async (e) => {
     e.preventDefault()
     await postFetchNewData(ticker)
-      .then(() => {
+      .then(({ data }) => {
         dispatch(
           actions.updatePopupInfo({
             show: true,
             content: "Fetch data successfully",
             type: "success",
+          })
+        )
+        dispatch(
+          actions.addToWatchList({
+            ticker: ticker,
+            price: data.price,
+            change: data.change,
+            percentage: data.percentage,
           })
         )
         fetchAllStocksData()
