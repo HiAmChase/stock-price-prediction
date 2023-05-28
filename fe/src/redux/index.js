@@ -4,7 +4,7 @@ const stockSlice = createSlice({
   name: "stock",
   initialState: {
     ticker: "aapl",
-    watchList: [],
+    watchList: JSON.parse(localStorage.getItem("watchList")) || [],
     stockInfo: {},
     popupInfo: { show: false, content: "", type: "" },
   },
@@ -25,6 +25,8 @@ const stockSlice = createSlice({
       } else {
         state.watchList = [...state.watchList, action.payload]
       }
+
+      localStorage.setItem("watchList", JSON.stringify(state.watchList))
     },
 
     removeFromWatchList(state, action) {
@@ -33,6 +35,7 @@ const stockSlice = createSlice({
         (item) => item.ticker !== action.payload
       )
       state.watchList = newWatchList
+      localStorage.setItem("watchList", JSON.stringify(state.watchList))
     },
 
     updateStockInfo(state, action) {
