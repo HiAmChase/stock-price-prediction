@@ -46,8 +46,22 @@ function ChartDisplay({ statistic }) {
           percentage: stockInfo.percentage,
         })
       )
+      dispatch(
+        actions.updatePopupInfo({
+          show: true,
+          content: `${ticker.toUpperCase()} was added to watchlist`,
+          type: "success",
+        })
+      )
     } else {
       dispatch(actions.removeFromWatchList(ticker))
+      dispatch(
+        actions.updatePopupInfo({
+          show: true,
+          content: `${ticker.toUpperCase()} was removed from watchlist`,
+          type: "success",
+        })
+      )
       setIsFavorite(false)
     }
   }

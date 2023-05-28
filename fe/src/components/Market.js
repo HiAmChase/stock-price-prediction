@@ -12,6 +12,13 @@ function Market() {
 
   const handleRemoveFromWatchList = (ticker) => {
     dispatch(actions.removeFromWatchList(ticker))
+    dispatch(
+      actions.updatePopupInfo({
+        show: true,
+        content: `${ticker.toUpperCase()} was removed from watchlist`,
+        type: "success",
+      })
+    )
   }
 
   return (
