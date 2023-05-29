@@ -77,7 +77,7 @@ function ChartDisplay({ statistic }) {
 
   useEffect(() => {
     setHeight(window.innerHeight * 0.6)
-    // handleGetPredictPast()
+    handleGetPredictPast()
   }, [])
 
   useEffect(() => {
@@ -126,7 +126,7 @@ function ChartDisplay({ statistic }) {
           {
             type: "line",
             name: "Predicts",
-            data: statistic.stocks,
+            data: predictPast,
             color: "white",
           },
           {
@@ -167,7 +167,7 @@ function ChartDisplay({ statistic }) {
         },
       })
     }
-  }, [statistic, charType])
+  }, [statistic, charType, predictPast])
 
   return (
     <div className="Chartdisplay">
