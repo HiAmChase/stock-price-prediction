@@ -62,9 +62,8 @@ def predict(stock):
         stock=stock,
         predict_type=PredictType.PREDICT_WITH_60_DAYS
     )
-    return {
-        "predicted": predicted  # This is a value not array
-    }
+    # This is a value not array
+    return {"predicted": predicted}
 
 
 @app.route("/predict_test_data_60/<stock>", methods=["GET"])

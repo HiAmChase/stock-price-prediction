@@ -74,8 +74,9 @@ function App() {
           })
         )
         fetchAllStocksData()
-        fetchStatisticData(ticker)
-        fetchFundamentData(ticker)
+        fetchStatisticData()
+        fetchFundamentData()
+        handleGetPredictPast()
       })
       .catch(() => {
         dispatch(

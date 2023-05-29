@@ -41,6 +41,10 @@ function Fundament({ data, handleFetchData }) {
               Prev Close: {data.prev_price?.toFixed(2)}
             </span>
           </div>
+          <div className="Fund__predict">
+            <span>Next value: </span>
+            <h1>0</h1>
+          </div>
         </div>
       </div>
     </div>
