@@ -6,6 +6,7 @@ import {
   getStockInfo,
   getAllStock,
   postFetchNewData,
+  getPredictPast,
 } from "./api/stock"
 
 import { actions } from "./redux"
@@ -26,6 +27,7 @@ function App() {
   const [statistic, setStatistic] = useState({})
   const [fundament, setFundament] = useState({})
   const [stocks, setStocks] = useState([])
+  const [predictPast, setPredictPast] = useState([])
 
   const fetchAllStocksData = async () => {
     await getAllStock().then(({ data }) => {
@@ -86,6 +88,13 @@ function App() {
       })
   }
 
+  const handleGetPredictPast = async () => {
+    // Default is 60 days
+    await getPredictPast(ticker, "LAST_60_DAYS").then(({ data }) => {
+      setPredictPast(data.predicteds)
+    })
+  }
+
   useEffect(() => {
     fetchAllStocksData()
   }, [])
@@ -93,6 +102,7 @@ function App() {
   useEffect(() => {
     fetchStatisticData()
     fetchFundamentData()
+    handleGetPredictPast()
   }, [ticker])
 
   useEffect(() => {
@@ -102,7 +112,7 @@ function App() {
   return (
     <div className="App">
       <div className="App__topPanel">
-        <ChartDisplay statistic={statistic} />
+        <ChartDisplay statistic={statistic} predictPast={predictPast} />
       </div>
       <div className="App__bottomPanel">
         <Market />
