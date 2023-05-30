@@ -7,6 +7,7 @@ import {
   getAllStock,
   postFetchNewData,
   getPredictPast,
+  getPredictFuture,
 } from "./api/stock"
 
 import { actions } from "./redux"
@@ -29,6 +30,12 @@ function App() {
   const [fundament, setFundament] = useState({})
   const [stocks, setStocks] = useState([])
   const [predictPast, setPredictPast] = useState([])
+  const [predictFuture, setPredictFuture] = useState(0)
+
+  const resetVariable = () => {
+    setPredictPast([])
+    setPredictFuture(0)
+  }
 
   const fetchAllStocksData = async () => {
     await getAllStock().then(({ data }) => {
@@ -55,8 +62,21 @@ function App() {
     })
   }
 
+  const handleGetPredictPast = async () => {
+    await getPredictPast(ticker, predictType).then(({ data }) => {
+      setPredictPast(data.predict_past)
+    })
+  }
+
+  const handleGetPredictFuture = async () => {
+    await getPredictFuture(ticker, predictType).then(({ data }) => {
+      setPredictFuture(data.predict_future)
+    })
+  }
+
   const handleFetchData = async (e) => {
     e.preventDefault()
+    resetVariable()
     await postFetchNewData(ticker)
       .then(({ data }) => {
         dispatch(
@@ -78,6 +98,7 @@ function App() {
         fetchStatisticData()
         fetchFundamentData()
         handleGetPredictPast()
+        handleGetPredictFuture()
       })
       .catch(() => {
         dispatch(
@@ -90,25 +111,22 @@ function App() {
       })
   }
 
-  const handleGetPredictPast = async () => {
-    // Default is 60 days
-    await getPredictPast(ticker, predictType).then(({ data }) => {
-      setPredictPast(data.predict_past)
-    })
-  }
-
-  useEffect(() => {
-    handleGetPredictPast()
-  }, [predictType])
-
   useEffect(() => {
     fetchAllStocksData()
   }, [])
 
   useEffect(() => {
+    resetVariable()
+    handleGetPredictPast()
+    handleGetPredictFuture()
+  }, [predictType])
+
+  useEffect(() => {
+    resetVariable()
     fetchStatisticData()
     fetchFundamentData()
     handleGetPredictPast()
+    handleGetPredictFuture()
   }, [ticker])
 
   useEffect(() => {
@@ -123,7 +141,11 @@ function App() {
       <div className="App__bottomPanel">
         <Market />
         <StockTable stocks={stocks} />
-        <Fundament data={fundament} handleFetchData={handleFetchData} />
+        <Fundament
+          data={fundament}
+          handleFetchData={handleFetchData}
+          predictFuture={predictFuture}
+        />
       </div>
       <Popup />
     </div>

@@ -4,7 +4,7 @@ import { getColor } from "./utils"
 
 import "./Fundament.css"
 
-function Fundament({ data, handleFetchData }) {
+function Fundament({ data, handleFetchData, predictFuture }) {
   return (
     <div className="Fundament">
       <div className="Fundgeneral">
@@ -43,7 +43,7 @@ function Fundament({ data, handleFetchData }) {
           </div>
           <div className="Fund__predict">
             <span>Next value: </span>
-            <h1>0</h1>
+            <h1>{predictFuture?.toFixed(2)}</h1>
           </div>
         </div>
       </div>

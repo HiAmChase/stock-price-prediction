@@ -22,10 +22,17 @@ const getPredictPast = (stock, predictType) => {
   })
 }
 
+const getPredictFuture = (stock, predictType) => {
+  return instance.post(`/predict_future/stock/${stock}`, {
+    predict_type: predictType,
+  })
+}
+
 export {
   getStockInfo,
   getAllStock,
   getStatisticStock,
   getPredictPast,
   postFetchNewData,
+  getPredictFuture,
 }

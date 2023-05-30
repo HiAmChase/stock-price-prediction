@@ -3,10 +3,10 @@ from enum import Enum
 PATH = "/home/thinh/Documents/stock-price-prediction/be"
 # PATH = "/home/chase/Documents/stock-price-prediction/be"
 
-TEST_DATA = f"{PATH}/test_data"
-TRAIN_DATA = f"{PATH}/train_data"
-MODEL_60_DAYS = f"{PATH}/models_60"
-MODEL_30_DAYS = f"{PATH}/models_30"
+TEST_DATA = "test_data"
+TRAIN_DATA = "train_data"
+MODEL_60_DAYS = "models_60"
+MODEL_30_DAYS = "models_30"
 
 DATE_FORMAT = "%Y-%m-%d"
 
