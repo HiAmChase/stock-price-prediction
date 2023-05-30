@@ -23,6 +23,7 @@ function App() {
   const dispatch = useDispatch()
   const ticker = useSelector((state) => state.ticker)
   const popupInfo = useSelector((state) => state.popupInfo)
+  const predictType = useSelector((state) => state.predictType)
 
   const [statistic, setStatistic] = useState({})
   const [fundament, setFundament] = useState({})
@@ -91,10 +92,14 @@ function App() {
 
   const handleGetPredictPast = async () => {
     // Default is 60 days
-    await getPredictPast(ticker, "LAST_60_DAYS").then(({ data }) => {
+    await getPredictPast(ticker, predictType).then(({ data }) => {
       setPredictPast(data.predicteds)
     })
   }
+
+  useEffect(() => {
+    handleGetPredictPast()
+  }, [predictType])
 
   useEffect(() => {
     fetchAllStocksData()

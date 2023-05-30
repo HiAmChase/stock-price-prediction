@@ -13,6 +13,7 @@ function ChartDisplay({ statistic, predictPast }) {
   const ticker = useSelector((state) => state.ticker)
   const watchList = useSelector((state) => state.watchList)
   const stockInfo = useSelector((state) => state.stockInfo)
+  const predictType = useSelector((state) => state.predictType)
   const dispatch = useDispatch()
 
   const [stock, setStock] = useState("")
@@ -189,6 +190,16 @@ function ChartDisplay({ statistic, predictPast }) {
             <option value="candlestick">Candlestick</option>
             <option value="ohlc">OHLC</option>
             <option value="line">Line</option>
+          </select>
+        </div>
+        <div>
+          <select
+            className="Menu__dropdown"
+            value={predictType}
+            onChange={(e) => dispatch(actions.setPredictType(e.target.value))}
+          >
+            <option value="LAST_30_DAYS">30 Days</option>
+            <option value="LAST_60_DAYS">60 Days</option>
           </select>
         </div>
         <div>
