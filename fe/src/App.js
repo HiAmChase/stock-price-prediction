@@ -93,7 +93,7 @@ function App() {
   const handleGetPredictPast = async () => {
     // Default is 60 days
     await getPredictPast(ticker, predictType).then(({ data }) => {
-      setPredictPast(data.predicteds)
+      setPredictPast(data.predict_past)
     })
   }
 

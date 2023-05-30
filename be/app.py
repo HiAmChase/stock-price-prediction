@@ -5,12 +5,11 @@ try:
 
     from utils import (
         predict_test_data,
-        predict_stock,
+        predict_future_stock,
         get_stock_info,
         get_statistic,
         fetch_new_data
     )
-    from constant import PredictType
     from stock import STOCK as stock_data
     print("All module Loaded")
 except Exception as e:
@@ -53,32 +52,11 @@ def fetch__new_data(stock):
 def predict_past(stock):
     predict_type = request.json.get("predict_type")
     predicteds = predict_test_data(stock, predict_type)
-    return {"predicteds": predicteds}
+    return {"predict_past": predicteds}
 
 
-@app.route("/predict_future_60/<stock>", methods=["GET"])
-def predict(stock):
-    predicted = predict_stock(
-        stock=stock,
-        predict_type=PredictType.PREDICT_WITH_60_DAYS
-    )
-    # This is a value not array
-    return {"predicted": predicted}
-
-
-@app.route("/predict_test_data_60/<stock>", methods=["GET"])
-def predict_test_data_60(stock):
-    predicteds = predict_test_data(
-        stock=stock,
-        predict_type=PredictType.PREDICT_WITH_60_DAYS
-    )
-    return {"predicteds": predicteds}
-
-
-@app.route("/predict_test_data_30/<stock>", methods=["GET"])
-def predict_test_data_30(stock):
-    predicteds = predict_test_data(
-        stock=stock,
-        predict_type=PredictType.PREDICT_WITH_30_DAYS
-    )
-    return {"predicteds": predicteds}
+@app.route("/predict_future/stock/<stock>", methods=["POST"])
+def predict_future(stock):
+    predict_type = request.json.get("predict_type")
+    predicted = predict_future_stock(stock, predict_type)
+    return {"predict_future": predicted}

@@ -115,7 +115,7 @@ def predict_test_data(stock, predict_type):
     return predicteds
 
 
-def predict_stock(stock, predict_type):
+def predict_future_stock(stock, predict_type):
     scaler = MinMaxScaler(feature_range=(0, 1))
     train_data = pd.read_csv(f"{TRAIN_DATA}/{stock}.csv")
 
