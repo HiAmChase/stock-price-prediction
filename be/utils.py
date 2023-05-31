@@ -149,6 +149,15 @@ def predict_future_stock(stock, predict_type):
     return prediction.item(0)
 
 
+def fetch_all_data():
+    print("START TO FETCH ALL STOCK DATA")
+    tickers = [stock.get("ticker") for stock in STOCK]
+
+    for ticker in tickers:
+        fetch_new_data(ticker)
+    print("FETCH ALL STOCK DATA COMPLETED")
+
+
 def fetch_new_data(stock):
     stock_obj = next((x for x in STOCK if x.get("ticker") == stock), None)
     country = stock_obj.get("country")

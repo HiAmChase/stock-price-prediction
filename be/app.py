@@ -1,5 +1,6 @@
 try:
-
+    import time
+    import schedule
     from flask import Flask, request
     from flask_cors import CORS
 
@@ -8,7 +9,8 @@ try:
         predict_future_stock,
         get_stock_info,
         get_statistic,
-        fetch_new_data
+        fetch_new_data,
+        fetch_all_data
     )
     from stock import STOCK as stock_data
     print("All module Loaded")
@@ -17,6 +19,22 @@ except Exception as e:
 
 app = Flask(__name__)
 CORS(app)
+
+schedule.every().day.at("00:00").do(fetch_all_data)
+
+
+def run_scheduled_task():
+    while True:
+        schedule.run_pending()
+        time.sleep(1)
+
+
+@app.before_first_request
+def activate_job():
+    print("START THE BACKGROUND TASK")
+    from threading import Thread
+    thread = Thread(target=run_scheduled_task)
+    thread.start()
 
 
 @app.route("/stock", methods=["GET"])
