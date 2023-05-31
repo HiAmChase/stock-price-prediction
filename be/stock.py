@@ -340,7 +340,7 @@ STOCK = [
         "company_name": "CTCP Chứng khoán SSI",
         "industry": "Financial",
         "sector": "Services",
-        "country": "USA"
+        "country": "VNM"
     },
     {
         "ticker": "stb",
