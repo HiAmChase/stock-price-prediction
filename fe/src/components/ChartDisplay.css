@@ -16,6 +16,10 @@
     margin: 4px;
 }
 
+.Tickerinput:focus {
+    outline: none;
+}
+
 .Menu__dropdown{
     width: 130px;
 }
