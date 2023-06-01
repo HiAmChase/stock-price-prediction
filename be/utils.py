@@ -244,3 +244,11 @@ def get_num_lines(fname):
         for i, _ in enumerate(f):
             pass
     return i + 1
+
+
+def check_search_available(_txt, searchable):
+    if _txt is None or _txt == "":
+        return True
+    elif _txt in searchable:
+        return True
+    return False

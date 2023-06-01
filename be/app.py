@@ -10,7 +10,8 @@ try:
         get_stock_info,
         get_statistic,
         fetch_new_data,
-        fetch_all_data
+        fetch_all_data,
+        check_search_available
     )
     from stock import STOCK as stock_data
     print("All module Loaded")
@@ -39,11 +40,16 @@ def activate_job():
 
 @app.route("/stock", methods=["GET"])
 def get_all_stock():
+    args = request.args.to_dict()
+    _txt = args.get("_txt")
     stocks = []
     for stock in stock_data:
         ticker = stock.get("ticker")
-        data = get_stock_info(ticker)
-        stocks.append(data)
+        company_name = stock.get("company_name")
+        searchable = ' '.join([ticker, company_name])
+        if check_search_available(_txt, searchable):
+            data = get_stock_info(ticker)
+            stocks.append(data)
     return stocks
 
 
