@@ -113,6 +113,7 @@ function ChartDisplay({ statistic, predictPast }) {
           },
           backgroundColor: BACKGROUND_COLOR,
         },
+        rangeSelector: { selected: 2 },
         series: [
           {
             type: "line",
