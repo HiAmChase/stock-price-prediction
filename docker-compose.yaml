@@ -2,7 +2,7 @@ version: "3"
 services:
   flask:
     container_name: flask
-    image: flask:3.10.4
+    image: stock:3.10.4
     network_mode: "host"
     ports:
       - "5000:5000"

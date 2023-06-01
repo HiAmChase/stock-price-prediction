@@ -1,2 +1,2 @@
 build:
-	docker build -t flask:3.10.4 .
+	docker build -t stock:3.10.4 .
