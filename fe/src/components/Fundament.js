@@ -30,7 +30,6 @@ function Fundament({ data, handleFetchData, predictFuture }) {
             {data.price?.toFixed(2)}
             <span className="chg">
               <span className={getColor(data.change)}>
-                {data.change >= 0 ? "" : "-"}
                 {data.percentage?.toFixed(2)}%
               </span>
             </span>

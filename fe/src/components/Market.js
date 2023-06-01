@@ -46,7 +46,6 @@ function Market() {
                   {item.change?.toFixed(2)}
                 </td>
                 <td className={`text-center ${getColor(item.change)}`}>
-                  {item.change >= 0 ? "" : "-"}
                   {item.percentage?.toFixed(2)}%
                 </td>
                 <Tooltip title="Remove from Favorite">

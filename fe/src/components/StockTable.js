@@ -14,16 +14,26 @@ function StockTable({ stocks }) {
 
   let orderStocks = stocks
 
+  const sortByDesc = () => {
+    orderStocks = orderStocks.sort(
+      (a, b) => parseFloat(b[filter]) - parseFloat(a[filter])
+    )
+  }
+
+  const sortByAsc = () => {
+    orderStocks = orderStocks.sort(
+      (a, b) => parseFloat(a[filter]) - parseFloat(b[filter])
+    )
+  }
+
   switch (filter) {
     case "change":
+    case "percentage":
+    case "price":
       if (orderOptions === "desc") {
-        orderStocks = orderStocks.sort(
-          (a, b) => parseFloat(b[filter]) - parseFloat(a[filter])
-        )
+        sortByDesc()
       } else {
-        orderStocks = orderStocks.sort(
-          (a, b) => parseFloat(a[filter]) - parseFloat(b[filter])
-        )
+        sortByAsc()
       }
   }
 
@@ -66,19 +76,47 @@ function StockTable({ stocks }) {
                 </div>
               </div>
             </th>
-            <th
-              onClick={() => setFilter("percentage")}
-              className="table-header-item"
-              scope="col"
-            >
-              Percentage
+            <th className="table-header-item" scope="col">
+              <div className="order-header">
+                Percentage
+                <div className="order-button-group">
+                  <i
+                    onClick={() => {
+                      setFilter("percentage")
+                      setOrderOptions("desc")
+                    }}
+                    class="fa-solid fa-caret-up button-up"
+                  ></i>
+                  <i
+                    onClick={() => {
+                      setFilter("percentage")
+                      setOrderOptions("asc")
+                    }}
+                    class="fa-sharp fa-solid fa-caret-down button-down"
+                  ></i>
+                </div>
+              </div>
             </th>
-            <th
-              onClick={() => setFilter("price")}
-              className="table-header-item"
-              scope="col"
-            >
-              Price
+            <th className="table-header-item" scope="col">
+              <div className="order-header">
+                Price
+                <div className="order-button-group">
+                  <i
+                    onClick={() => {
+                      setFilter("price")
+                      setOrderOptions("desc")
+                    }}
+                    class="fa-solid fa-caret-up button-up"
+                  ></i>
+                  <i
+                    onClick={() => {
+                      setFilter("price")
+                      setOrderOptions("asc")
+                    }}
+                    class="fa-sharp fa-solid fa-caret-down button-down"
+                  ></i>
+                </div>
+              </div>
             </th>
           </tr>
         </thead>
@@ -96,10 +134,7 @@ function StockTable({ stocks }) {
                 <td>{item.country.toUpperCase()}</td>
                 <td>{item.date}</td>
                 <td>{item.change?.toFixed(2)}</td>
-                <td>
-                  {item.change >= 0 ? "" : "-"}
-                  {item.percentage?.toFixed(2)}%
-                </td>
+                <td>{item.percentage?.toFixed(2)}%</td>
                 <td>{item.price?.toFixed(2)}</td>
               </tr>
             )
