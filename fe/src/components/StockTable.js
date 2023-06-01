@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { useDispatch } from "react-redux"
 import { Tooltip } from "@mui/material"
 
@@ -8,6 +8,24 @@ import "./StockTable.css"
 
 function StockTable({ stocks }) {
   const dispatch = useDispatch()
+
+  const [filter, setFilter] = useState("")
+  const [orderOptions, setOrderOptions] = useState("asc")
+
+  let orderStocks = stocks
+
+  switch (filter) {
+    case "change":
+      if (orderOptions === "desc") {
+        orderStocks = orderStocks.sort(
+          (a, b) => parseFloat(b[filter]) - parseFloat(a[filter])
+        )
+      } else {
+        orderStocks = orderStocks.sort(
+          (a, b) => parseFloat(a[filter]) - parseFloat(b[filter])
+        )
+      }
+  }
 
   const updateTicker = (ticker) => {
     dispatch(actions.setTicker(ticker))
@@ -28,18 +46,44 @@ function StockTable({ stocks }) {
               Date
             </th>
             <th className="table-header-item" scope="col">
-              Change
+              <div className="order-header">
+                Change
+                <div className="order-button-group">
+                  <i
+                    onClick={() => {
+                      setFilter("change")
+                      setOrderOptions("desc")
+                    }}
+                    class="fa-solid fa-caret-up button-up"
+                  ></i>
+                  <i
+                    onClick={() => {
+                      setFilter("change")
+                      setOrderOptions("asc")
+                    }}
+                    class="fa-sharp fa-solid fa-caret-down button-down"
+                  ></i>
+                </div>
+              </div>
             </th>
-            <th className="table-header-item" scope="col">
+            <th
+              onClick={() => setFilter("percentage")}
+              className="table-header-item"
+              scope="col"
+            >
               Percentage
             </th>
-            <th className="table-header-item" scope="col">
+            <th
+              onClick={() => setFilter("price")}
+              className="table-header-item"
+              scope="col"
+            >
               Price
             </th>
           </tr>
         </thead>
         <tbody>
-          {stocks.map((item) => {
+          {orderStocks.map((item) => {
             return (
               <tr
                 key={item.ticker}

@@ -30,3 +30,19 @@
 .stock-table tbody button:focus {
     outline: none;
 }
+
+.order-header {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.order-button-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.button-up:hover , .button-down:hover {
+    cursor: pointer;
+}
