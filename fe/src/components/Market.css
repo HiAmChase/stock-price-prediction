@@ -24,3 +24,7 @@
     background-color: #222838;
     cursor: pointer;
 }
+
+.MarketRow > td {
+    padding: 6px 0;
+}

@@ -48,8 +48,8 @@ function Market() {
                 key={item.ticker}
                 onClick={() => handleSetTicker(item.ticker)}
               >
-                <td>{item.ticker.toUpperCase()}</td>
-                <td>{item.price?.toFixed(2)}</td>
+                <td className="text-center">{item.ticker.toUpperCase()}</td>
+                <td className="text-center">{item.price?.toFixed(2)}</td>
                 <td className={`text-center ${getColor(item.change)}`}>
                   {item.change?.toFixed(2)}
                 </td>
