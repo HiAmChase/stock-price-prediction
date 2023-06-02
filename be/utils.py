@@ -19,6 +19,33 @@ from constant import (
 )
 
 
+def get_highest_stock_grown_rate():
+    tickers = [stock.get("ticker") for stock in STOCK]
+    stock_data = []
+
+    for ticker in tickers:
+        data = get_stock_grown_rate(ticker)
+        stock_data.append(data)
+
+    # Get top 10 highest grown rate
+    stock_data.sort(key=lambda x: x.get("percentage"), reverse=True)
+    stock_data = stock_data[0:10]
+
+    return stock_data
+
+
+def get_stock_grown_rate(stock):
+    test_data = pd.read_csv(f"{TEST_DATA}/{stock}.csv")
+    price, prev_n_days_price, percentage = calculate_grown_rate(test_data)
+
+    return {
+        "ticker": stock,
+        "price": price,
+        "percentage": percentage,
+        "prev_n_days_price": prev_n_days_price
+    }
+
+
 def get_stock_info(stock):
     test_data = pd.read_csv(f"{TEST_DATA}/{stock}.csv")
 
@@ -231,12 +258,24 @@ def get_current_data(data):
     data_last_day = data.iloc[-1]
 
     date = data_last_day["Date"]
-    change = data_last_day["Close"] - data_last_2_days["Close"]
     price = data_last_day["Close"]
     prev_price = data_last_2_days["Close"]
+    change = price - prev_price
     percentage = change / price * 100
 
     return (change, price, percentage, date, prev_price)
+
+
+def calculate_grown_rate(data):
+    data_last_day = data.iloc[-1]
+    data_last_n_days = data.iloc[-61]
+
+    price = data_last_day["Close"]
+    prev_n_days_price = data_last_n_days["Close"]
+    change = price - prev_n_days_price
+    percentage = change / price * 100
+
+    return (price, prev_n_days_price, percentage)
 
 
 def get_num_lines(fname):

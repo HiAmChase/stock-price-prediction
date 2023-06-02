@@ -11,6 +11,7 @@ try:
         get_statistic,
         fetch_new_data,
         fetch_all_data,
+        get_highest_stock_grown_rate,
         check_search_available
     )
     from stock import STOCK as stock_data
@@ -84,3 +85,9 @@ def predict_future(stock):
     predict_type = request.json.get("predict_type")
     predicted = predict_future_stock(stock, predict_type)
     return {"predict_future": predicted}
+
+
+@app.route("/grown_rate/stock", methods=["GET"])
+def get_stock_grown_rate():
+    data = get_highest_stock_grown_rate()
+    return data
