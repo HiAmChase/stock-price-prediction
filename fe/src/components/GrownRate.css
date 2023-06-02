@@ -1,0 +1,36 @@
+.GrownRate{
+    position: relative;
+    padding: 0px 5px;
+    display: flex;
+    flex-direction: column;
+    color: #d1d4dc;
+}
+
+.title-tooltip {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+}
+
+
+.GrownRate__title {
+    text-align: center;
+    padding: 10px 0px;
+    border-bottom: 3px solid #d1d4dc;
+    font-size: 20px;
+}
+
+.GrownRate__table{
+    flex-grow: 1;
+    overflow-y: auto;
+}
+.GrownRate table{
+    width: 100%;
+}
+.GrownRate__header{
+    text-align: left;
+}
+.GrownRateRow:hover{
+    background-color: #222838;
+    cursor: pointer;
+}
