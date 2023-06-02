@@ -1,7 +1,7 @@
 import instance from "./config"
 
-const getAllStock = () => {
-  return instance.get("/stock", { params: { _txt: "aa" } })
+const getAllStock = (params = null) => {
+  return instance.get("/stock", { params })
 }
 
 const getStockInfo = (stock) => {

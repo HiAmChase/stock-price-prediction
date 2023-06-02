@@ -64,14 +64,14 @@ function StockTable({ stocks }) {
                       setFilter("change")
                       setOrderOptions("desc")
                     }}
-                    class="fa-solid fa-caret-up button-up"
+                    className="fa-solid fa-caret-up button-up"
                   ></i>
                   <i
                     onClick={() => {
                       setFilter("change")
                       setOrderOptions("asc")
                     }}
-                    class="fa-sharp fa-solid fa-caret-down button-down"
+                    className="fa-sharp fa-solid fa-caret-down button-down"
                   ></i>
                 </div>
               </div>
@@ -85,14 +85,14 @@ function StockTable({ stocks }) {
                       setFilter("percentage")
                       setOrderOptions("desc")
                     }}
-                    class="fa-solid fa-caret-up button-up"
+                    className="fa-solid fa-caret-up button-up"
                   ></i>
                   <i
                     onClick={() => {
                       setFilter("percentage")
                       setOrderOptions("asc")
                     }}
-                    class="fa-sharp fa-solid fa-caret-down button-down"
+                    className="fa-sharp fa-solid fa-caret-down button-down"
                   ></i>
                 </div>
               </div>
@@ -106,14 +106,14 @@ function StockTable({ stocks }) {
                       setFilter("price")
                       setOrderOptions("desc")
                     }}
-                    class="fa-solid fa-caret-up button-up"
+                    className="fa-solid fa-caret-up button-up"
                   ></i>
                   <i
                     onClick={() => {
                       setFilter("price")
                       setOrderOptions("asc")
                     }}
-                    class="fa-sharp fa-solid fa-caret-down button-down"
+                    className="fa-sharp fa-solid fa-caret-down button-down"
                   ></i>
                 </div>
               </div>

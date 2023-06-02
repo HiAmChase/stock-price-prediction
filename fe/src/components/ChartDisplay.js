@@ -9,14 +9,19 @@ import StockChart from "./StockChart"
 
 import "./ChartDisplay.css"
 
-function ChartDisplay({ statistic, predictPast }) {
+function ChartDisplay({
+  statistic,
+  predictPast,
+  stockSearch,
+  setStockSearch,
+  handleSearchStock,
+}) {
   const ticker = useSelector((state) => state.ticker)
   const watchList = useSelector((state) => state.watchList)
   const stockInfo = useSelector((state) => state.stockInfo)
   const predictType = useSelector((state) => state.predictType)
   const dispatch = useDispatch()
 
-  const [stock, setStock] = useState("")
   const [isFavorite, setIsFavorite] = useState(false)
   const [charType, setChartType] = useState("candlestick")
   const [stockOptions, setStockOptions] = useState({})
@@ -28,11 +33,6 @@ function ChartDisplay({ statistic, predictPast }) {
       return setIsFavorite(true)
     }
     return setIsFavorite(false)
-  }
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    dispatch(actions.setTicker(stock))
   }
 
   const handleFavorite = async (e) => {
@@ -167,13 +167,13 @@ function ChartDisplay({ statistic, predictPast }) {
         {/* Stock input */}
         {/* TODO: Update to drop down */}
         <div>
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSearchStock}>
             <div>
               <input
-                value={stock}
+                value={stockSearch}
                 className="Tickerinput"
                 type="text"
-                onChange={(e) => setStock(e.target.value.toLowerCase())}
+                onChange={(e) => setStockSearch(e.target.value)}
               />
             </div>
             <button type="submit" style={{ display: "none" }}>

@@ -45,8 +45,8 @@ def get_all_stock():
     stocks = []
     for stock in stock_data:
         ticker = stock.get("ticker")
-        company_name = stock.get("company_name")
-        searchable = ' '.join([ticker, company_name])
+        company_name = stock.get("company_name").lower()
+        searchable = " ".join([ticker, company_name])
         if check_search_available(_txt, searchable):
             data = get_stock_info(ticker)
             stocks.append(data)

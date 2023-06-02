@@ -249,6 +249,6 @@ def get_num_lines(fname):
 def check_search_available(_txt, searchable):
     if _txt is None or _txt == "":
         return True
-    elif _txt in searchable:
+    elif _txt.lower() in searchable:
         return True
     return False

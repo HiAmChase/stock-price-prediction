@@ -29,12 +29,20 @@ function App() {
   const [statistic, setStatistic] = useState({})
   const [fundament, setFundament] = useState({})
   const [stocks, setStocks] = useState([])
+  const [stockSearch, setStockSearch] = useState("")
   const [predictPast, setPredictPast] = useState([])
   const [predictFuture, setPredictFuture] = useState(0)
 
   const resetVariable = () => {
     setPredictPast([])
     setPredictFuture(0)
+  }
+
+  const handleSearchStock = async (e) => {
+    e.preventDefault()
+    await getAllStock({ _txt: stockSearch }).then(({ data }) => {
+      setStocks(data)
+    })
   }
 
   const fetchAllStocksData = async () => {
@@ -136,7 +144,13 @@ function App() {
   return (
     <div className="App">
       <div className="App__topPanel">
-        <ChartDisplay statistic={statistic} predictPast={predictPast} />
+        <ChartDisplay
+          statistic={statistic}
+          predictPast={predictPast}
+          stockSearch={stockSearch}
+          setStockSearch={setStockSearch}
+          handleSearchStock={handleSearchStock}
+        />
       </div>
       <div className="App__bottomPanel">
         <Market />
