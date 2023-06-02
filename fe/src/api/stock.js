@@ -4,6 +4,10 @@ const getAllStock = (params = null) => {
   return instance.get("/stock", { params })
 }
 
+const getStockGrownRate = () => {
+  return instance.get(`/grown_rate/stock`)
+}
+
 const getStockInfo = (stock) => {
   return instance.get(`/stock/${stock}`)
 }
@@ -35,4 +39,5 @@ export {
   getPredictPast,
   postFetchNewData,
   getPredictFuture,
+  getStockGrownRate,
 }

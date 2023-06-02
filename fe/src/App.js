@@ -8,6 +8,7 @@ import {
   postFetchNewData,
   getPredictPast,
   getPredictFuture,
+  getStockGrownRate,
 } from "./api/stock"
 
 import { actions } from "./redux"
@@ -17,6 +18,7 @@ import Market from "./components/Market"
 import Fundament from "./components/Fundament"
 import StockTable from "./components/StockTable"
 import Popup from "./components/Popup"
+import GrownRate from "./components/GrownRate"
 
 import "./App.css"
 
@@ -29,6 +31,7 @@ function App() {
   const [statistic, setStatistic] = useState({})
   const [fundament, setFundament] = useState({})
   const [stocks, setStocks] = useState([])
+  const [stocksGrownRate, setStocksGrownRate] = useState([])
   const [stockSearch, setStockSearch] = useState("")
   const [predictPast, setPredictPast] = useState([])
   const [predictFuture, setPredictFuture] = useState(0)
@@ -48,6 +51,12 @@ function App() {
   const fetchAllStocksData = async () => {
     await getAllStock().then(({ data }) => {
       setStocks(data)
+    })
+  }
+
+  const getStocksGrownRateData = async () => {
+    await getStockGrownRate().then(({ data }) => {
+      setStocksGrownRate(data)
     })
   }
 
@@ -121,6 +130,7 @@ function App() {
 
   useEffect(() => {
     fetchAllStocksData()
+    getStocksGrownRateData()
   }, [])
 
   useEffect(() => {
@@ -151,6 +161,7 @@ function App() {
           setStockSearch={setStockSearch}
           handleSearchStock={handleSearchStock}
         />
+        <GrownRate stock={stocksGrownRate} />
       </div>
       <div className="App__bottomPanel">
         <Market />

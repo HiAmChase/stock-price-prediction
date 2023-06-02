@@ -53,9 +53,6 @@ function StockTable({ stocks }) {
               Country
             </th>
             <th className="table-header-item" scope="col">
-              Date
-            </th>
-            <th className="table-header-item" scope="col">
               <div className="order-header">
                 Change
                 <div className="order-button-group">
@@ -132,7 +129,6 @@ function StockTable({ stocks }) {
                   <td>{item.ticker.toUpperCase()}</td>
                 </Tooltip>
                 <td>{item.country.toUpperCase()}</td>
-                <td>{item.date}</td>
                 <td>{item.change?.toFixed(2)}</td>
                 <td>{item.percentage?.toFixed(2)}%</td>
                 <td>{item.price?.toFixed(2)}</td>

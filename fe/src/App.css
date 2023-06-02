@@ -13,6 +13,10 @@ body {
   background-color: rgb(19, 23, 34);
   height: 64vh;
   min-height: 400px;
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
 }
 .App__bottomPanel {
   margin: 3px;
@@ -34,6 +38,12 @@ body {
   height: 35.3vh;
 }
 .App__bottomPanel > div:nth-child(3) {
+  width: 20%;
+}
+.App__topPanel > div:nth-child(1) {
+  width: 80%;
+}
+.App__topPanel > div:nth-child(2) {
   width: 20%;
 }
 .Value__up{

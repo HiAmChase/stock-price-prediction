@@ -21,6 +21,10 @@ function Market() {
     )
   }
 
+  const handleSetTicker = (ticker) => {
+    dispatch(actions.setTicker(ticker))
+  }
+
   return (
     <div className="Market">
       <div>
@@ -39,7 +43,11 @@ function Market() {
           </thead>
           <tbody className="Market__main">
             {watchList.map((item) => (
-              <tr className="MarketRow" key={item.ticker}>
+              <tr
+                className="MarketRow"
+                key={item.ticker}
+                onClick={() => handleSetTicker(item.ticker)}
+              >
                 <td>{item.ticker.toUpperCase()}</td>
                 <td>{item.price?.toFixed(2)}</td>
                 <td className={`text-center ${getColor(item.change)}`}>
