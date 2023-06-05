@@ -2,7 +2,7 @@ import React from "react"
 import "./GrownRate.css"
 import { Tooltip } from "@mui/material"
 
-function GrownRate({ stock }) {
+function GrownRate({ stock, handleSetTicker }) {
   return (
     <div className="GrownRate">
       <div>
@@ -23,7 +23,11 @@ function GrownRate({ stock }) {
           </thead>
           <tbody className="Market__main">
             {stock.map((item) => (
-              <tr className="GrownRateRow" key={item.ticker}>
+              <tr
+                className="GrownRateRow"
+                key={item.ticker}
+                onClick={() => handleSetTicker(item.ticker)}
+              >
                 <td className="text-center">{item.ticker.toUpperCase()}</td>
                 <td className="text-center Value__up">
                   {item.prev_n_days_price?.toFixed(2)}

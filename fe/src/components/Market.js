@@ -6,7 +6,7 @@ import "./Market.css"
 import { Tooltip } from "@mui/material"
 import { getColor } from "./utils"
 
-function Market() {
+function Market({ handleSetTicker }) {
   const watchList = useSelector((state) => state.watchList)
   const dataCached = JSON.parse(localStorage.getItem("stocks"))
   const dispatch = useDispatch()
@@ -27,10 +27,6 @@ function Market() {
         type: "success",
       })
     )
-  }
-
-  const handleSetTicker = (ticker) => {
-    dispatch(actions.setTicker(ticker))
   }
 
   return (

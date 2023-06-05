@@ -41,6 +41,10 @@ function App() {
     setPredictFuture(0)
   }
 
+  const handleSetTicker = (ticker) => {
+    dispatch(actions.setTicker(ticker))
+  }
+
   const handleSearchStock = async (e) => {
     e.preventDefault()
     await getAllStock({ _txt: stockSearch }).then(({ data }) => {
@@ -156,10 +160,10 @@ function App() {
           setStockSearch={setStockSearch}
           handleSearchStock={handleSearchStock}
         />
-        <GrownRate stock={stocksGrownRate} />
+        <GrownRate stock={stocksGrownRate} handleSetTicker={handleSetTicker} />
       </div>
       <div className="App__bottomPanel">
-        <Market />
+        <Market handleSetTicker={handleSetTicker} />
         <StockTable stocks={stocks} />
         <Fundament
           data={fundament}
