@@ -39,14 +39,7 @@ function ChartDisplay({
     e.preventDefault()
     if (isFavorite === false) {
       setIsFavorite(true)
-      dispatch(
-        actions.addToWatchList({
-          ticker: ticker,
-          price: stockInfo.price,
-          change: stockInfo.change,
-          percentage: stockInfo.percentage,
-        })
-      )
+      dispatch(actions.addToWatchList(ticker))
       dispatch(
         actions.updatePopupInfo({
           show: true,

@@ -42,7 +42,7 @@ function Market() {
             </tr>
           </thead>
           <tbody className="Market__main">
-            {watchList.map((item) => (
+            {/* {watchList.map((item) => (
               <tr
                 className="MarketRow"
                 key={item.ticker}
@@ -62,7 +62,7 @@ function Market() {
                   </td>
                 </Tooltip>
               </tr>
-            ))}
+            ))} */}
           </tbody>
         </table>
       </div>

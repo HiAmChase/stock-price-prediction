@@ -95,20 +95,12 @@ function App() {
     e.preventDefault()
     resetVariable()
     await postFetchNewData(ticker)
-      .then(({ data }) => {
+      .then(() => {
         dispatch(
           actions.updatePopupInfo({
             show: true,
             content: "Fetch data successfully",
             type: "success",
-          })
-        )
-        dispatch(
-          actions.updateTickerInWatchList({
-            ticker: ticker,
-            price: data.price,
-            change: data.change,
-            percentage: data.percentage,
           })
         )
         fetchAllStocksData()

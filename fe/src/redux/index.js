@@ -21,39 +21,21 @@ const stockSlice = createSlice({
     },
 
     addToWatchList(state, action) {
-      // payload = stock object
-      const index = state.watchList.findIndex(
-        (item) => item.ticker === action.payload.ticker
-      )
-
-      if (index !== -1) {
-        state.watchList[index] = action.payload
-      } else {
+      // payload = ticker
+      const index = state.watchList.findIndex((item) => item === action.payload)
+      if (index === -1) {
         state.watchList = [...state.watchList, action.payload]
       }
-
       localStorage.setItem("watchList", JSON.stringify(state.watchList))
     },
 
     removeFromWatchList(state, action) {
       // payload = ticker
       const newWatchList = [...state.watchList].filter(
-        (item) => item.ticker !== action.payload
+        (item) => item !== action.payload
       )
       state.watchList = newWatchList
       localStorage.setItem("watchList", JSON.stringify(state.watchList))
-    },
-
-    updateTickerInWatchList(state, action) {
-      // payload = stock object
-      const index = state.watchList.findIndex(
-        (item) => item.ticker === action.payload.ticker
-      )
-
-      if (index !== -1) {
-        state.watchList[index] = action.payload
-        localStorage.setItem("watchList", JSON.stringify(state.watchList))
-      }
     },
 
     updateStockInfo(state, action) {
