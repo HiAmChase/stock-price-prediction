@@ -72,9 +72,11 @@ function App() {
       setFundament(data)
       dispatch(
         actions.updateStockInfo({
+          ticker: data.ticker,
           price: data.price,
           change: data.change,
           percentage: data.percentage,
+          company_name: data.company_name,
         })
       )
     })

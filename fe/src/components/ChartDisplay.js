@@ -196,6 +196,9 @@ function ChartDisplay({
             <option value="LAST_60_DAYS">60 Days</option>
           </select>
         </div>
+        <h4 className="Chartdisplay__title">
+          {`${stockInfo.ticker.toUpperCase()} - ${stockInfo.company_name}`}
+        </h4>
         <div>
           <Favorite isFavorite={isFavorite} handleFavorite={handleFavorite} />
         </div>
