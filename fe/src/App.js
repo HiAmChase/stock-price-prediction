@@ -51,6 +51,7 @@ function App() {
   const fetchAllStocksData = async () => {
     await getAllStock().then(({ data }) => {
       setStocks(data)
+      localStorage.setItem("stocks", JSON.stringify(data))
     })
   }
 

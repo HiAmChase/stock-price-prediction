@@ -8,7 +8,15 @@ import { getColor } from "./utils"
 
 function Market() {
   const watchList = useSelector((state) => state.watchList)
+  const dataCached = JSON.parse(localStorage.getItem("stocks"))
   const dispatch = useDispatch()
+
+  let stocksInWatchList = []
+  dataCached.forEach((item) => {
+    if (watchList.includes(item.ticker)) {
+      stocksInWatchList = [...stocksInWatchList, item]
+    }
+  })
 
   const handleRemoveFromWatchList = (ticker) => {
     dispatch(actions.removeFromWatchList(ticker))
@@ -42,7 +50,7 @@ function Market() {
             </tr>
           </thead>
           <tbody className="Market__main">
-            {/* {watchList.map((item) => (
+            {stocksInWatchList.map((item) => (
               <tr
                 className="MarketRow"
                 key={item.ticker}
@@ -62,7 +70,7 @@ function Market() {
                   </td>
                 </Tooltip>
               </tr>
-            ))} */}
+            ))}
           </tbody>
         </table>
       </div>
