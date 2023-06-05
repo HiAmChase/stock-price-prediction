@@ -24,11 +24,13 @@ function GrownRate({ stock }) {
           <tbody className="Market__main">
             {stock.map((item) => (
               <tr className="GrownRateRow" key={item.ticker}>
-                <td>{item.ticker.toUpperCase()}</td>
+                <td className="text-center">{item.ticker.toUpperCase()}</td>
                 <td className="text-center Value__up">
                   {item.prev_n_days_price?.toFixed(2)}
                 </td>
-                <td className="Value__up">{item.price?.toFixed(2)}</td>
+                <td className="Value__up text-center">
+                  {item.price?.toFixed(2)}
+                </td>
                 <td className="text-center Value__up">
                   {item.percentage?.toFixed(2)}%
                 </td>
