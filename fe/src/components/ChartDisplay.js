@@ -15,11 +15,12 @@ function ChartDisplay({
   stockSearch,
   setStockSearch,
   handleSearchStock,
+  predictType,
+  setPredictType,
 }) {
   const ticker = useSelector((state) => state.ticker)
   const watchList = useSelector((state) => state.watchList)
   const stockInfo = useSelector((state) => state.stockInfo)
-  const predictType = useSelector((state) => state.predictType)
   const dispatch = useDispatch()
 
   const [isFavorite, setIsFavorite] = useState(false)
@@ -190,7 +191,7 @@ function ChartDisplay({
           <select
             className="Menu__dropdown"
             value={predictType}
-            onChange={(e) => dispatch(actions.setPredictType(e.target.value))}
+            onChange={(e) => setPredictType(e.target.value)}
           >
             <option value="LAST_30_DAYS">1 month</option>
             <option value="LAST_60_DAYS">2 months</option>

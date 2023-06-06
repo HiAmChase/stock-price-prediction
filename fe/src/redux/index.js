@@ -4,7 +4,6 @@ const stockSlice = createSlice({
   name: "stock",
   initialState: {
     ticker: "aapl",
-    predictType: "LAST_60_DAYS",
     watchList: JSON.parse(localStorage.getItem("watchList")) || [],
     stockInfo: {},
     popupInfo: { show: false, content: "", type: "" },
@@ -13,11 +12,6 @@ const stockSlice = createSlice({
     setTicker(state, action) {
       // payload = ticker
       state.ticker = action.payload
-    },
-
-    setPredictType(state, action) {
-      // payload = predictType
-      state.predictType = action.payload
     },
 
     addToWatchList(state, action) {

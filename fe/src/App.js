@@ -26,7 +26,6 @@ function App() {
   const dispatch = useDispatch()
   const ticker = useSelector((state) => state.ticker)
   const popupInfo = useSelector((state) => state.popupInfo)
-  const predictType = useSelector((state) => state.predictType)
 
   const [statistic, setStatistic] = useState({})
   const [fundament, setFundament] = useState({})
@@ -35,6 +34,7 @@ function App() {
   const [predictPast, setPredictPast] = useState([])
   const [stockSearch, setStockSearch] = useState("")
   const [grownRateDays, setGrownRateDays] = useState("30")
+  const [predictType, setPredictType] = useState("LAST_60_DAYS")
   const [predictFuture, setPredictFuture] = useState(0)
 
   const resetVariable = () => {
@@ -165,6 +165,8 @@ function App() {
           predictPast={predictPast}
           stockSearch={stockSearch}
           setStockSearch={setStockSearch}
+          predictType={predictType}
+          setPredictType={setPredictType}
           handleSearchStock={handleSearchStock}
         />
         <GrownRate
