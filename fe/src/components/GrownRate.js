@@ -1,15 +1,19 @@
 import React from "react"
 import "./GrownRate.css"
-import { Tooltip } from "@mui/material"
 
 function GrownRate({ stock, handleSetTicker }) {
   return (
     <div className="GrownRate">
-      <div>
-        <Tooltip title="Show top 10 stocks highest grown rate in 2 months">
-          <i className="fa-solid fa-info title-tooltip"></i>
-        </Tooltip>
-        <h4 className="GrownRate__title">Top 10 Highest Grown Rate</h4>
+      <div className="GrownRate__title_header">
+        <h4 className="GrownRate__title">Highest Grown Rate</h4>
+        <div className="GrownRate__dropdown">
+          <select className="Menu__dropdown">
+            <option value="30">1 month</option>
+            <option value="60">2 months</option>
+            <option value="180">6 months</option>
+            <option value="360">12 months</option>
+          </select>
+        </div>
       </div>
       <div className="GrownRate__table">
         <table>

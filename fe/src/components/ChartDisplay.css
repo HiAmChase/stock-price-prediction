@@ -23,7 +23,8 @@
     margin: 4px;
 }
 
-.Tickerinput:focus {
+.Tickerinput:focus,
+.Menu__dropdown:focus {
     outline: none;
 }
 
