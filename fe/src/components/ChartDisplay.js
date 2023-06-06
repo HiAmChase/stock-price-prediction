@@ -197,7 +197,7 @@ function ChartDisplay({
           </select>
         </div>
         <h4 className="Chartdisplay__title">
-          {`${stockInfo.ticker.toUpperCase()} - ${stockInfo.company_name}`}
+          {`${stockInfo.ticker?.toUpperCase()} - ${stockInfo.company_name}`}
         </h4>
         <div>
           <Favorite isFavorite={isFavorite} handleFavorite={handleFavorite} />
