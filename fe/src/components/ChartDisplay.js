@@ -192,8 +192,8 @@ function ChartDisplay({
             value={predictType}
             onChange={(e) => dispatch(actions.setPredictType(e.target.value))}
           >
-            <option value="LAST_30_DAYS">30 Days</option>
-            <option value="LAST_60_DAYS">60 Days</option>
+            <option value="LAST_30_DAYS">1 month</option>
+            <option value="LAST_60_DAYS">2 months</option>
           </select>
         </div>
         <h4 className="Chartdisplay__title">

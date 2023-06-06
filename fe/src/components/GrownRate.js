@@ -1,13 +1,22 @@
 import React from "react"
 import "./GrownRate.css"
 
-function GrownRate({ stock, handleSetTicker }) {
+function GrownRate({
+  stock,
+  handleSetTicker,
+  grownRateDays,
+  setGrownRateDays,
+}) {
   return (
     <div className="GrownRate">
       <div className="GrownRate__title_header">
         <h4 className="GrownRate__title">Highest Grown Rate</h4>
         <div className="GrownRate__dropdown">
-          <select className="Menu__dropdown">
+          <select
+            className="Menu__dropdown"
+            value={grownRateDays}
+            onChange={(e) => setGrownRateDays(e.target.value)}
+          >
             <option value="30">1 month</option>
             <option value="60">2 months</option>
             <option value="180">6 months</option>

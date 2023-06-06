@@ -89,5 +89,8 @@ def predict_future(stock):
 
 @app.route("/grown_rate/stock", methods=["GET"])
 def get_stock_grown_rate():
-    data = get_highest_stock_grown_rate()
+    args = request.args.to_dict()
+    grown_rate_days = args.get("grown_rate_days")
+    grown_rate_days = int(grown_rate_days) or 30
+    data = get_highest_stock_grown_rate(grown_rate_days)
     return data

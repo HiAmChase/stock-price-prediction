@@ -4,8 +4,8 @@ const getAllStock = (params = null) => {
   return instance.get("/stock", { params })
 }
 
-const getStockGrownRate = () => {
-  return instance.get(`/grown_rate/stock`)
+const getStockGrownRate = (params = null) => {
+  return instance.get(`/grown_rate/stock`, { params })
 }
 
 const getStockInfo = (stock) => {

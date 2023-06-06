@@ -32,8 +32,9 @@ function App() {
   const [fundament, setFundament] = useState({})
   const [stocks, setStocks] = useState([])
   const [stocksGrownRate, setStocksGrownRate] = useState([])
-  const [stockSearch, setStockSearch] = useState("")
   const [predictPast, setPredictPast] = useState([])
+  const [stockSearch, setStockSearch] = useState("")
+  const [grownRateDays, setGrownRateDays] = useState("30")
   const [predictFuture, setPredictFuture] = useState(0)
 
   const resetVariable = () => {
@@ -60,9 +61,11 @@ function App() {
   }
 
   const getStocksGrownRateData = async () => {
-    await getStockGrownRate().then(({ data }) => {
-      setStocksGrownRate(data)
-    })
+    await getStockGrownRate({ grown_rate_days: grownRateDays }).then(
+      ({ data }) => {
+        setStocksGrownRate(data)
+      }
+    )
   }
 
   const fetchStatisticData = async () => {
@@ -133,6 +136,10 @@ function App() {
   }, [])
 
   useEffect(() => {
+    getStocksGrownRateData()
+  }, [grownRateDays])
+
+  useEffect(() => {
     resetVariable()
     handleGetPredictPast()
     handleGetPredictFuture()
@@ -160,7 +167,12 @@ function App() {
           setStockSearch={setStockSearch}
           handleSearchStock={handleSearchStock}
         />
-        <GrownRate stock={stocksGrownRate} handleSetTicker={handleSetTicker} />
+        <GrownRate
+          grownRateDays={grownRateDays}
+          setGrownRateDays={setGrownRateDays}
+          stock={stocksGrownRate}
+          handleSetTicker={handleSetTicker}
+        />
       </div>
       <div className="App__bottomPanel">
         <Market handleSetTicker={handleSetTicker} />
