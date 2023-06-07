@@ -91,6 +91,8 @@ def predict_future(stock):
 def get_stock_grown_rate():
     args = request.args.to_dict()
     grown_rate_days = args.get("grown_rate_days")
+    max_results = args.get("max_results")
     grown_rate_days = int(grown_rate_days) or 30
-    data = get_highest_stock_grown_rate(grown_rate_days)
+    max_results = int(max_results) or 10
+    data = get_highest_stock_grown_rate(grown_rate_days, max_results)
     return data

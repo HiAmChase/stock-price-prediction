@@ -33,7 +33,10 @@ function App() {
   const [stocksGrownRate, setStocksGrownRate] = useState([])
   const [predictPast, setPredictPast] = useState([])
   const [stockSearch, setStockSearch] = useState("")
-  const [grownRateDays, setGrownRateDays] = useState("30")
+  const [grownRateFilter, setGrownRateFilter] = useState({
+    grown_rate_days: "30",
+    max_results: "10",
+  })
   const [predictType, setPredictType] = useState("LAST_60_DAYS")
   const [predictFuture, setPredictFuture] = useState(0)
 
@@ -61,11 +64,9 @@ function App() {
   }
 
   const getStocksGrownRateData = async () => {
-    await getStockGrownRate({ grown_rate_days: grownRateDays }).then(
-      ({ data }) => {
-        setStocksGrownRate(data)
-      }
-    )
+    await getStockGrownRate(grownRateFilter).then(({ data }) => {
+      setStocksGrownRate(data)
+    })
   }
 
   const fetchStatisticData = async () => {
@@ -137,7 +138,7 @@ function App() {
 
   useEffect(() => {
     getStocksGrownRateData()
-  }, [grownRateDays])
+  }, [grownRateFilter])
 
   useEffect(() => {
     resetVariable()
@@ -170,8 +171,8 @@ function App() {
           handleSearchStock={handleSearchStock}
         />
         <GrownRate
-          grownRateDays={grownRateDays}
-          setGrownRateDays={setGrownRateDays}
+          grownRateFilter={grownRateFilter}
+          setGrownRateFilter={setGrownRateFilter}
           stock={stocksGrownRate}
           handleSetTicker={handleSetTicker}
         />

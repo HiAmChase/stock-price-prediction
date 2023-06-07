@@ -19,7 +19,7 @@ from constant import (
 )
 
 
-def get_highest_stock_grown_rate(grown_rate_days):
+def get_highest_stock_grown_rate(grown_rate_days, max_results):
     tickers = [stock.get("ticker") for stock in STOCK]
     stock_data = []
 
@@ -29,7 +29,7 @@ def get_highest_stock_grown_rate(grown_rate_days):
 
     # Get top 10 highest grown rate
     stock_data.sort(key=lambda x: x.get("percentage"), reverse=True)
-    stock_data = stock_data[0:10]
+    stock_data = stock_data[0:max_results]
 
     return stock_data
 
