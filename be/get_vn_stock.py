@@ -10,7 +10,7 @@ DATA_FETCHED = [
 ]
 
 COMPANIES = [
-    "AAA", "AAM", "ABR", "ABS", "ABT", "ACB", "ACC", "ACG", "ADG",
+    "AAA", "AAM", "ABR", "ABS", "ABT", "ACB", "ACC", "ADG",
     "ADS", "AGG", "AGM", "AGR", "AMD", "ANV", "APC", "APG", "APH", "ASG",
     "ASM", "ASP", "AST", "BAF", "BBC", "BCE", "BCG", "BCM", "BFC", "BHN",
     "BIC", "BID", "BKG", "BMC", "BMI", "BMP", "BRC", "BSI", "BTP", "BTT",
