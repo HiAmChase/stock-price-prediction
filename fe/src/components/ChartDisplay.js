@@ -193,6 +193,7 @@ function ChartDisplay({
             value={predictType}
             onChange={(e) => setPredictType(e.target.value)}
           >
+            <option value="LAST_15_DAYS">15 days</option>
             <option value="LAST_30_DAYS">1 month</option>
             <option value="LAST_60_DAYS">2 months</option>
           </select>

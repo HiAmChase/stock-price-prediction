@@ -8,7 +8,7 @@ import { getColor } from "./utils"
 
 function Market({ handleSetTicker }) {
   const watchList = useSelector((state) => state.watchList)
-  const dataCached = JSON.parse(localStorage.getItem("stocks"))
+  const dataCached = JSON.parse(localStorage.getItem("stocks")) || []
   const dispatch = useDispatch()
 
   let stocksInWatchList = []
