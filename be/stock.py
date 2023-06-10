@@ -469,6 +469,90 @@ STOCK = [
         "country": "VNM"
     },
     {
+        "ticker": "bwe",
+        "company_name": "CTCP Nước - Môi trường Bình Dương",
+        "industry": "Industry",
+        "sector": "Development",
+        "country": "VNM"
+    },
+    {
+        "ticker": "c32",
+        "company_name": "CTCP CIC39",
+        "industry": "Industry",
+        "sector": "Development",
+        "country": "VNM"
+    },
+    {
+        "ticker": "c47",
+        "company_name": "CTCP Xây dựng C47",
+        "industry": "Industry",
+        "sector": "Development",
+        "country": "VNM"
+    },
+    {
+        "ticker": "cav",
+        "company_name": "CTCP dây cáp điện Việt Nam",
+        "industry": "Industry",
+        "sector": "Development",
+        "country": "VNM"
+    },
+    {
+        "ticker": "cci",
+        "company_name": "CTCP Thương mại Củ Chi",
+        "industry": "Industry",
+        "sector": "Development",
+        "country": "VNM"
+    },
+    {
+        "ticker": "ccl",
+        "company_name": "CTCP Đầu tư và Phát triển Đô thị Dầu khí Cửu Long",
+        "industry": "Investment",
+        "sector": "Commercial",
+        "country": "VNM"
+    },
+    {
+        "ticker": "cdc",
+        "company_name": "CTCP Chương Dương",
+        "industry": "Industry",
+        "sector": "Development",
+        "country": "VNM"
+    },
+    {
+        "ticker": "chp",
+        "company_name": "CTCP Thủy điện miền Trung",
+        "industry": "Industry",
+        "sector": "Development",
+        "country": "VNM"
+    },
+    {
+        "ticker": "cig",
+        "company_name": "CTCP COMA18",
+        "industry": "Investment",
+        "sector": "Commercial",
+        "country": "VNM"
+    },
+    {
+        "ticker": "cii",
+        "company_name": "CTCP Hạ tầng Kỹ thuật TP.HCM",
+        "industry": "Investment",
+        "sector": "Commercial",
+        "country": "VNM"
+    },
+    {
+        "ticker": "ckg",
+        "company_name": "CTCP Xây dựng Kiên Giang",
+        "industry": "Investment",
+        "sector": "Commercial",
+        "country": "VNM"
+    },
+    {
+        "ticker": "clc",
+        "company_name": "CTCP Cát Lợi",
+        "industry": "Consumer Goods",
+        "sector": "Services",
+        "country": "VNM"
+    },
+    {
         "ticker": "ctg",
         "company_name": "Ngân hàng TMCP Công Thương Việt Nam - VIETINBANK",
         "industry": "Financial",
