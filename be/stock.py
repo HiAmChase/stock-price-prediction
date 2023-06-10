@@ -210,6 +210,41 @@ STOCK = [
         "country": "USA"
     },
     {
+        "ticker": "aaa",
+        "company_name": "Nhựa An Phát Xanh",
+        "industry": "Industry",
+        "sector": "Services",
+        "country": "VNM"
+    },
+    {
+        "ticker": "aam",
+        "company_name": "Thủy sản Mekong",
+        "industry": "Beverage",
+        "sector": "Consumer Staples",
+        "country": "VNM"
+    },
+    {
+        "ticker": "abr",
+        "company_name": "CTCP Đầu Tư Nhãn Hiệu Việt",
+        "industry": "Consumer Goods",
+        "sector": "Services",
+        "country": "VNM"
+    },
+    {
+        "ticker": "abs",
+        "company_name": "CTCP Nông nghiệp Bình Thuận",
+        "industry": "Energy",
+        "sector": "Resources",
+        "country": "VNM"
+    },
+    {
+        "ticker": "abt",
+        "company_name": "CTCP Nông nghiệp Bình Thuận",
+        "industry": "Energy",
+        "sector": "Resources",
+        "country": "VNM"
+    },
+    {
         "ticker": "acb",
         "company_name": "Ngân hàng TMCP Á Châu",
         "industry": "Financial",
