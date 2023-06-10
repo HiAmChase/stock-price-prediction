@@ -252,6 +252,132 @@ STOCK = [
         "country": "VNM"
     },
     {
+        "ticker": "acc",
+        "company_name": "CTCP Đầu tư và Xây dựng Bình Dương ACC",
+        "industry": "Industry",
+        "sector": "Development",
+        "country": "VNM"
+    },
+    {
+        "ticker": "adg",
+        "company_name": "CTCP Clever Group",
+        "industry": "Media",
+        "sector": "Entertainment",
+        "country": "VNM"
+    },
+    {
+        "ticker": "ads",
+        "company_name": "CTCP Damsan",
+        "industry": "Energy",
+        "sector": "Resources",
+        "country": "VNM"
+    },
+    {
+        "ticker": "agg",
+        "company_name": "CTCP Đầu tư và Bất động sản An Gia",
+        "industry": "Investment",
+        "sector": "Commercial",
+        "country": "VNM"
+    },
+    {
+        "ticker": "agm",
+        "company_name": "CTCP xuất nhập khẩu An Giang",
+        "industry": "Beverage",
+        "sector": "Consumer Staples",
+        "country": "VNM"
+    },
+    {
+        "ticker": "agr",
+        "company_name": "CTCP chứng khoán Agribank",
+        "industry": "Financial",
+        "sector": "Services",
+        "country": "VNM"
+    },
+    {
+        "ticker": "amd",
+        "company_name": "CTCP đầu tư và khoáng sản FLC Stone",
+        "industry": "Consumer Goods",
+        "sector": "Services",
+        "country": "VNM"
+    },
+    {
+        "ticker": "anv",
+        "company_name": "Công ty TNHH Amicogen Nam Việt",
+        "industry": "Beverage",
+        "sector": "Consumer Staples",
+        "country": "VNM"
+    },
+    {
+        "ticker": "apc",
+        "company_name": "CTCP Chiếu xạ An Phú",
+        "industry": "Energy",
+        "sector": "Resources",
+        "country": "VNM"
+    },
+    {
+        "ticker": "apg",
+        "company_name": "CTCP chứng khoán APG",
+        "industry": "Financial",
+        "sector": "Services",
+        "country": "VNM"
+    },
+    {
+        "ticker": "aph",
+        "company_name": "CTCP Tập đoàn An Phát Holdings",
+        "industry": "Energy",
+        "sector": "Resources",
+        "country": "VNM"
+    },
+    {
+        "ticker": "asg",
+        "company_name": "CTCP Tập đoàn ASG",
+        "industry": "Industry",
+        "sector": "Services",
+        "country": "VNM"
+    },
+    {
+        "ticker": "asm",
+        "company_name": "CTCP Tập đoàn Sao Mai",
+        "industry": "Investment",
+        "sector": "Commercial",
+        "country": "VNM"
+    },
+    {
+        "ticker": "asp",
+        "company_name": "CTCP Tập đoàn dầu khí An Pha",
+        "industry": "Energy",
+        "sector": "Resources",
+        "country": "VNM"
+    },
+    {
+        "ticker": "ast",
+        "company_name": "CTCP Dịch vụ Hàng không Taseco",
+        "industry": "Aerospace",
+        "sector": "Manufacture",
+        "country": "VNM"
+    },
+    {
+        "ticker": "bbc",
+        "company_name": "CTCP Bibica",
+        "industry": "Beverage",
+        "sector": "Consumer Staples",
+        "country": "VNM"
+    },
+    {
+        "ticker": "bce",
+        "company_name": "CTCP Xây dựng và Giao thông Bình Dương",
+        "industry": "Industry",
+        "sector": "Development",
+        "country": "VNM"
+    },
+    {
+        "ticker": "bcg",
+        "company_name": "CTCP Tập đoàn Bamboo Capital",
+        "industry": "Industry",
+        "sector": "Development",
+        "country": "VNM"
+    },
+    {
         "ticker": "bcm",
         "company_name": "Tổng Công ty Đầu tư và Phát triển Công nghiệp",
         "industry": "Industry",
