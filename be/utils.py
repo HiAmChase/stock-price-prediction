@@ -27,7 +27,6 @@ def get_highest_stock_grown_rate(grown_rate_days, max_results):
         data = get_stock_grown_rate(ticker, grown_rate_days)
         stock_data.append(data)
 
-    # Get top 10 highest grown rate
     stock_data.sort(key=lambda x: x.get("percentage"), reverse=True)
     stock_data = stock_data[0:max_results]
 
@@ -98,6 +97,8 @@ def get_statistic(stock):
 
 
 def predict_test_data(stock, predict_type):
+    if predict_type is None:
+        return []
     scaler = MinMaxScaler(feature_range=(0, 1))
     train_data = pd.read_csv(f"{TRAIN_DATA}/{stock}.csv")
     test_data = pd.read_csv(f"{TEST_DATA}/{stock}.csv")
@@ -145,6 +146,8 @@ def predict_test_data(stock, predict_type):
 
 
 def predict_future_stock(stock, predict_type):
+    if predict_type is None:
+        return 0
     scaler = MinMaxScaler(feature_range=(0, 1))
     train_data = pd.read_csv(f"{TRAIN_DATA}/{stock}.csv")
 
