@@ -385,10 +385,80 @@ STOCK = [
         "country": "VNM"
     },
     {
+        "ticker": "bfc",
+        "company_name": "CTCP Phân bón Bình Điền",
+        "industry": "Energy",
+        "sector": "Resources",
+        "country": "VNM"
+    },
+    {
+        "ticker": "bhn",
+        "company_name": "CTCP Bia - Rượu - Nước giải khát Hà Nội",
+        "industry": "Beverage",
+        "sector": "Consumer Staples",
+        "country": "VNM"
+    },
+    {
+        "ticker": "bic",
+        "company_name": "Bảo hiểm BIDV",
+        "industry": "Financial",
+        "sector": "Services",
+        "country": "VNM"
+    },
+    {
         "ticker": "bid",
         "company_name": "Ngân hàng TMCP Đầu tư và Phát triển Việt Nam",
         "industry": "Financial",
         "sector": "Services",
+        "country": "VNM"
+    },
+    {
+        "ticker": "bmc",
+        "company_name": "CTCP Khoáng sản Bình Định",
+        "industry": "Energy",
+        "sector": "Resources",
+        "country": "VNM"
+    },
+    {
+        "ticker": "bmi",
+        "company_name": "CTCP Bảo Minh",
+        "industry": "Financial",
+        "sector": "Services",
+        "country": "VNM"
+    },
+    {
+        "ticker": "bmp",
+        "company_name": "CTCP Nhựa Bình Minh",
+        "industry": "Industry",
+        "sector": "Development",
+        "country": "VNM"
+    },
+    {
+        "ticker": "brc",
+        "company_name": "CTCP Cao su Bến Thành",
+        "industry": "Energy",
+        "sector": "Resources",
+        "country": "VNM"
+    },
+    {
+        "ticker": "bsi",
+        "company_name": "Chứng khoán BIDV",
+        "industry": "Financial",
+        "sector": "Services",
+        "country": "VNM"
+    },
+    {
+        "ticker": "btp",
+        "company_name": "CTCP Nhiệt điện Bà Rịa",
+        "industry": "Energy",
+        "sector": "Resources",
+        "country": "VNM"
+    },
+    {
+        "ticker": "btt",
+        "company_name": "CTCP Thương mại - Dịch vụ Bến Thành",
+        "industry": "Industry",
+        "sector": "Development",
         "country": "VNM"
     },
     {
