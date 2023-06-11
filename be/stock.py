@@ -553,10 +553,192 @@ STOCK = [
         "country": "VNM"
     },
     {
+        "ticker": "cll",
+        "company_name": "CTCP Cảng Cát Lái",
+        "industry": "Consumer Goods",
+        "sector": "Services",
+        "country": "VNM"
+    },
+    {
+        "ticker": "clw",
+        "company_name": "CTCP Cấp nước Chợ Lớn",
+        "industry": "Consumer Goods",
+        "sector": "Services",
+        "country": "VNM"
+    },
+    {
+        "ticker": "cmg",
+        "company_name": "CTCP Tập đoàn Công nghệ CMC",
+        "industry": "Technology",
+        "sector": "Services",
+        "country": "VNM"
+    },
+    {
+        "ticker": "cmv",
+        "company_name": "CTCP Thương Ngiệp Cà Mau",
+        "industry": "Consumer Goods",
+        "sector": "Services",
+        "country": "VNM"
+    },
+    {
+        "ticker": "cmx",
+        "company_name": "CTCP Camimex Group",
+        "industry": "Beverage",
+        "sector": "Consumer Staples",
+        "country": "VNM"
+    },
+    {
+        "ticker": "cng",
+        "company_name": "CTCP CNG Việt Nam",
+        "industry": "Consumer Goods",
+        "sector": "Services",
+        "country": "VNM"
+    },
+    {
+        "ticker": "com",
+        "company_name": "CTCP Vật tư - Xăng dầu",
+        "industry": "Energy",
+        "sector": "Resources",
+        "country": "VNM"
+    },
+    {
+        "ticker": "crc",
+        "company_name": "CTCP Create Capital Việt Nam",
+        "industry": "Consumer Goods",
+        "sector": "Services",
+        "country": "VNM"
+    },
+    {
+        "ticker": "cre",
+        "company_name": "CTCP Bất động sản Thế kỷ",
+        "industry": "Investment",
+        "sector": "Commercial",
+        "country": "VNM"
+    },
+    {
+        "ticker": "csm",
+        "company_name": "CTCP Công nghệ Cao su Miền Nam",
+        "industry": "Industry",
+        "sector": "Development",
+        "country": "VNM"
+    },
+    {
+        "ticker": "csv",
+        "company_name": "CTCP hóa chất cơ bản Miền Nam",
+        "industry": "Energy",
+        "sector": "Resources",
+        "country": "VNM"
+    },
+    {
+        "ticker": "ctd",
+        "company_name": "CTCP Xây dựng Coteccons",
+        "industry": "Industry",
+        "sector": "Development",
+        "country": "VNM"
+    },
+    {
+        "ticker": "ctf",
+        "company_name": "CTCP City Auto",
+        "industry": "Consumer Goods",
+        "sector": "Services",
+        "country": "VNM"
+    },
+    {
         "ticker": "ctg",
         "company_name": "Ngân hàng TMCP Công Thương Việt Nam - VIETINBANK",
         "industry": "Financial",
         "sector": "Services",
+        "country": "VNM"
+    },
+    {
+        "ticker": "cti",
+        "company_name": "CTCP Đầu tư Phát triển Cường Thuận IDICO",
+        "industry": "Industry",
+        "sector": "Development",
+        "country": "VNM"
+    },
+    {
+        "ticker": "ctr",
+        "company_name": "Tổng CTCP công trình Viettel",
+        "industry": "Industry",
+        "sector": "Development",
+        "country": "VNM"
+    },
+    {
+        "ticker": "cts",
+        "company_name": "CTCP Chứng khoán Ngân hàng Công thương Việt Nam",
+        "industry": "Financial",
+        "sector": "Services",
+        "country": "VNM"
+    },
+    {
+        "ticker": "cvt",
+        "company_name": "Công ty Cổ phần CMC",
+        "industry": "Industry",
+        "sector": "Development",
+        "country": "VNM"
+    },
+    {
+        "ticker": "d2d",
+        "company_name": "CTCP Phát triển Đô thị Công nghiệp Số 2",
+        "industry": "Industry",
+        "sector": "Development",
+        "country": "VNM"
+    },
+    {
+        "ticker": "dag",
+        "company_name": "CTCP Tập đoàng Nhựa Đông Á",
+        "industry": "Industry",
+        "sector": "Development",
+        "country": "VNM"
+    },
+    {
+        "ticker": "dag",
+        "company_name": "CTCP Tập đoàn Nhựa Đông Á",
+        "industry": "Industry",
+        "sector": "Development",
+        "country": "VNM"
+    },
+    {
+        "ticker": "dah",
+        "company_name": "CTCP Tập đoàn Khách sạn Đông Á",
+        "industry": "Industry",
+        "sector": "Development",
+        "country": "VNM"
+    },
+    {
+        "ticker": "dat",
+        "company_name": "CTCP Đầu tư Du lịch và Phát triển Thủy sản",
+        "industry": "Industry",
+        "sector": "Development",
+        "country": "VNM"
+    },
+    {
+        "ticker": "dbc",
+        "company_name": "CTCP Tập đoàn Dabaco Việt Nam",
+        "industry": "Beverage",
+        "sector": "Consumer Staples",
+        "country": "VNM"
+    },
+    {
+        "ticker": "dbd",
+        "company_name": "CTCP Dược - Trang thiết bị Y tế Bidiphar",
+        "industry": "Medical",
+        "sector": "Consumer Staples",
+        "country": "VNM"
+    },
+    {
+        "ticker": "dbt",
+        "company_name": "CTCP Dược phẩm Bến Tre",
+        "industry": "Medical",
+        "sector": "Consumer Staples",
+        "country": "VNM"
+    },
+    {
+        "ticker": "dbt",
+        "company_name": "CTCP Dược phẩm Bến Tre",
+        "industry": "Medical",
+        "sector": "Consumer Staples",
         "country": "VNM"
     },
     {
@@ -718,6 +900,7 @@ STOCK = [
         "company_name": "CTCP Sữa Việt Nam - Vinamilk",
         "industry": "Beverage",
         "sector": "Consumer Staples",
+
         "country": "VNM"
     },
     {
