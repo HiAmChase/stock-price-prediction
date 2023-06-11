@@ -1463,9 +1463,135 @@ STOCK = [
         "country": "VNM"
     },
     {
+        "ticker": "l10",
+        "company_name": "CTCP LILAMA10",
+        "industry": "Industry",
+        "sector": "Development",
+        "country": "VNM"
+    },
+    {
+        "ticker": "laf",
+        "company_name": "CTCP Chế biến hàng xuất khẩu Long An",
+        "industry": "Consumer Goods",
+        "sector": "Services",
+        "country": "VNM"
+    },
+    {
+        "ticker": "lbm",
+        "company_name": "CTCP Khoáng sản và Vật liệu Xây dựng Lâm Đồng",
+        "industry": "Industry",
+        "sector": "Development",
+        "country": "VNM"
+    },
+    {
+        "ticker": "lcg",
+        "company_name": "CTCP LIZEN",
+        "industry": "Industry",
+        "sector": "Development",
+        "country": "VNM"
+    },
+    {
+        "ticker": "ldg",
+        "company_name": "CTCP Đầu tư LDG",
+        "industry": "Investment",
+        "sector": "Commercial",
+        "country": "VNM"
+    },
+    {
+        "ticker": "lec",
+        "company_name": "CTCP Bất động sản Điện lực Miền Trung",
+        "industry": "Investment",
+        "sector": "Commercial",
+        "country": "VNM"
+    },
+    {
+        "ticker": "lgc",
+        "company_name": "CTCP đầu tư cầu đường CII",
+        "industry": "Industry",
+        "sector": "Development",
+        "country": "VNM"
+    },
+    {
+        "ticker": "lgl",
+        "company_name": "CTCP Đầu tư và Phát triển Đô thị Long Giang",
+        "industry": "Investment",
+        "sector": "Commercial",
+        "country": "VNM"
+    },
+    {
+        "ticker": "lhg",
+        "company_name": "CTCP Long Hậu",
+        "industry": "Investment",
+        "sector": "Commercial",
+        "country": "VNM"
+    },
+    {
+        "ticker": "lix",
+        "company_name": "CTCP Bột giặt Lix",
+        "industry": "Consumer Goods",
+        "sector": "Services",
+        "country": "VNM"
+    },
+    {
+        "ticker": "lm8",
+        "company_name": "CTCP Lilama 18",
+        "industry": "Industry",
+        "sector": "Development",
+        "country": "VNM"
+    },
+    {
+        "ticker": "lpb",
+        "company_name": "Ngân hàng LienVietPostBank",
+        "industry": "Financial",
+        "sector": "Services",
+        "country": "VNM"
+    },
+    {
+        "ticker": "lss",
+        "company_name": "CTCP Mía đường Lam Sơn",
+        "industry": "Consumer Goods",
+        "sector": "Services",
+        "country": "VNM"
+    },
+    {
         "ticker": "mbb",
         "company_name": "Ngân hàng TMCP Quân Đội - MBBank",
         "industry": "Financial",
+        "sector": "Services",
+        "country": "VNM"
+    },
+    {
+        "ticker": "mcp",
+        "company_name": "CTCP In và Bao bì Mỹ Châu",
+        "industry": "Industry",
+        "sector": "Development",
+        "country": "VNM"
+    },
+    {
+        "ticker": "mdg",
+        "company_name": "CTCP Miền Đông",
+        "industry": "Industry",
+        "sector": "Development",
+        "country": "VNM"
+    },
+    {
+        "ticker": "mhc",
+        "company_name": "CTCP MHC",
+        "industry": "Industry",
+        "sector": "Development",
+        "country": "VNM"
+    },
+    {
+        "ticker": "mig",
+        "company_name": "Tổng CTCP Bảo Hiểm Quân Đội",
+        "industry": "Financial",
+        "sector": "Services",
+        "country": "VNM"
+    },
+    {
+        "ticker": "msh",
+        "company_name": "CTCP May Sông Hồng",
+        "industry": "Consumer Goods",
         "sector": "Services",
         "country": "VNM"
     },
@@ -1484,6 +1610,97 @@ STOCK = [
         "country": "VNM"
     },
     {
+        "ticker": "naf",
+        "company_name": "CTCP Nafoods Group",
+        "industry": "Consumer Goods",
+        "sector": "Services",
+        "country": "VNM"
+    },
+    {
+        "ticker": "nav",
+        "company_name": "CTCP Nam Việt",
+        "industry": "Industry",
+        "sector": "Development",
+        "country": "VNM"
+    },
+    {
+        "ticker": "nbb",
+        "company_name": "CTCP Năm Bảy Bảy",
+        "industry": "Investment",
+        "sector": "Commercial",
+        "country": "VNM"
+    },
+    {
+        "ticker": "nct",
+        "company_name": "CTCP dịch vụ hàng hóa Nội Bài",
+        "industry": "Industry",
+        "sector": "Development",
+        "country": "VNM"
+    },
+    {
+        "ticker": "nha",
+        "company_name": "CTCP Đô thị Nam Hà Nội",
+        "industry": "Industry",
+        "sector": "Development",
+        "country": "VNM"
+    },
+    {
+        "ticker": "nhh",
+        "company_name": "CTCP Nhựa Hà Nội",
+        "industry": "Industry",
+        "sector": "Development",
+        "country": "VNM"
+    },
+    {
+        "ticker": "nht",
+        "company_name": "CTCP Sản xuất và Thương Mại Nam Hoa",
+        "industry": "Consumer Goods",
+        "sector": "Services",
+        "country": "VNM"
+    },
+    {
+        "ticker": "nkg",
+        "company_name": "CTCP Thép Nam Kim",
+        "industry": "Energy",
+        "sector": "Resources",
+        "country": "VNM"
+    },
+    {
+        "ticker": "nlg",
+        "company_name": "CTCP Đầu tư Nam Long",
+        "industry": "Investment",
+        "sector": "Commercial",
+        "country": "VNM"
+    },
+    {
+        "ticker": "nnc",
+        "company_name": "CTCP Đá Nú Nhỏ",
+        "industry": "Industry",
+        "sector": "Development",
+        "country": "VNM"
+    },
+    {
+        "ticker": "nsc",
+        "company_name": "CTCP Giống cây trồng Trung Ương",
+        "industry": "Consumer Goods",
+        "sector": "Services",
+        "country": "VNM"
+    },
+    {
+        "ticker": "nt2",
+        "company_name": "CTCP Điện lực Dầu khí Nhơn Trạch 2",
+        "industry": "Energy",
+        "sector": "Resources",
+        "country": "VNM"
+    },
+    {
+        "ticker": "ntl",
+        "company_name": "CTCP Phát triển đô thị Tử Liêm",
+        "industry": "Investment",
+        "sector": "Commercial",
+        "country": "VNM"
+    },
+    {
         "ticker": "nvl",
         "company_name": "Tập đoàn Đầu tư Địa ốc NoVa",
         "industry": "Investment",
@@ -1491,10 +1708,136 @@ STOCK = [
         "country": "VNM"
     },
     {
+        "ticker": "nvt",
+        "company_name": "CTCP Bất động sản Du lịch Ninh Vân Bay",
+        "industry": "Investment",
+        "sector": "Commercial",
+        "country": "VNM"
+    },
+    {
+        "ticker": "ogc",
+        "company_name": "CTCP Tập đoàn Đại Dương",
+        "industry": "Investment",
+        "sector": "Commercial",
+        "country": "VNM"
+    },
+    {
+        "ticker": "opc",
+        "company_name": "CTCP Dược phẩm OPC",
+        "industry": "Medical",
+        "sector": "Consumer Staples",
+        "country": "VNM"
+    },
+    {
+        "ticker": "ors",
+        "company_name": "CTCP Chứng khoán Tiên Phong",
+        "industry": "Financial",
+        "sector": "Services",
+        "country": "VNM"
+    },
+    {
+        "ticker": "pac",
+        "company_name": "CTCP Pin Ắc quy Miền Nam",
+        "industry": "Industry",
+        "sector": "Development",
+        "country": "VNM"
+    },
+    {
+        "ticker": "pan",
+        "company_name": "CTCP Tập Đoàn PAN",
+        "industry": "Consumer Goods",
+        "sector": "Services",
+        "country": "VNM"
+    },
+    {
+        "ticker": "pc1",
+        "company_name": "CTCP Tập đoàn PC1",
+        "industry": "Industry",
+        "sector": "Development",
+        "country": "VNM"
+    },
+    {
+        "ticker": "pdn",
+        "company_name": "CTCP Cảng Đồng Nai",
+        "industry": "Industry",
+        "sector": "Development",
+        "country": "VNM"
+    },
+    {
         "ticker": "pdr",
         "company_name": "CTCP Phát triển Bất động sản Phát Đạt",
         "industry": "Investment",
         "sector": "Commercial",
+        "country": "VNM"
+    },
+    {
+        "ticker": "pet",
+        "company_name": "CTCP Dịch vụ Tổng hợp Dầu khí",
+        "industry": "Energy",
+        "sector": "Resources",
+        "country": "VNM"
+    },
+    {
+        "ticker": "pgc",
+        "company_name": "Tổng Công ty Gas Petrolimex",
+        "industry": "Energy",
+        "sector": "Resources",
+        "country": "VNM"
+    },
+    {
+        "ticker": "pgd",
+        "company_name": "CTCP Phân phối khí Thấp ap",
+        "industry": "Energy",
+        "sector": "Resources",
+        "country": "VNM"
+    },
+    {
+        "ticker": "pgi",
+        "company_name": "CTCP Bảo hiểm Petrolimex",
+        "industry": "Financial",
+        "sector": "Services",
+        "country": "VNM"
+    },
+    {
+        "ticker": "pgv",
+        "company_name": "Tổng Công ty Phát điện 3",
+        "industry": "Energy",
+        "sector": "Resources",
+        "country": "VNM"
+    },
+    {
+        "ticker": "phc",
+        "company_name": "CTCP Xây dựng Phục Hưng Holdings",
+        "industry": "Industry",
+        "sector": "Development",
+        "country": "VNM"
+    },
+    {
+        "ticker": "phr",
+        "company_name": "CTCP Cao su Phước Hòa",
+        "industry": "Energy",
+        "sector": "Resources",
+        "country": "VNM"
+    },
+    {
+        "ticker": "pit",
+        "company_name": "CTCP Xuất nhập khẩu Petrolimex",
+        "industry": "Consumer Goods",
+        "sector": "Services",
+        "country": "VNM"
+    },
+    {
+        "ticker": "pjt",
+        "company_name": "CTCP Vận tải Đường Petrolimex",
+        "industry": "Industry",
+        "sector": "Development",
+        "country": "VNM"
+    },
+    {
+        "ticker": "plp",
+        "company_name": "CTCP Sản xuất và Công nghệ Nhựa Pha Lê",
+        "industry": "Energy",
+        "sector": "Resources",
         "country": "VNM"
     },
     {
