@@ -819,6 +819,139 @@ STOCK = [
         "country": "VNM"
     },
     {
+        "ticker": "dpg",
+        "company_name": "CTCP Tập đoàn Đạt Phương",
+        "industry": "Industry",
+        "sector": "Development",
+        "country": "VNM"
+    },
+    {
+        "ticker": "dpm",
+        "company_name": "Tổng CTCP Phân bón và Hóa chất dầu khí",
+        "industry": "Energy",
+        "sector": "Resources",
+        "country": "VNM"
+    },
+    {
+        "ticker": "dpr",
+        "company_name": "CTCP Cao su Đồng Phú",
+        "industry": "Energy",
+        "sector": "Resources",
+        "country": "VNM"
+    },
+    {
+        "ticker": "dqc",
+        "company_name": "CTCP Tập đoàn Điện Quang",
+        "industry": "Industry",
+        "sector": "Development",
+        "country": "VNM"
+    },
+    {
+        "ticker": "drc",
+        "company_name": "CTCP Cao su Đà Nẵng",
+        "industry": "Industry",
+        "sector": "Development",
+        "country": "VNM"
+    },
+    {
+        "ticker": "drh",
+        "company_name": "CTCP DRH Holdings",
+        "industry": "Investment",
+        "sector": "Commercial",
+        "country": "VNM"
+    },
+    {
+        "ticker": "drl",
+        "company_name": "CTCP Thủy Điện - Điện lực 3",
+        "industry": "Energy",
+        "sector": "Resources",
+        "country": "VNM"
+    },
+    {
+        "ticker": "dsn",
+        "company_name": "CTCP Công viên nước Đầm Sen",
+        "industry": "Entertainment",
+        "sector": "Services",
+        "country": "VNM"
+    },
+    {
+        "ticker": "dta",
+        "company_name": "CTCP Đệ Tam",
+        "industry": "Investment",
+        "sector": "Commercial",
+        "country": "VNM"
+    },
+    {
+        "ticker": "dtl",
+        "company_name": "CTCP Đại Thiên Lộc",
+        "industry": "Energy",
+        "sector": "Resources",
+        "country": "VNM"
+    },
+    {
+        "ticker": "dtt",
+        "company_name": "CTCP Kỹ nghệ Đô Thành",
+        "industry": "Energy",
+        "sector": "Resources",
+        "country": "VNM"
+    },
+    {
+        "ticker": "dvp",
+        "company_name": "CTCP Đầu tư và Phát triển cảng Đình Vũ",
+        "industry": "Industry",
+        "sector": "Development",
+        "country": "VNM"
+    },
+    {
+        "ticker": "dxg",
+        "company_name": "CTCP Tập đoàn Đất Xanh",
+        "industry": "Investment",
+        "sector": "Commercial",
+        "country": "VNM"
+    },
+    {
+        "ticker": "dxv",
+        "company_name": "CTCP ViCem Vật liệu xây dựng Đà Nẵng",
+        "industry": "Industry",
+        "sector": "Development",
+        "country": "VNM"
+    },
+    {
+        "ticker": "eib",
+        "company_name": "Ngân hàng Eximbank",
+        "industry": "Financial",
+        "sector": "Services",
+        "country": "VNM"
+    },
+    {
+        "ticker": "elc",
+        "company_name": "CTCP Công nghệ - viễn thông ELCOM",
+        "industry": "Technology",
+        "sector": "Services",
+        "country": "VNM"
+    },
+    {
+        "ticker": "emc",
+        "company_name": "CTCP Cơ Điện Thủ Đức",
+        "industry": "Industry",
+        "sector": "Development",
+        "country": "VNM"
+    },
+    {
+        "ticker": "eve",
+        "company_name": "CTCP Everpia",
+        "industry": "Consumer Goods",
+        "sector": "Services",
+        "country": "VNM"
+    },
+    {
+        "ticker": "evf",
+        "company_name": "Công ty Tài chính Cổ phần Điện lực",
+        "industry": "Financial",
+        "sector": "Services",
+        "country": "VNM"
+    },
+    {
         "ticker": "fpt",
         "company_name": "Công ty Cổ phần FPT",
         "industry": "Technology",
