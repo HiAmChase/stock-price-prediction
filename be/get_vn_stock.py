@@ -22,7 +22,7 @@ COMPANIES = [
     "DPG", "DPM", "DPR", "DQC", "DRC", "DRH", "DRL", "DSN", "DTA", "DTL",
     "DTT", "DVP", "DXG", "DXV", "EIB", "ELC", "EMC", "EVE", "EVF",
     "EVG", "FCM", "FCN", "FDC", "FIR", "FIT", "FMC", "FPT", "FRT", "FTS",
-    "GAB", "GAS", "GDT", "GEG", "GEX", "GIL", "GMC", "GMD", "GSP",
+    "GAS", "GDT", "GEG", "GEX", "GIL", "GMC", "GMD", "GSP",
     "GTA", "GVR", "HAG", "HAH", "HAP", "HAR", "HAS", "HAX", "HBC", "HCD",
     "HCM", "HDB", "HDC", "HDG", "HHP", "HHS", "HHV", "HID", "HII", "HMC",
     "HNG", "HPG", "HPX", "HQC", "HRC", "HSG", "HSL", "HT1", "HTI", "HTL",

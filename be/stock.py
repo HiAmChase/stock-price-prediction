@@ -952,9 +952,72 @@ STOCK = [
         "country": "VNM"
     },
     {
+        "ticker": "evg",
+        "company_name": "CTCP Tập đoàn Everland",
+        "industry": "Industry",
+        "sector": "Development",
+        "country": "VNM"
+    },
+    {
+        "ticker": "fcm",
+        "company_name": "CTCP Khoáng sản FECON",
+        "industry": "Energy",
+        "sector": "Resources",
+        "country": "VNM"
+    },
+    {
+        "ticker": "fcn",
+        "company_name": "CTCP FECON",
+        "industry": "Industry",
+        "sector": "Development",
+        "country": "VNM"
+    },
+    {
+        "ticker": "fdc",
+        "company_name": "CTCP Phát triển Đầu tư HCM",
+        "industry": "Investment",
+        "sector": "Commercial",
+        "country": "VNM"
+    },
+    {
+        "ticker": "fir",
+        "company_name": "CTCP Địa ốc First Real",
+        "industry": "Investment",
+        "sector": "Commercial",
+        "country": "VNM"
+    },
+    {
+        "ticker": "fit",
+        "company_name": "CTCP Tập đoàn F.I.T",
+        "industry": "Investment",
+        "sector": "Commercial",
+        "country": "VNM"
+    },
+    {
+        "ticker": "fmc",
+        "company_name": "CTCP Thực phẩm Sao Ta",
+        "industry": "Beverage",
+        "sector": "Consumer Staples",
+        "country": "VNM"
+    },
+    {
         "ticker": "fpt",
         "company_name": "Công ty Cổ phần FPT",
         "industry": "Technology",
+        "sector": "Services",
+        "country": "VNM"
+    },
+    {
+        "ticker": "frt",
+        "company_name": "CTCP Bán lẻ Kỹ thuật số FPT",
+        "industry": "Technology",
+        "sector": "Services",
+        "country": "VNM"
+    },
+    {
+        "ticker": "fts",
+        "company_name": "CTCP Chứng khoán FPT",
+        "industry": "Financial",
         "sector": "Services",
         "country": "VNM"
     },
@@ -966,6 +1029,62 @@ STOCK = [
         "country": "VNM"
     },
     {
+        "ticker": "gdt",
+        "company_name": "CTCP Chế biến Gỗ Đức Thành",
+        "industry": "Consumer Goods",
+        "sector": "Services",
+        "country": "VNM"
+    },
+    {
+        "ticker": "geg",
+        "company_name": "CTCP Điện Gia Lai",
+        "industry": "Energy",
+        "sector": "Resources",
+        "country": "VNM"
+    },
+    {
+        "ticker": "gex",
+        "company_name": "CTCP Tập đoàn Gelex",
+        "industry": "Industry",
+        "sector": "Development",
+        "country": "VNM"
+    },
+    {
+        "ticker": "gil",
+        "company_name": "CTCP Xuất Nhập Khẩu Bình Thạnh",
+        "industry": "Consumer Goods",
+        "sector": "Services",
+        "country": "VNM"
+    },
+    {
+        "ticker": "gmc",
+        "company_name": "CTCP Garmex Sài Gòn",
+        "industry": "Consumer Goods",
+        "sector": "Services",
+        "country": "VNM"
+    },
+    {
+        "ticker": "gmd",
+        "company_name": "CTCP Gemadept",
+        "industry": "Consumer Goods",
+        "sector": "Services",
+        "country": "VNM"
+    },
+    {
+        "ticker": "gsp",
+        "company_name": "CTCP Vận tải Sản Phẩm khí Quốc Tế",
+        "industry": "Consumer Goods",
+        "sector": "Services",
+        "country": "VNM"
+    },
+    {
+        "ticker": "gta",
+        "company_name": "CTCP chế biến gỗ Thuận An",
+        "industry": "Consumer Goods",
+        "sector": "Services",
+        "country": "VNM"
+    },
+    {
         "ticker": "gvr",
         "company_name": "Tập đoàn Công nghiệp Cao su Việt Nam",
         "industry": "Industry",
@@ -973,10 +1092,136 @@ STOCK = [
         "country": "VNM"
     },
     {
+        "ticker": "hag",
+        "company_name": "CTCP Hoàng Anh Gia Lai",
+        "industry": "Investment",
+        "sector": "Commercial",
+        "country": "VNM"
+    },
+    {
+        "ticker": "hah",
+        "company_name": "CTCP Vận tải và xếp dỡ Hải An",
+        "industry": "Industry",
+        "sector": "Development",
+        "country": "VNM"
+    },
+    {
+        "ticker": "hap",
+        "company_name": "CTCP Tập đoàn HAPACO",
+        "industry": "Energy",
+        "sector": "Resources",
+        "country": "VNM"
+    },
+    {
+        "ticker": "har",
+        "company_name": "CTCP Bất động sản An Dương Thảo Điền",
+        "industry": "Investment",
+        "sector": "Commercial",
+        "country": "VNM"
+    },
+    {
+        "ticker": "has",
+        "company_name": "CTCP Hacisco",
+        "industry": "Industry",
+        "sector": "Development",
+        "country": "VNM"
+    },
+    {
+        "ticker": "hax",
+        "company_name": "CTCP Dịch vụ Ô tô Hàng Xanh",
+        "industry": "Industry",
+        "sector": "Development",
+        "country": "VNM"
+    },
+    {
+        "ticker": "hbc",
+        "company_name": "CTCP Tập đoàn Xây dựng Hòa Bình",
+        "industry": "Industry",
+        "sector": "Development",
+        "country": "VNM"
+    },
+    {
+        "ticker": "hcd",
+        "company_name": "CTCP Đầu tư sản xuất HCD",
+        "industry": "Industry",
+        "sector": "Development",
+        "country": "VNM"
+    },
+    {
+        "ticker": "hcm",
+        "company_name": "CTCP Chứng khoán TP.HCM",
+        "industry": "Financial",
+        "sector": "Services",
+        "country": "VNM"
+    },
+    {
         "ticker": "hdb",
         "company_name": "Ngân hàng TMCP Phát triển - HDBank",
         "industry": "Financial",
         "sector": "Services",
+        "country": "VNM"
+    },
+    {
+        "ticker": "hdc",
+        "company_name": "CTCP Phát triển nhà Bà Rịa - Vũng Tàu",
+        "industry": "Investment",
+        "sector": "Commercial",
+        "country": "VNM"
+    },
+    {
+        "ticker": "hdg",
+        "company_name": "CTCP Tập đoàn Hà Đô",
+        "industry": "Investment",
+        "sector": "Commercial",
+        "country": "VNM"
+    },
+    {
+        "ticker": "hhp",
+        "company_name": "CTCP Giấy Hoàng Hà Hải Phòng",
+        "industry": "Energy",
+        "sector": "Resources",
+        "country": "VNM"
+    },
+    {
+        "ticker": "hhs",
+        "company_name": "CTCP Đầu tư - Dịch vụ Hoàng Huy",
+        "industry": "Industry",
+        "sector": "Development",
+        "country": "VNM"
+    },
+    {
+        "ticker": "hhv",
+        "company_name": "CTCP Đầu tư Hạ Tầng Giao thông Đèo Cả",
+        "industry": "Industry",
+        "sector": "Development",
+        "country": "VNM"
+    },
+    {
+        "ticker": "hid",
+        "company_name": "CTCP Halcom Việt Nam",
+        "industry": "Industry",
+        "sector": "Development",
+        "country": "VNM"
+    },
+    {
+        "ticker": "hii",
+        "company_name": "CTCP An Tiến Industries",
+        "industry": "Energy",
+        "sector": "Resources",
+        "country": "VNM"
+    },
+    {
+        "ticker": "hmc",
+        "company_name": "CTCP Kim khí TP.HCM - VNSTEEL",
+        "industry": "Energy",
+        "sector": "Resources",
+        "country": "VNM"
+    },
+    {
+        "ticker": "hng",
+        "company_name": "CTCP Nông ngiệp Quốc tế Hoàng Anh Gia Lai",
+        "industry": "Beverage",
+        "sector": "Consumer Staples",
         "country": "VNM"
     },
     {
