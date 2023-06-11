@@ -735,8 +735,85 @@ STOCK = [
         "country": "VNM"
     },
     {
-        "ticker": "dbt",
-        "company_name": "CTCP Dược phẩm Bến Tre",
+        "ticker": "dc4",
+        "company_name": "CTCP Xây dựng DIC Holdings",
+        "industry": "Industry",
+        "sector": "Development",
+        "country": "VNM"
+    },
+    {
+        "ticker": "dcl",
+        "company_name": "CTCP Dược phẩm Cửu Long",
+        "industry": "Medical",
+        "sector": "Consumer Staples",
+        "country": "VNM"
+    },
+    {
+        "ticker": "dcm",
+        "company_name": "CTCP Phân Bón Dầu khí Cà Mau",
+        "industry": "Energy",
+        "sector": "Resources",
+        "country": "VNM"
+    },
+    {
+        "ticker": "dgc",
+        "company_name": "CTCP Tập đoàn Hóa chất Đức Giang",
+        "industry": "Energy",
+        "sector": "Resources",
+        "country": "VNM"
+    },
+    {
+        "ticker": "dgw",
+        "company_name": "CTCP Thế giới Số",
+        "industry": "Consumer Goods",
+        "sector": "Services",
+        "country": "VNM"
+    },
+    {
+        "ticker": "dha",
+        "company_name": "CTCP Hóa An",
+        "industry": "Industry",
+        "sector": "Development",
+        "country": "VNM"
+    },
+    {
+        "ticker": "dhc",
+        "company_name": "CTCP Đông Hải Bến Tre",
+        "industry": "Energy",
+        "sector": "Resources",
+        "country": "VNM"
+    },
+    {
+        "ticker": "dhg",
+        "company_name": "CTCP Dược Hậu Giang",
+        "industry": "Medical",
+        "sector": "Consumer Staples",
+        "country": "VNM"
+    },
+    {
+        "ticker": "dhm",
+        "company_name": "CTCP khai thác khoáng sản Dương Hiếu",
+        "industry": "Energy",
+        "sector": "Resources",
+        "country": "VNM"
+    },
+    {
+        "ticker": "dig",
+        "company_name": "Tổng CTCP Đầu tư phát triển Xây dựng",
+        "industry": "Industry",
+        "sector": "Development",
+        "country": "VNM"
+    },
+    {
+        "ticker": "dlg",
+        "company_name": "CTCP Tập đoàn Đức Long Gia Lai",
+        "industry": "Consumer Goods",
+        "sector": "Services",
+        "country": "VNM"
+    },
+    {
+        "ticker": "dmc",
+        "company_name": "CTCP Xuất nhập khẩu Y tế Domesco",
         "industry": "Medical",
         "sector": "Consumer Staples",
         "country": "VNM"
