@@ -2303,6 +2303,195 @@ STOCK = [
         "country": "VNM"
     },
     {
+        "ticker": "tcm",
+        "company_name": "CTCP Dệt may Thành Công",
+        "industry": "Consumer Goods",
+        "sector": "Services",
+        "country": "VNM"
+    },
+    {
+        "ticker": "tco",
+        "company_name": "CTCP Vận tải Duyên Hải",
+        "industry": "Industry",
+        "sector": "Development",
+        "country": "VNM"
+    },
+    {
+        "ticker": "tcr",
+        "company_name": "CTCP Công nghiệp Gốm sứ Taicera",
+        "industry": "Industry",
+        "sector": "Development",
+        "country": "VNM"
+    },
+    {
+        "ticker": "tct",
+        "company_name": "CTCP Cáp treo Núi Bà Tây Ninh",
+        "industry": "Industry",
+        "sector": "Development",
+        "country": "VNM"
+    },
+    {
+        "ticker": "tdc",
+        "company_name": "CTCP Kinh doanh và Phát triển Bình Dương",
+        "industry": "Industry",
+        "sector": "Development",
+        "country": "VNM"
+    },
+    {
+        "ticker": "tdg",
+        "company_name": "CTCP Đầu tư TDG GLOBAL",
+        "industry": "Investment",
+        "sector": "Commercial",
+        "country": "VNM"
+    },
+    {
+        "ticker": "tdh",
+        "company_name": "CTCP Phát triển nhà Thủ Đức",
+        "industry": "Investment",
+        "sector": "Commercial",
+        "country": "VNM"
+    },
+    {
+        "ticker": "tdm",
+        "company_name": "CTCP Nước Thủ Dầu Một",
+        "industry": "Industry",
+        "sector": "Development",
+        "country": "VNM"
+    },
+    {
+        "ticker": "tdp",
+        "company_name": "CTCP Thuận Đức Bỉm Sơn",
+        "industry": "Industry",
+        "sector": "Development",
+        "country": "VNM"
+    },
+    {
+        "ticker": "tdw",
+        "company_name": "CTCP Cấp nước Thủ Đức",
+        "industry": "Industry",
+        "sector": "Development",
+        "country": "VNM"
+    },
+    {
+        "ticker": "teg",
+        "company_name": "CTCP Năng lượng Trường Thành",
+        "industry": "Energy",
+        "sector": "Resources",
+        "country": "VNM"
+    },
+    {
+        "ticker": "tgg",
+        "company_name": "CTCP Louis Capital",
+        "industry": "Industry",
+        "sector": "Development",
+        "country": "VNM"
+    },
+    {
+        "ticker": "thg",
+        "company_name": "CTCP Đầu tư và Xây dựng Tiến Giang",
+        "industry": "Industry",
+        "sector": "Development",
+        "country": "VNM"
+    },
+    {
+        "ticker": "thi",
+        "company_name": "CTCP Thiết bị Điện",
+        "industry": "Industry",
+        "sector": "Development",
+        "country": "VNM"
+    },
+    {
+        "ticker": "tip",
+        "company_name": "CTCP Phát triển Khu công nghiệp Tín Nghĩa",
+        "industry": "Investment",
+        "sector": "Commercial",
+        "country": "VNM"
+    },
+    {
+        "ticker": "tix",
+        "company_name": "CTCP Đầu tư Tân Bình",
+        "industry": "Investment",
+        "sector": "Commercial",
+        "country": "VNM"
+    },
+    {
+        "ticker": "tld",
+        "company_name": "CTCP Đầu tư Xây dựng Thăng Long",
+        "industry": "Industry",
+        "sector": "Development",
+        "country": "VNM"
+    },
+    {
+        "ticker": "tlg",
+        "company_name": "CTCP Tập đoàn Thiên Long",
+        "industry": "Consumer Goods",
+        "sector": "Services",
+        "country": "VNM"
+    },
+    {
+        "ticker": "tlh",
+        "company_name": "CTCP Tập đoàn thép Tiến Lên",
+        "industry": "Energy",
+        "sector": "Resources",
+        "country": "VNM"
+    },
+    {
+        "ticker": "tmp",
+        "company_name": "CTCP Thủy điện Thác Mơ",
+        "industry": "Energy",
+        "sector": "Resources",
+        "country": "VNM"
+    },
+    {
+        "ticker": "tms",
+        "company_name": "CTCP Transimex",
+        "industry": "Industry",
+        "sector": "Development",
+        "country": "VNM"
+    },
+    {
+        "ticker": "tmt",
+        "company_name": "CTCP Ô tô TMT",
+        "industry": "Industry",
+        "sector": "Development",
+        "country": "VNM"
+    },
+    {
+        "ticker": "tn1",
+        "company_name": "CTCP Thương mại Dịch vụ TNS Holdings",
+        "industry": "Investment",
+        "sector": "Commercial",
+        "country": "VNM"
+    },
+    {
+        "ticker": "tna",
+        "company_name": "CTCP Xuất nhập khẩu Thiên Nam",
+        "industry": "Consumer Goods",
+        "sector": "Services",
+        "country": "VNM"
+    },
+    {
+        "ticker": "tnc",
+        "company_name": "CTCP Cao su Thống nhất",
+        "industry": "Energy",
+        "sector": "Resources",
+        "country": "VNM"
+    },
+    {
+        "ticker": "tni",
+        "company_name": "CTCP Tập đoàn Thành Nam",
+        "industry": "Energy",
+        "sector": "Resources",
+        "country": "VNM"
+    },
+    {
+        "ticker": "tnt",
+        "company_name": "CTCP tập đoàn TNT",
+        "industry": "Investment",
+        "sector": "Commercial",
+        "country": "VNM"
+    },
+    {
         "ticker": "tpb",
         "company_name": "Ngân hàng TMCP Tiên Phong - TPBank",
         "industry": "Financial",
@@ -2310,9 +2499,177 @@ STOCK = [
         "country": "VNM"
     },
     {
+        "ticker": "tpc",
+        "company_name": "CTCP Nhựa Tân Đại Hưng",
+        "industry": "Industry",
+        "sector": "Development",
+        "country": "VNM"
+    },
+    {
+        "ticker": "tra",
+        "company_name": "CTCP Traphaco",
+        "industry": "Medical",
+        "sector": "Consumer Staples",
+        "country": "VNM"
+    },
+    {
+        "ticker": "trc",
+        "company_name": "CTCP Cao su Tây Ninh",
+        "industry": "Energy",
+        "sector": "Resources",
+        "country": "VNM"
+    },
+    {
+        "ticker": "tsc",
+        "company_name": "CTCP Kỹ thuật nông nghiệp Cần Thơ",
+        "industry": "Consumer Goods",
+        "sector": "Services",
+        "country": "VNM"
+    },
+    {
+        "ticker": "tta",
+        "company_name": "CTCP Đầu tư và Phát triển Trường Thành",
+        "industry": "Consumer Goods",
+        "sector": "Services",
+        "country": "VNM"
+    },
+    {
+        "ticker": "ttb",
+        "company_name": "CTCP Tập đoàn Tiến Bộ",
+        "industry": "Industry",
+        "sector": "Development",
+        "country": "VNM"
+    },
+    {
+        "ticker": "tte",
+        "company_name": "CTCP Đầu tư Năng lượng Trường Thịnh",
+        "industry": "Energy",
+        "sector": "Resources",
+        "country": "VNM"
+    },
+    {
+        "ticker": "ttf",
+        "company_name": "CTCP Kỹ nghệ gỗ Trường Thành",
+        "industry": "Consumer Goods",
+        "sector": "Services",
+        "country": "VNM"
+    },
+    {
+        "ticker": "tv2",
+        "company_name": "CTCP Tư vấn Xây dựng điện 2",
+        "industry": "Industry",
+        "sector": "Development",
+        "country": "VNM"
+    },
+    {
+        "ticker": "tvb",
+        "company_name": "CTCP Chứng khoán Trí Việt",
+        "industry": "Financial",
+        "sector": "Services",
+        "country": "VNM"
+    },
+    {
+        "ticker": "tvs",
+        "company_name": "CTCP Chứng khoán Thiên Việt",
+        "industry": "Financial",
+        "sector": "Services",
+        "country": "VNM"
+    },
+    {
+        "ticker": "tvt",
+        "company_name": "CTCP Việt Thắng",
+        "industry": "Consumer Goods",
+        "sector": "Services",
+        "country": "VNM"
+    },
+    {
+        "ticker": "tya",
+        "company_name": "CTCP Dây và Cáp điện Taya",
+        "industry": "Consumer Goods",
+        "sector": "Services",
+        "country": "VNM"
+    },
+    {
+        "ticker": "uic",
+        "company_name": "CTCP Đầu tư nhà và Phát triển IDICO",
+        "industry": "Industry",
+        "sector": "Development",
+        "country": "VNM"
+    },
+    {
+        "ticker": "vaf",
+        "company_name": "CTCP Phân lân nung chảy Văn Điền",
+        "industry": "Energy",
+        "sector": "Resources",
+        "country": "VNM"
+    },
+    {
+        "ticker": "vca",
+        "company_name": "CTCP Thép VICASA",
+        "industry": "Energy",
+        "sector": "Resources",
+        "country": "VNM"
+    },
+    {
         "ticker": "vcb",
         "company_name": "Ngân hàng TMCP Ngoại thương Việt Nam - Vietcombank",
         "industry": "Financial",
+        "sector": "Services",
+        "country": "VNM"
+    },
+    {
+        "ticker": "vcf",
+        "company_name": "CTCP Vinacafe - Biên Hòa",
+        "industry": "Consumer Goods",
+        "sector": "Services",
+        "country": "VNM"
+    },
+    {
+        "ticker": "vcg",
+        "company_name": "CTCP Viglacera",
+        "industry": "Industry",
+        "sector": "Development",
+        "country": "VNM"
+    },
+    {
+        "ticker": "vci",
+        "company_name": "CTCP Chứng khoán Bản Việt",
+        "industry": "Financial",
+        "sector": "Services",
+        "country": "VNM"
+    },
+    {
+        "ticker": "vdp",
+        "company_name": "CTCP Dược phẩm Trung ương Vidipha",
+        "industry": "Medical",
+        "sector": "Consumer Staples",
+        "country": "VNM"
+    },
+    {
+        "ticker": "vds",
+        "company_name": "CTCP Chứng khoán Rồng Việt",
+        "industry": "Financial",
+        "sector": "Services",
+        "country": "VNM"
+    },
+    {
+        "ticker": "vfg",
+        "company_name": "CTCP Khử trùng Việt Nam",
+        "industry": "Energy",
+        "sector": "Resources",
+        "country": "VNM"
+    },
+    {
+        "ticker": "vgc",
+        "company_name": "Tổng Công ty Viglacera",
+        "industry": "Industry",
+        "sector": "Development",
+        "country": "VNM"
+    },
+    {
+        "ticker": "vhc",
+        "company_name": "CTCP Vinh Hoàn",
+        "industry": "Consumer Goods",
         "sector": "Services",
         "country": "VNM"
     },
@@ -2338,6 +2695,27 @@ STOCK = [
         "country": "VNM"
     },
     {
+        "ticker": "vid",
+        "company_name": "CTCP Đầu tư và Phát triển Thương mại",
+        "industry": "Energy",
+        "sector": "Resources",
+        "country": "VNM"
+    },
+    {
+        "ticker": "vip",
+        "company_name": "CTCP Vận tải Xăng dầu VIPCO",
+        "industry": "Industry",
+        "sector": "Development",
+        "country": "VNM"
+    },
+    {
+        "ticker": "vix",
+        "company_name": "CTCP Chứng khoán VIX",
+        "industry": "Financial",
+        "sector": "Services",
+        "country": "VNM"
+    },
+    {
         "ticker": "vjc",
         "company_name": "CTCP Hàng không Vietjet",
         "industry": "Airline",
@@ -2345,11 +2723,59 @@ STOCK = [
         "country": "VNM"
     },
     {
+        "ticker": "vmd",
+        "company_name": "CTCP Y Dược phẩm Vimedimex",
+        "industry": "Medical",
+        "sector": "Consumer Staples",
+        "country": "VNM"
+    },
+    {
+        "ticker": "vnd",
+        "company_name": "CTCP Chứng khoán VNDIRECT",
+        "industry": "Financial",
+        "sector": "Services",
+        "country": "VNM"
+    },
+    {
+        "ticker": "vne",
+        "company_name": "CTCP Xây dựng điện Việt Nam",
+        "industry": "Industry",
+        "sector": "Development",
+        "country": "VNM"
+    },
+    {
+        "ticker": "vng",
+        "company_name": "CTCP Du lịch Thành Thành Công",
+        "industry": "Industry",
+        "sector": "Development",
+        "country": "VNM"
+    },
+    {
+        "ticker": "vnl",
+        "company_name": "CTCP Logistic Vinamilk",
+        "industry": "Industry",
+        "sector": "Development",
+        "country": "VNM"
+    },
+    {
         "ticker": "vnm",
         "company_name": "CTCP Sữa Việt Nam - Vinamilk",
         "industry": "Beverage",
         "sector": "Consumer Staples",
-
+        "country": "VNM"
+    },
+    {
+        "ticker": "vns",
+        "company_name": "CTCP Ánh Dương Việt Nam",
+        "industry": "Industry",
+        "sector": "Development",
+        "country": "VNM"
+    },
+    {
+        "ticker": "vos",
+        "company_name": "CTCP Vận tải biển Việt Nam",
+        "industry": "Industry",
+        "sector": "Development",
         "country": "VNM"
     },
     {
@@ -2360,10 +2786,94 @@ STOCK = [
         "country": "VNM"
     },
     {
+        "ticker": "vpd",
+        "company_name": "CTCP Phát triển Điện Lực Việt Nam",
+        "industry": "Industry",
+        "sector": "Development",
+        "country": "VNM"
+    },
+    {
+        "ticker": "vpg",
+        "company_name": "CTCP Xuất nhập khẩu Việt Phát",
+        "industry": "Industry",
+        "sector": "Development",
+        "country": "VNM"
+    },
+    {
+        "ticker": "vph",
+        "company_name": "CTCP Vạn Phát Hưng",
+        "industry": "Investment",
+        "sector": "Commercial",
+        "country": "VNM"
+    },
+    {
+        "ticker": "vpi",
+        "company_name": "CTCP Đầu tư Văn Phú",
+        "industry": "Investment",
+        "sector": "Commercial",
+        "country": "VNM"
+    },
+    {
+        "ticker": "vps",
+        "company_name": "CTCP thuốc sát trùng Việt Nam",
+        "industry": "Energy",
+        "sector": "Resources",
+        "country": "VNM"
+    },
+    {
+        "ticker": "vrc",
+        "company_name": "CTCP Bất động sản và Đầu tư VRC",
+        "industry": "Investment",
+        "sector": "Commercial",
+        "country": "VNM"
+    },
+    {
         "ticker": "vre",
         "company_name": "CTCP Vincom Retail",
         "industry": "Retail",
         "sector": "Services",
+        "country": "VNM"
+    },
+    {
+        "ticker": "vsc",
+        "company_name": "CTCP Container Việt Nam",
+        "industry": "Industry",
+        "sector": "Development",
+        "country": "VNM"
+    },
+    {
+        "ticker": "vsh",
+        "company_name": "CTCP Thủy điện Vinh Sơn - Sông Hinh",
+        "industry": "Energy",
+        "sector": "Resources",
+        "country": "VNM"
+    },
+    {
+        "ticker": "vtb",
+        "company_name": "CTCP Viettronics Tân Bình",
+        "industry": "Consumer Goods",
+        "sector": "Services",
+        "country": "VNM"
+    },
+    {
+        "ticker": "vto",
+        "company_name": "CTCP Vận tải xăng dầu Vitaco",
+        "industry": "Industry",
+        "sector": "Development",
+        "country": "VNM"
+    },
+    {
+        "ticker": "ybm",
+        "company_name": "CTCP Khoáng sản công nghiệp Yên Bái",
+        "industry": "Energy",
+        "sector": "Resources",
+        "country": "VNM"
+    },
+    {
+        "ticker": "yeg",
+        "company_name": "CTCP Tập đoàn Yeah1",
+        "industry": "Media",
+        "sector": "Entertainment",
         "country": "VNM"
     },
 ]
