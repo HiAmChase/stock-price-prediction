@@ -1232,6 +1232,237 @@ STOCK = [
         "country": "VNM"
     },
     {
+        "ticker": "hpx",
+        "company_name": "CTCP Đầu tư Hải Phát",
+        "industry": "Investment",
+        "sector": "Commercial",
+        "country": "VNM"
+    },
+    {
+        "ticker": "hqc",
+        "company_name": "CTCP Địa ốc Hoàng Quân",
+        "industry": "Investment",
+        "sector": "Commercial",
+        "country": "VNM"
+    },
+    {
+        "ticker": "hrc",
+        "company_name": "CTCP Cao su Hòa Bình",
+        "industry": "Energy",
+        "sector": "Resources",
+        "country": "VNM"
+    },
+    {
+        "ticker": "hsg",
+        "company_name": "CTCP Tập đoàn Hoa Sen",
+        "industry": "Energy",
+        "sector": "Resources",
+        "country": "VNM"
+    },
+    {
+        "ticker": "hsl",
+        "company_name": "CTCP Thực phẩm Hồng Hà",
+        "industry": "Beverage",
+        "sector": "Consumer Staples",
+        "country": "VNM"
+    },
+    {
+        "ticker": "ht1",
+        "company_name": "CTCP xi măng VICEM Hà Tiên",
+        "industry": "Industry",
+        "sector": "Development",
+        "country": "VNM"
+    },
+    {
+        "ticker": "hti",
+        "company_name": "CTCP Đầu tư Phát triển Hạ tầng IDICO",
+        "industry": "Industry",
+        "sector": "Development",
+        "country": "VNM"
+    },
+    {
+        "ticker": "htl",
+        "company_name": "CTCP Kỹ thuật và Ô tô Trường Long",
+        "industry": "Industry",
+        "sector": "Development",
+        "country": "VNM"
+    },
+    {
+        "ticker": "htn",
+        "company_name": "CTCP Hưng Thịnh Incons",
+        "industry": "Industry",
+        "sector": "Development",
+        "country": "VNM"
+    },
+    {
+        "ticker": "htv",
+        "company_name": "CTCP Logistic Vicem",
+        "industry": "Industry",
+        "sector": "Development",
+        "country": "VNM"
+    },
+    {
+        "ticker": "hu1",
+        "company_name": "CTCP Đầu tư và Xây dựng HUD1",
+        "industry": "Industry",
+        "sector": "Development",
+        "country": "VNM"
+    },
+    {
+        "ticker": "hub",
+        "company_name": "CTCP Xây lắp Thừa Thiên Huế",
+        "industry": "Industry",
+        "sector": "Development",
+        "country": "VNM"
+    },
+    {
+        "ticker": "hvh",
+        "company_name": "CTCP Đầu tư và Công nghệ HVC",
+        "industry": "Consumer Goods",
+        "sector": "Services",
+        "country": "VNM"
+    },
+    {
+        "ticker": "hvn",
+        "company_name": "Tổng Công ty Hàng không Việt Nam",
+        "industry": "Entertainment",
+        "sector": "Services",
+        "country": "VNM"
+    },
+    {
+        "ticker": "hvx",
+        "company_name": "CTCP xi măng Vicem Hải Vân",
+        "industry": "Industry",
+        "sector": "Development",
+        "country": "VNM"
+    },
+    {
+        "ticker": "ibc",
+        "company_name": "CTCP Đầu tư APAX Holdings",
+        "industry": "Investment",
+        "sector": "Commercial",
+        "country": "VNM"
+    },
+    {
+        "ticker": "ict",
+        "company_name": "CTCP Viễn thông - Tin học Bưu điện",
+        "industry": "Technology",
+        "sector": "Services",
+        "country": "VNM"
+    },
+    {
+        "ticker": "idi",
+        "company_name": "CTCP Đầu tư và Phát triển IDI",
+        "industry": "Beverage",
+        "sector": "Consumer Staples",
+        "country": "VNM"
+    },
+    {
+        "ticker": "ijc",
+        "company_name": "CTCP Phát triển Hạ tầng Kỹ thuật",
+        "industry": "Industry",
+        "sector": "Development",
+        "country": "VNM"
+    },
+    {
+        "ticker": "ilb",
+        "company_name": "CTCP ICD Tân Cảng - Long Bình",
+        "industry": "Industry",
+        "sector": "Development",
+        "country": "VNM"
+    },
+    {
+        "ticker": "imp",
+        "company_name": "CTCP dược phẩm Imexpharm",
+        "industry": "Medical",
+        "sector": "Consumer Staples",
+        "country": "VNM"
+    },
+    {
+        "ticker": "ita",
+        "company_name": "CTCP Đầu tư và Công nghiệp Tân Tạo",
+        "industry": "Investment",
+        "sector": "Commercial",
+        "country": "VNM"
+    },
+    {
+        "ticker": "itc",
+        "company_name": "CTCP Đầu tư - Kinh doanh nhà",
+        "industry": "Investment",
+        "sector": "Commercial",
+        "country": "VNM"
+    },
+    {
+        "ticker": "itd",
+        "company_name": "CTCP Công nghệ Tiên Phong",
+        "industry": "Technology",
+        "sector": "Services",
+        "country": "VNM"
+    },
+    {
+        "ticker": "jvc",
+        "company_name": "CTCP Đầu tư và Phát triển Y tế Việt Nhật",
+        "industry": "Medical",
+        "sector": "Consumer Staples",
+        "country": "VNM"
+    },
+    {
+        "ticker": "kbc",
+        "company_name": "CTCP Phát triển Đô thị Kinh Bắc",
+        "industry": "Industry",
+        "sector": "Development",
+        "country": "VNM"
+    },
+    {
+        "ticker": "kdc",
+        "company_name": "CTCP thực phẩm và gia vị ta",
+        "industry": "Consumer Goods",
+        "sector": "Services",
+        "country": "VNM"
+    },
+    {
+        "ticker": "kdh",
+        "company_name": "CTCP Đầu tư và Kinh doanh Nhà Khang Điền",
+        "industry": "Investment",
+        "sector": "Commercial",
+        "country": "VNM"
+    },
+    {
+        "ticker": "khp",
+        "company_name": "CTCP Điện lực Khánh Hòa",
+        "industry": "Energy",
+        "sector": "Resources",
+        "country": "VNM"
+    },
+    {
+        "ticker": "kmr",
+        "company_name": "CTCP Mirae",
+        "industry": "Consumer Goods",
+        "sector": "Services",
+        "country": "VNM"
+    },
+    {
+        "ticker": "kos",
+        "company_name": "CTCP Kosy",
+        "industry": "Investment",
+        "sector": "Commercial",
+        "country": "VNM"
+    },
+    {
+        "ticker": "kpf",
+        "company_name": "CTCP đầu tư tài sản Koji",
+        "industry": "Investment",
+        "sector": "Commercial",
+        "country": "VNM"
+    },
+    {
+        "ticker": "ksb",
+        "company_name": "CTCP Khoáng sản và Xây dựng Bình Dương",
+        "industry": "Energy",
+        "sector": "Resources",
+        "country": "VNM"
+    },
+    {
         "ticker": "mbb",
         "company_name": "Ngân hàng TMCP Quân Đội - MBBank",
         "industry": "Financial",
