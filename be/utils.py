@@ -35,12 +35,15 @@ def get_highest_stock_grown_rate(grown_rate_days, max_results):
 
 def get_stock_grown_rate(stock, grown_rate_days):
     test_data = pd.read_csv(f"{TEST_DATA}/{stock}.csv")
+    stock_obj = next((x for x in STOCK if x.get("ticker") == stock), None)
+    company_name = stock_obj.get("company_name")
     price, prev_n_days_price, percentage = calculate_grown_rate(
         test_data, grown_rate_days
     )
 
     return {
         "ticker": stock,
+        "company_name": company_name,
         "price": price,
         "percentage": percentage,
         "prev_n_days_price": prev_n_days_price
