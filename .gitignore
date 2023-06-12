@@ -1,6 +1,6 @@
 __pycache__
-models_15/
-models_30/
-models_60/
-test_data/
-train_data/
+models_15
+models_30
+models_60
+test_data
+train_data
