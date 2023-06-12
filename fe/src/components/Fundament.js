@@ -17,7 +17,7 @@ function Fundament({ data, handleFetchData, predictFuture }) {
           </Tooltip>
         </div>
         {/* Title */}
-        <div>
+        <div style={{ fontSize: "18px" }}>
           {data.industry}
           <i className="fa-solid fa-circle separatedot"></i>
           {data.sector}
@@ -35,13 +35,14 @@ function Fundament({ data, handleFetchData, predictFuture }) {
             </span>
           </h1>
           <div className="Fund__info">
-            <span className="Fund__date">{data.date}</span>
+            <span className="Fund__date">Date: {data.date}</span>
+            <i className="fa-solid fa-circle separatedot"></i>
             <span className="Fund__text">
               Prev Close: {data.prev_price?.toFixed(2)}
             </span>
           </div>
           <div className="Fund__predict">
-            <span>Next value: </span>
+            <h4>Next value: </h4>
             <h1>{predictFuture?.toFixed(2)}</h1>
           </div>
         </div>

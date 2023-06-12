@@ -9,10 +9,10 @@
 }
 .separatedot{
     font-size: 0.5rem !important;
-    margin: 0px 5px;
+    margin: 0px 10px;
 }
 .chg{
-    margin-left: 5px;
+    margin-left: 10px;
     font-size: 18px;
 }
 .Fund__row{
@@ -53,9 +53,9 @@
 .Fund__title > button:focus {
     outline: none;
 }
-.Fund__text{
+/* .Fund__text{
     color: #787b86;
-}
+} */
 .Fundstat{
     flex-grow: 1;
     overflow-y: auto;
@@ -63,14 +63,22 @@
 
 .Fund__info {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    align-items: center;
 }
 
 .Fund__predict {
     width: 100%;
+    margin-top: 15px;
 }
-
+.Fund__predict h4 {
+    margin: 0;
+}
 .Fund__predict h1 {
-    font-size: 50px;
+    font-size: 40px;
     text-align: center;
+    margin: 0;
+}
+.Fundament span {
+    font-size: 18px;
 }
