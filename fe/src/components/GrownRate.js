@@ -1,4 +1,5 @@
 import React from "react"
+import { Tooltip } from "@mui/material"
 import { getColor } from "./utils"
 import "./GrownRate.css"
 
@@ -60,22 +61,24 @@ function GrownRate({
           </thead>
           <tbody className="Market__main">
             {stock.map((item) => (
-              <tr
-                className="GrownRateRow"
-                key={item.ticker}
-                onClick={() => handleSetTicker(item.ticker)}
-              >
-                <td className="text-center">{item.ticker.toUpperCase()}</td>
-                <td className={`text-center ${getColor(item.percentage)}`}>
-                  {item.prev_n_days_price?.toFixed(2)}
-                </td>
-                <td className={`text-center ${getColor(item.percentage)}`}>
-                  {item.price?.toFixed(2)}
-                </td>
-                <td className={`text-center ${getColor(item.percentage)}`}>
-                  {item.percentage?.toFixed(2)}%
-                </td>
-              </tr>
+              <Tooltip title={item.company_name}>
+                <tr
+                  className="GrownRateRow"
+                  key={item.ticker}
+                  onClick={() => handleSetTicker(item.ticker)}
+                >
+                  <td className="text-center">{item.ticker.toUpperCase()}</td>
+                  <td className={`text-center ${getColor(item.percentage)}`}>
+                    {item.prev_n_days_price?.toFixed(2)}
+                  </td>
+                  <td className={`text-center ${getColor(item.percentage)}`}>
+                    {item.price?.toFixed(2)}
+                  </td>
+                  <td className={`text-center ${getColor(item.percentage)}`}>
+                    {item.percentage?.toFixed(2)}%
+                  </td>
+                </tr>
+              </Tooltip>
             ))}
           </tbody>
         </table>
