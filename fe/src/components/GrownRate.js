@@ -12,7 +12,7 @@ function GrownRate({
   return (
     <div className="GrownRate">
       <div className="GrownRate__title_header">
-        <h4 className="GrownRate__title">Top Highest Grown Rate</h4>
+        <h4 className="GrownRate__title">Top Highest Growth Rate</h4>
         <div className="GrownRate__group">
           <div className="GrownRate__dropdown">
             <select

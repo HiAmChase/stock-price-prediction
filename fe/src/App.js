@@ -133,7 +133,6 @@ function App() {
 
   useEffect(() => {
     fetchAllStocksData()
-    getStocksGrownRateData()
   }, [])
 
   useEffect(() => {
@@ -141,18 +140,15 @@ function App() {
   }, [grownRateFilter])
 
   useEffect(() => {
-    resetVariable()
-    handleGetPredictPast()
-    handleGetPredictFuture()
-  }, [predictType])
+    fetchStatisticData()
+    fetchFundamentData()
+  }, [ticker])
 
   useEffect(() => {
     resetVariable()
-    fetchStatisticData()
-    fetchFundamentData()
-    handleGetPredictPast()
-    handleGetPredictFuture()
-  }, [ticker])
+    // handleGetPredictPast()
+    // handleGetPredictFuture()
+  }, [ticker, predictType])
 
   useEffect(() => {
     setTimeout(() => dispatch(actions.updatePopupInfo({ show: false })), 2000)
