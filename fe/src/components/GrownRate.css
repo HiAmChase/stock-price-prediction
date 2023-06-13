@@ -13,6 +13,7 @@
 }
 
 .GrownRate__title_header {
+    position: relative;
     border-bottom: 3px solid #d1d4dc;
     padding-bottom: 10px;
     margin: 8px 0;
@@ -52,4 +53,9 @@
 
 .GrownRateRow > td {
     padding: 6px 0;
+}
+
+.GrownRate__tooltip {
+    position: absolute;
+    left: 2px;
 }
