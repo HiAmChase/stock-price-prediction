@@ -39,6 +39,7 @@ function App() {
   })
   const [predictType, setPredictType] = useState("LAST_60_DAYS")
   const [predictFuture, setPredictFuture] = useState(0)
+  const [loading, setLoading] = useState(true)
 
   const resetVariable = () => {
     setPredictPast([])
@@ -146,8 +147,8 @@ function App() {
 
   useEffect(() => {
     resetVariable()
-    // handleGetPredictPast()
-    // handleGetPredictFuture()
+    handleGetPredictPast()
+    handleGetPredictFuture()
   }, [ticker, predictType])
 
   useEffect(() => {
@@ -158,6 +159,7 @@ function App() {
     <div className="App">
       <div className="App__topPanel">
         <ChartDisplay
+          loading={loading}
           statistic={statistic}
           predictPast={predictPast}
           stockSearch={stockSearch}

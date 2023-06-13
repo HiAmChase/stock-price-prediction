@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react"
 import { useSelector, useDispatch } from "react-redux"
+import ClipLoader from "react-spinners/ClipLoader"
 
 import { DEFAULT_COLOR, DOWN_COLOR, UP_COLOR, BACKGROUND_COLOR } from "./utils"
 import { actions } from "../redux"
@@ -10,6 +11,7 @@ import StockChart from "./StockChart"
 import "./ChartDisplay.css"
 
 function ChartDisplay({
+  loading,
   statistic,
   predictPast,
   stockSearch,
@@ -204,6 +206,18 @@ function ChartDisplay({
         <div>
           <Favorite isFavorite={isFavorite} handleFavorite={handleFavorite} />
         </div>
+        {loading && (
+          <div className="Chartdisplay__loading">
+            <span>Đang tải...</span>
+            <ClipLoader
+              color="#d1d4dc"
+              loading={true}
+              size={18}
+              aria-label="Loading Spinner"
+              data-testid="loader"
+            />
+          </div>
+        )}
       </div>
       <div className="Chartdisplay__chart" id="chart">
         <StockChart options={stockOptions} />

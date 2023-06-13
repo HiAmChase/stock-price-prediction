@@ -2,6 +2,7 @@
     padding: 3px;
 }
 .Chartdisplay__menu{
+    position: relative;
     display: flex;
     align-items: center;
 }
@@ -36,4 +37,16 @@
     margin: 3px 5px !important;
     border-radius: 4px;
     color: rgb(209, 212, 220) !important;;
+}
+
+.Chartdisplay__loading {
+    position: absolute;
+    right: 0;
+    display: flex;
+    color: rgb(209, 212, 220);
+    align-items: center;
+}
+
+.Chartdisplay__loading span {
+    margin-right: 8px;
 }
