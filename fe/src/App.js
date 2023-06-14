@@ -39,7 +39,7 @@ function App() {
   })
   const [predictType, setPredictType] = useState("LAST_60_DAYS")
   const [predictFuture, setPredictFuture] = useState(0)
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(false)
 
   const resetVariable = () => {
     setPredictPast([])
@@ -92,8 +92,10 @@ function App() {
   }
 
   const handleGetPredictPast = async () => {
+    setLoading(true)
     await getPredictPast(ticker, predictType).then(({ data }) => {
       setPredictPast(data.predict_past)
+      setLoading(false)
     })
   }
 
