@@ -269,7 +269,7 @@ def get_current_data(data):
     price = data_last_day["Close"]
     prev_price = data_last_2_days["Close"]
     change = price - prev_price
-    percentage = change / price * 100
+    percentage = change / prev_price * 100
 
     return (change, price, percentage, date, prev_price)
 
