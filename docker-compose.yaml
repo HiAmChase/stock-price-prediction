@@ -4,4 +4,4 @@ services:
     container_name: flask
     image: stock:3.10.4
     ports:
-      - "5000:5000"
+      - "3003:5000"
