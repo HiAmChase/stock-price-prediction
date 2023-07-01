@@ -208,7 +208,7 @@ function ChartDisplay({
         </div>
         {loading && (
           <div className="Chartdisplay__loading">
-            <span>Đang tải...</span>
+            <span>Loading...</span>
             <ClipLoader
               color="#d1d4dc"
               loading={true}
