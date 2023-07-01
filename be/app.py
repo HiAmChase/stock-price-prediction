@@ -22,7 +22,7 @@ except Exception as e:
 app = Flask(__name__)
 CORS(app)
 
-schedule.every().day.at("00:00").do(fetch_all_data)
+schedule.every().day.at("16:15").do(fetch_all_data)
 
 
 def run_scheduled_task():

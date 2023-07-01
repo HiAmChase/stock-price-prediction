@@ -13,7 +13,7 @@ function GrownRate({
     <div className="GrownRate">
       <div className="GrownRate__title_header">
         <div className="GrownRate__tooltip">
-          <Tooltip title="The data will be automatically updated at 00:00am">
+          <Tooltip title="The data will be updated automatically at 00:00am">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
