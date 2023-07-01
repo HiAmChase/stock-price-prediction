@@ -693,13 +693,6 @@ STOCK = [
         "country": "VNM"
     },
     {
-        "ticker": "dag",
-        "company_name": "CTCP Tập đoàn Nhựa Đông Á",
-        "industry": "Industry",
-        "sector": "Development",
-        "country": "VNM"
-    },
-    {
         "ticker": "dah",
         "company_name": "CTCP Tập đoàn Khách sạn Đông Á",
         "industry": "Industry",
