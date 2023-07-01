@@ -211,17 +211,18 @@ def fetch_domestic_data(stock):
     last_day = datetime.strptime(last_day, DATE_FORMAT).date()
     last_day = str(last_day + timedelta(days=1))
 
-    loader = dt.DataLoader(stock, last_day, today)
+    loader = dt.DataLoader(stock, last_day, today, data_source="VND")
     data = loader.download()
     new_data = []
+    print(data)
     for index, row in data.iterrows():
         row_date = str(index).split(" ")[0]
-        high = row["High"]
-        low = row["Low"]
-        _open = row["Open"]
-        close = row["Close"]
-        adjust = row["adjust"]
-        volume = int(row["Volume"])
+        high = row["high"]
+        low = row["low"]
+        _open = row["open"]
+        close = row["close"]
+        adjust = row["avg"]
+        volume = int(row["volume"])
         new_row = [row_date, high, low, _open, close, adjust, volume]
         new_data.append(new_row)
 

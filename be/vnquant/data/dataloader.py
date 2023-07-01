@@ -42,8 +42,8 @@ class DataLoader():
             # logging.info(stock_data)
             if str.lower(self.data_source) == 'vnd':
                 data = stock_data[
-                    ['High', 'Low', 'Open',
-                     'Close', 'avg', 'Volume']
+                    ['high', 'low', 'open',
+                     'close', 'avg', 'volume']
                 ]
                 return data
             else:
@@ -100,12 +100,11 @@ class DataLoaderVND(DataLoadProto):
         res = requests.get(API_VNDIRECT, params=params, headers=HEADERS)
         data = res.json()['data']
         data = pd.DataFrame(data)
-        stock_data = data[['date', 'adClose', 'Close', 'pctChange', 'average', 'nmVolume',
-                           'nmValue', 'ptVolume', 'ptValue', 'Open', 'High', 'Low']].copy()
-        stock_data.columns = ['date', 'adjust', 'Close', 'change_perc', 'avg',
+        stock_data = data[['date', 'adClose', 'close', 'pctChange', 'average', 'nmVolume',
+                           'nmValue', 'ptVolume', 'ptValue', 'open', 'high', 'low']].copy()
+        stock_data.columns = ['date', 'adjust', 'close', 'change_perc', 'avg',
                               'volume_match', 'value_match', 'volume_reconcile', 'value_reconcile',
-                              'Open', 'High', 'Low']
-
+                              'open', 'high', 'low']
         stock_data = stock_data.set_index('date').apply(
             pd.to_numeric, errors='coerce')
         stock_data.index = list(map(utils.convert_date, stock_data.index))

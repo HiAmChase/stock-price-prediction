@@ -61,7 +61,7 @@ TEST_END_DATE = "2023-06-02"
 
 """ Get train data """
 for company in COMPANIES:
-    loader = dt.DataLoader(company, TRAIN_START_DATE, TRAIN_END_DATE)
+    loader = dt.DataLoader(company, TRAIN_START_DATE, TRAIN_END_DATE, data_source="VND")
 
     data = loader.download()
     data.to_csv(f"vn_train_data/{company.lower()}.csv")
