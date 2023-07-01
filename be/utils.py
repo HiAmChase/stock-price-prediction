@@ -214,7 +214,6 @@ def fetch_domestic_data(stock):
     loader = dt.DataLoader(stock, last_day, today, data_source="VND")
     data = loader.download()
     new_data = []
-    print(data)
     for index, row in data.iterrows():
         row_date = str(index).split(" ")[0]
         high = row["high"]
