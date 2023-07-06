@@ -25,8 +25,10 @@ import "./App.css"
 function App() {
   const dispatch = useDispatch()
   const ticker = useSelector((state) => state.ticker)
+  const watchList = useSelector((state) => state.watchList)
   const popupInfo = useSelector((state) => state.popupInfo)
 
+  const [isFavorite, setIsFavorite] = useState(false)
   const [statistic, setStatistic] = useState({})
   const [fundament, setFundament] = useState({})
   const [stocks, setStocks] = useState([])
@@ -41,6 +43,14 @@ function App() {
   const [predictFuture, setPredictFuture] = useState(0)
   const [loading, setLoading] = useState(false)
 
+  const checkIsFavorite = (ticker) => {
+    const item = watchList.find((item) => item === ticker)
+    if (item !== undefined) {
+      return setIsFavorite(true)
+    }
+    return setIsFavorite(false)
+  }
+
   const resetVariable = () => {
     setPredictPast([])
     setPredictFuture(0)
@@ -48,6 +58,7 @@ function App() {
 
   const handleSetTicker = (ticker) => {
     dispatch(actions.setTicker(ticker))
+    checkIsFavorite(ticker)
   }
 
   const handleSearchStock = async (e) => {
@@ -169,6 +180,9 @@ function App() {
           predictType={predictType}
           setPredictType={setPredictType}
           handleSearchStock={handleSearchStock}
+          isFavorite={isFavorite}
+          setIsFavorite={setIsFavorite}
+          checkIsFavorite={checkIsFavorite}
         />
         <GrownRate
           grownRateFilter={grownRateFilter}

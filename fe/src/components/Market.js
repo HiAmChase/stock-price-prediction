@@ -47,17 +47,29 @@ function Market({ handleSetTicker }) {
           </thead>
           <tbody className="Market__main">
             {stocksInWatchList.map((item) => (
-              <tr
-                className="MarketRow"
-                key={item.ticker}
-                onClick={() => handleSetTicker(item.ticker)}
-              >
-                <td className="text-center">{item.ticker.toUpperCase()}</td>
-                <td className="text-center">{item.price?.toFixed(2)}</td>
-                <td className={`text-center ${getColor(item.change)}`}>
+              <tr className="MarketRow" key={item.ticker}>
+                <td
+                  className="text-center"
+                  onClick={() => handleSetTicker(item.ticker)}
+                >
+                  {item.ticker.toUpperCase()}
+                </td>
+                <td
+                  className="text-center"
+                  onClick={() => handleSetTicker(item.ticker)}
+                >
+                  {item.price?.toFixed(2)}
+                </td>
+                <td
+                  className={`text-center ${getColor(item.change)}`}
+                  onClick={() => handleSetTicker(item.ticker)}
+                >
                   {item.change?.toFixed(2)}
                 </td>
-                <td className={`text-center ${getColor(item.change)}`}>
+                <td
+                  className={`text-center ${getColor(item.change)}`}
+                  onClick={() => handleSetTicker(item.ticker)}
+                >
                   {item.percentage?.toFixed(2)}%
                 </td>
                 <Tooltip title="Remove from Favorite">

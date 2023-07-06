@@ -19,24 +19,17 @@ function ChartDisplay({
   handleSearchStock,
   predictType,
   setPredictType,
+  isFavorite,
+  setIsFavorite,
+  checkIsFavorite,
 }) {
   const ticker = useSelector((state) => state.ticker)
-  const watchList = useSelector((state) => state.watchList)
   const stockInfo = useSelector((state) => state.stockInfo)
   const dispatch = useDispatch()
 
-  const [isFavorite, setIsFavorite] = useState(false)
   const [charType, setChartType] = useState("candlestick")
   const [stockOptions, setStockOptions] = useState({})
   const [height, setHeight] = useState(0)
-
-  const checkIsFavorite = () => {
-    const item = watchList.find((item) => item.ticker === ticker)
-    if (item !== undefined) {
-      return setIsFavorite(true)
-    }
-    return setIsFavorite(false)
-  }
 
   const handleFavorite = async (e) => {
     e.preventDefault()
@@ -68,7 +61,7 @@ function ChartDisplay({
   }, [])
 
   useEffect(() => {
-    checkIsFavorite()
+    checkIsFavorite(ticker)
   }, [ticker])
 
   useEffect(() => {
