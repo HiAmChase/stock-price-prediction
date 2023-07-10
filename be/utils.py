@@ -189,7 +189,11 @@ def fetch_all_data():
     tickers = [stock.get("ticker") for stock in STOCK]
 
     for ticker in tickers:
-        fetch_new_data(ticker)
+        try:
+            fetch_new_data(ticker)
+        except Exception:
+            print(f"Cannot fetch data with {ticker}")
+            continue
     print("FETCH ALL STOCK DATA COMPLETED")
 
 
